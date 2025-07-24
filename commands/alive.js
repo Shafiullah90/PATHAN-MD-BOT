@@ -20,7 +20,7 @@ async function aliveCommand(sock, chatId, message) {
                 isForwarded: false,
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: '@newsletter',
-                    newsletterName: '𝐉ᴜɴᴇ 𝐌ᴅ',
+                    newsletterName: 'Shafi bot',
                     serverMessageId: -1
                 }
             }
