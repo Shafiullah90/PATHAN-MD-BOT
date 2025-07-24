@@ -147,7 +147,7 @@ async function startXeonBotInc() {
                             isForwarded: false,
                             forwardedNewsletterMessageInfo: {
                                 newsletterJid: '@newsletter',
-                                newsletterName: '𝐉ᴜɴᴇ 𝐌ᴅ',
+                                newsletterName: 'pathan bot',
                                 serverMessageId: -1
                             }
                         }
