@@ -243,7 +243,7 @@ async function startXeonBotInc() {
                 text: 
                 `
 ┏❐═⭔ *CONNECTED* ⭔═❐
-┃⭔ BOT: JUNE MD
+┃⭔ BOT: king-bot 
 ┃⭔ Time: ${new Date().toLocaleString()}
 ┃⭔ Status:Online
 ┃⭔ OWNER:${owner}
