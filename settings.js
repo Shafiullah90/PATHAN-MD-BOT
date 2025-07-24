@@ -1,5 +1,5 @@
 const settings = {
-  packname: 'SHAFI PATHAN,
+  packname: 'afghan,
   author: 'afgan',
   botName: "KING-BOT",
   botOwner: 'SHAFI☆PATHAN', // Your name
