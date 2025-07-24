@@ -1,5 +1,17 @@
 # 🌌SHAFI PATHAN☆🇦🇫🇦🇫🇦🇫
 
+<div align="center"> 
+  <a href="https://git.io/typing-svg"> 
+    <img src="https://readme-typing-svg.demolab.com?font=Rockwell&size=50&pause=1000&color=33ff00&center=true&width=910&height=100&lines=KING-BOT;Multi+Device+Whatsapp+Bot;Made+By+SHAFI" alt="Typing SVG" />
+  </a> 
+</div> 
+
+
+      <img src="https://litter.catbox.moe/oazsz2gaqxd3woph.jpg" alt="king bot" height="300"> 
+  </a> 
+</div>
+
+---
 🤖 𝐊𝐢𝐧𝐠 𝐁𝐨𝐭 - WhatsApp king Bot
 
 Welcome to *King Bot*, a powerful and stylish WhatsApp bot built using *Baileys*!
@@ -22,18 +34,7 @@ Welcome to *King Bot*, a powerful and stylish WhatsApp bot built using *Baileys*
 - Anti-link & moderation  
 - Stylish menu and custom commands etc....
 
-<div align="center"> 
-  <a href="https://git.io/typing-svg"> 
-    <img src="https://readme-typing-svg.demolab.com?font=Rockwell&size=50&pause=1000&color=33ff00&center=true&width=910&height=100&lines=KING-BOT;Multi+Device+Whatsapp+Bot;Made+By+SHAFI" alt="Typing SVG" />
-  </a> 
-</div> 
 
-
-      <img src="https://litter.catbox.moe/oazsz2gaqxd3woph.jpg" alt="king bot" height="300"> 
-  </a> 
-</div>
-
----
 
 >  🌌 **DEPLOMENT & STEPS** 🌌
 
