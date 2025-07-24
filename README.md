@@ -40,8 +40,8 @@ Welcome to *King Bot*, a powerful and stylish WhatsApp bot built using *Baileys*
 
 > 1:  **Fork the Repository**
 
-_Click the button below to fork  June Md repository to your GitHub account_
-[![Typing SVG](https://readme-typing-svg.demolab.com/?lines=Tap+fork+button+Bellow+To+Fork;June+MD+REPO+On+Github)](https://git.io/typing-svg)
+_Click the button below to fork king bot repository to your GitHub account_
+[![Typing SVG](https://readme-typing-svg.demolab.com/?lines=Tap+fork+button+Bellow+To+Fork;king+bot+REPO+On+Github)](https://git.io/typing-svg)
 > <div align="left">
   <a href="https://github.com/Shafiullah90/king-bot/fork">
     <img src="https://img.shields.io/badge/Fork%20Repo-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=darkblue&color=darkblue" alt="FORK REPO"/>
