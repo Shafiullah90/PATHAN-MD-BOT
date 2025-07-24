@@ -100,8 +100,8 @@ _For further setup & guidance, click the button below🩹_
 
 >  **JOIN US**
 <div align="left">
-  <a href="https://t.me/cypherx_support">
-    <img src="https://img.shields.io/badge/Join%20Telegram-0078E7?style=for-the-badge&logo=telegram&logoColor=darkblue" alt="Join Telegram"/>
+  <a href="">
+    <img src="" alt="Join Telegram"/>
   </a>
 <br>
   <a href="https://chat.whatsapp.com/CyW9l0g2CiRGmdB0kUGdQd">
