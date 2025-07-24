@@ -1,4 +1,4 @@
-# 🌌JUNE MD
+# 🌌SHAFI PATHAN☆
 
 <div align="center"> 
   <a href="https://git.io/typing-svg"> 
@@ -8,7 +8,7 @@
 
 <div align="center"> 
   <a href="https://youtube.com/@mr_unique_hacker"> 
-    <img src="https://files.catbox.moe/198jbu.jpg" alt="JUNE MD" height="300"> 
+    <img src="https://files.catbox.moe/198jbu.jpg" alt="king-bot" height="300"> 
   </a> 
 </div>
 
