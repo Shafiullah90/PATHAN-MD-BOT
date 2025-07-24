@@ -29,7 +29,7 @@ Welcome to *King Bot*, a powerful and stylish WhatsApp bot built using *Baileys*
 </div> 
 
 
-    <img src="https://litter.catbox.moe/oazsz2gaqxd3woph.jpg" alt="king-bot" height="300"> 
+      <img src="https://litter.catbox.moe/oazsz2gaqxd3woph.jpg" alt="king bot" height="300"> 
   </a> 
 </div>
 
