@@ -1,8 +1,8 @@
 const settings = {
-  packname: 'shafi king',
+  packname: 'SHAFI☆PATHAN🇦🇫,
   author: 'PATHAN',
   botName: "KING-BOT",
-  botOwner: 'SHAFI', // Your name
+  botOwner: 'SHAFI☆PATHAN', // Your name
   ownerNumber: '66620925025', //Set your number here without + symbol.
   giphyApiKey: 'qnl7ssQChTdPjsKta2Ax2LMaGXz303tq',
   commandMode: "public",
