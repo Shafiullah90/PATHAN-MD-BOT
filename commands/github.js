@@ -6,11 +6,11 @@ const path = require('path');
 
 async function githubCommand(sock, chatId, message) {
   try {
-    const res = await fetch('https://api.github.com/repos/vinpink2/June-md');
+    const res = await fetch('https://api.github.com/repos/Shafiullah90/king-bot');
     if (!res.ok) throw new Error('Error fetching repository data');
     const json = await res.json();
 
-    let txt = `*/ 𝐉ᴜɴᴇ 𝐌ᴅ /*\n\n`;
+    let txt = `*/ king bot /*\n\n`;
     txt += `🔸  *Name* : ${json.name}\n`;
     txt += `🔸  *Watchers* : ${json.watchers_count}\n`;
     txt += `🔸  *Size* : ${(json.size / 1024).toFixed(2)} MB\n`;
@@ -19,7 +19,7 @@ async function githubCommand(sock, chatId, message) {
     txt += `🔸  *Forks* : ${json.forks_count}\n`;
     txt += `🔸  *Stars* : ${json.stargazers_count}\n`;
     txt += `🔸  *Dont Forget to fork & star⭐ Repo*\n\n`;
-    txt += `*/ 𝐉ᴜɴᴇ 𝐌ᴅ /*`;
+    txt += `*/ king bot /*`;
 
     // Use the local asset image
     const imgPath = path.join(__dirname, '../assets/june_repo.jpg');
