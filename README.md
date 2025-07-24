@@ -104,10 +104,9 @@ _For further setup & guidance, click the button below🩹_
     <img src="https://img.shields.io/badge/Join%20Telegram-0078E7?style=for-the-badge&logo=telegram&logoColor=darkblue" alt="Join Telegram"/>
   </a>
 <br>
-  <a href="[(https://chat.whatsapp.com/CyW9l0g2CiRGmdB0kUGdQd)">
+  <a href="https://chat.whatsapp.com/CyW9l0g2CiRGmdB0kUGdQd">
     <img src="https://img.shields.io/badge/Join%20WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=darkgreen" alt="WHATSAPP"/>
   </a>
 </div>
 
-
-
+ 𓆩᪳𝐒𝐇𝐀𝐅𝐈 𝐏𝐀𝐓𝐇𝐀𝐍᪳𓆪 🇦🇫🇦🇫𝙆𝙞𝙣𝙜 𝘽𝙤𝙩
