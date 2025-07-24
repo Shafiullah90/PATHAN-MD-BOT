@@ -30,9 +30,10 @@ async function helpCommand(sock, chatId, message) {
         const uptimeFormatted = formatTime(uptimeInSeconds);
     const helpMessage = `
 ┏❐═══════════════════╗
-┃     🌌  SHAFI pathan  🌌
+┃     🇦🇫 𓆩𝑺𝒉𝒂𝒇𝒊 𝑷𝒂𝒕𝒉𝒂𝒏𓆪 🇦🇫 
 ┗❐═══════════════════╝
- 
+ 💔 𝐋𝐞𝐚𝐫𝐧 𝐭𝐨 𝐥𝐢𝐯𝐞 𝐚𝐥𝐨𝐧𝐞...
+ 🇦🇫 𝐧𝐨 𝐨𝐧𝐞 𝐬𝐭𝐚𝐲𝐬 𝐟𝐨𝐫𝐞𝐯𝐞𝐫 😔
 ┏❐═══════════════════╗
 ┃▢  *Owner: ${settings.botOwner}*
 ┃▢  *Uptime: ${uptimeFormatted}*
