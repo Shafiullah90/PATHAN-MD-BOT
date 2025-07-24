@@ -75,7 +75,7 @@ const store = {
 let phoneNumber = "254792021944"
 let owner = JSON.parse(fs.readFileSync('./data/owner.json'))
 
-global.botname = "𝐉ᴜɴᴇ 𝐌ᴅ"
+global.botname = "KING BOT"
 global.themeemoji = "•"
 
 const settings = require('./settings')
@@ -243,7 +243,7 @@ async function startXeonBotInc() {
                 text: 
                 `
 ┏❐═⭔ *CONNECTED* ⭔═❐
-┃⭔ BOT: JUNE MD
+┃⭔ BOT: KING BOT🇦🇫
 ┃⭔ Time: ${new Date().toLocaleString()}
 ┃⭔ Status:Online
 ┃⭔ OWNER:${owner}
@@ -253,7 +253,7 @@ async function startXeonBotInc() {
                     isForwarded: false,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '@newsletter',
-                        newsletterName: '𝐉ᴜɴᴇ 𝐌ᴅ',
+                        newsletterName: 'KING BOT',
                         serverMessageId: -1
                     }
                 }
