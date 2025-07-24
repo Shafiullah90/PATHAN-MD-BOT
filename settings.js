@@ -1,6 +1,6 @@
 const settings = {
-  packname: 'SHAFI☆PATHAN🇦🇫,
-  author: 'PATHAN',
+  packname: 'SHAFI PATHAN,
+  author: 'afgan',
   botName: "KING-BOT",
   botOwner: 'SHAFI☆PATHAN', // Your name
   ownerNumber: '66620925025', //Set your number here without + symbol.
