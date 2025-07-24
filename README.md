@@ -5,9 +5,9 @@
     <img src="https://readme-typing-svg.demolab.com?font=Rockwell&size=50&pause=1000&color=33ff00&center=true&width=910&height=100&lines=KING-BOT;Multi+Device+Whatsapp+Bot;Made+By+SHAFI" alt="Typing SVG" />
   </a> 
 </div> 
-
-
-      <img src="https://litter.catbox.moe/oazsz2gaqxd3woph.jpg" alt="king bot" height="300"> 
+<div align="center"> 
+  <a href="https://youtube.com/@mr_unique_hacker"> 
+    <img src="https://litter.catbox.moe/oazsz2gaqxd3woph.jpg" alt="𝙆𝙞𝙣𝙜 𝘽𝙤𝙩" height="300"> 
   </a> 
 </div>
 
