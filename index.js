@@ -72,10 +72,10 @@ const store = {
     }
 }
 
-let phoneNumber = "66620925025"
+let phoneNumber = "254792021944"
 let owner = JSON.parse(fs.readFileSync('./data/owner.json'))
 
-global.botname = "KING-BOT"
+global.botname = "𝐉ᴜɴᴇ 𝐌ᴅ"
 global.themeemoji = "•"
 
 const settings = require('./settings')
@@ -243,7 +243,7 @@ async function startXeonBotInc() {
                 text: 
                 `
 ┏❐═⭔ *CONNECTED* ⭔═❐
-┃⭔ BOT: king-bot 
+┃⭔ BOT: JUNE MD
 ┃⭔ Time: ${new Date().toLocaleString()}
 ┃⭔ Status:Online
 ┃⭔ OWNER:${owner}
