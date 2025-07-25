@@ -95,7 +95,8 @@ const { rosedayCommand } = require('./commands/roseday');
 const imagineCommand = require('./commands/imagine');
 const videoCommand = require('./commands/video');
 const pagal = require('./commands/pagal');
-const alive = require('./commands/alive');
+
+
 
 // Global settings
 global.packname = settings.packname;
