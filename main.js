@@ -94,8 +94,7 @@ const { shayariCommand } = require('./commands/shayari');
 const { rosedayCommand } = require('./commands/roseday');
 const imagineCommand = require('./commands/imagine');
 const videoCommand = require('./commands/video');
-const pagal = require('./commands/pagal');
-
+const pagalCommand = require('./commands/pagal');
 
 
 // Global settings
@@ -561,7 +560,7 @@ async function handleMessages(sock, messageUpdate, printLog) {
             case userMessage.startsWith('.antibadword'):
                 if (!isGroup) {
                     await sock.sendMessage(chatId, { text: 'This command can only be used in groups.', ...channelInfo });
-                    return;
+               userMessage;
                 }
 
                 const adminStatus = await isAdmin(sock, chatId, senderId);
@@ -618,9 +617,9 @@ async function handleMessages(sock, messageUpdate, printLog) {
                 }
                 await groupInfoCommand(sock, chatId, message);
                 break;
-                case userMessage === '.pagal':
-          await pagalCommand(sock, chatId, message);
-          break;
+            case userMessage === '.pagal':
+  await pagalCommand.handler(sock, chatId, message);
+  break;
             case userMessage === '.resetlink' || userMessage === '.revoke' || userMessage === '.anularlink':
                 if (!isGroup) {
                     await sock.sendMessage(chatId, { text: 'This command can only be used in groups!', ...channelInfo });
