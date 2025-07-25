@@ -95,6 +95,7 @@ const { rosedayCommand } = require('./commands/roseday');
 const imagineCommand = require('./commands/imagine');
 const videoCommand = require('./commands/video');
 const { helloCommand } = require('./commands/hello');
+const { pagalCommand } = require('./commands/pagal');
 
 // Global settings
 global.packname = settings.packname;
@@ -618,6 +619,9 @@ async function handleMessages(sock, messageUpdate, printLog) {
                 break;
             case userMessage === '.hello':
     await helloCommand(sock, chatId, message);
+    break;
+                case userMessage === '.pagal':
+    await pagalCommand(sock, chatId, message);
     break;
             case userMessage === '.resetlink' || userMessage === '.revoke' || userMessage === '.anularlink':
                 if (!isGroup) {
