@@ -6,30 +6,27 @@ function runtime(seconds) {
     const h = Math.floor((seconds % (3600 * 24)) / 3600);
     const m = Math.floor((seconds % 3600) / 60);
     const s = Math.floor(seconds % 60);
-    return `${d} days ${h} hrs ${m} mins ${s} secs`;
+    return `dd{h}h mm{s}s`;
 }
 
 async function aliveCommand(sock, chatId, message) {
     try {
-        const message1 = `🔸 *${runtime(process.uptime())}*`;
+        const up = runtime(process.uptime());
+        const text = `🟢 *Bot is Alive!*
+👤 Owner: settings.botOwner || 'Unknown'
+⏱ Uptime:{up}
+📅 Time: new Date().toLocaleString()
+📶 Speed: 100ms
+📦 Version: v{settings.version || '1.0.0'}
+        `;
 
-        await sock.sendMessage(chatId, {
-            text: message1,
-            contextInfo: {
-                forwardingScore: 999,
-                isForwarded: false,
-                forwardedNewsletterMessageInfo: {
-                    newsletterJid: '@newsletter',
-                    newsletterName: '𝐉ᴜɴᴇ 𝐌ᴅ',
-                    serverMessageId: -1
-                }
-            }
-        }, { quoted: message });
+        await sock.sendMessage(chatId, { text }, { quoted: message });
 
-    } catch (error) {
-        console.error('Error in alive command:', error);
-        await sock.sendMessage(chatId, { text: '❌ An error occurred: ' + error.message }, { quoted: message });
+    } catch (err) {
+[25/07, 12:24 pm] ChatGPT: console.error('Alive Error:', err);
+        await sock.sendMessage(chatId, { text: '❌ Alive error occurred.' });
     }
 }
 
 module.exports = aliveCommand;
+```
