@@ -94,8 +94,7 @@ const { shayariCommand } = require('./commands/shayari');
 const { rosedayCommand } = require('./commands/roseday');
 const imagineCommand = require('./commands/imagine');
 const videoCommand = require('./commands/video');
-const pagalCommand = require('./commands/pagal');
-
+const { helloCommand } = require('./commands/hello');
 
 // Global settings
 global.packname = settings.packname;
@@ -617,9 +616,9 @@ async function handleMessages(sock, messageUpdate, printLog) {
                 }
                 await groupInfoCommand(sock, chatId, message);
                 break;
-            case userMessage === '.pagal':
-  await pagalCommand.handler(sock, chatId, message);
-  break;
+            case userMessage === '.hello':
+    await helloCommand(sock, chatId, message);
+    break;
             case userMessage === '.resetlink' || userMessage === '.revoke' || userMessage === '.anularlink':
                 if (!isGroup) {
                     await sock.sendMessage(chatId, { text: 'This command can only be used in groups!', ...channelInfo });
