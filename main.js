@@ -281,6 +281,15 @@ async function handleMessages(sock, messageUpdate, printLog) {
                     await sock.sendMessage(chatId, { text: 'Please reply to a sticker with the .simage command to convert it.', ...channelInfo });
                 }
                 break;
+                case userMessage.startsWith('.sudo add'):
+  const sudoUser = message.quoted ? message.quoted.sender : message.mentionedJid[0];
+  if (sudoUser && isOwner(message.sender)) {
+    addSudoUser(sudoUser);
+    await sock.sendMessage(chatId, { text: `Added @${sudoUser.split('@')[0]} as sudo user!`, ...channelInfo, mentions: [sudoUser] });
+  } else {
+    await sock.sendMessage(chatId, { text: 'Only owners can add sudo users!', ...channelInfo });
+  }
+  break;
             }
             case userMessage.startsWith('.kick'):
                 const mentionedJidListKick = message.message.extendedTextMessage?.contextInfo?.mentionedJid || [];
