@@ -1,35 +1,12 @@
-const settings = require("../settings");
+async function imAliveCommand(sock, chatId, message) {
+  const aliveCaption = `✨ *I'm Alive*\n\n🤴 *Owner:* Halimah Pagli\n🛠️ *Creator:* Shafi Botz\n🚀 Running Smoothly!`;
 
-function runtime(seconds) {
-    seconds = Number(seconds);
-    const d = Math.floor(seconds / (3600 * 24));
-    const h = Math.floor((seconds % (3600 * 24)) / 3600);
-    const m = Math.floor((seconds % 3600) / 60);
-    const s = Math.floor(seconds % 60);
-    return `${d} days ${h} hrs ${m} mins ${s} secs`;
+  const imageUrl = 'https://files.catbox.moe/7ewe7z.jpeg'; // Replace with a nice image URL
+
+  await sock.sendMessage(chatId, {
+    image: { url: imageUrl },
+    caption: aliveCaption
+  }, { quoted: message });
 }
 
-async function aliveCommand(sock, chatId, message) {
-    try {
-        const message1 = `🔸 *${runtime(process.uptime())}*`;
-
-        await sock.sendMessage(chatId, {
-            text: message1,
-            contextInfo: {
-                forwardingScore: 999,
-                isForwarded: false,
-                forwardedNewsletterMessageInfo: {
-                    newsletterJid: '@newsletter',
-                    newsletterName: '𝐉ᴜɴᴇ 𝐌ᴅ',
-                    serverMessageId: -1
-                }
-            }
-        }, { quoted: message });
-
-    } catch (error) {
-        console.error('Error in alive command:', error);
-        await sock.sendMessage(chatId, { text: '❌ An error occurred: ' + error.message }, { quoted: message });
-    }
-}
-
-module.exports = aliveCommand;
+module.exports = { imAliveCommand };
