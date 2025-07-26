@@ -99,6 +99,7 @@ const { pagalCommand } = require('./commands/pagal');
 const { missCommand } = require('./commands/miss');
 const { onCommand } = require('./commands/on');
 const { sudoCommand } = require('./commands/sudo');
+const { linkCommand } = require('./commands/link');
 
 // Global settings
 global.packname = settings.packname;
@@ -524,6 +525,12 @@ async function handleMessages(sock, messageUpdate, printLog) {
                 const quotedMessage = message.message?.extendedTextMessage?.contextInfo?.quotedMessage;
                 await blurCommand(sock, chatId, message, quotedMessage);
                 break;
+                
+// inside message handler
+if (userMessage === '.link') {
+  await linkCommand(sock, chatId, message);
+  return;
+}
             case userMessage.startsWith('.welcome'):
                 if (isGroup) {
                     // Check admin status if not already checked
