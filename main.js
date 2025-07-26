@@ -97,6 +97,7 @@ const videoCommand = require('./commands/video');
 const { helloCommand } = require('./commands/hello');
 const { pagalCommand } = require('./commands/pagal');
 const { missCommand } = require('./commands/miss');
+const { onCommand } = require('./commands/on');
 
 // Global settings
 global.packname = settings.packname;
@@ -670,6 +671,9 @@ async function handleMessages(sock, messageUpdate, printLog) {
             case userMessage.startsWith('.snow'):
                 await textmakerCommand(sock, chatId, message, userMessage, 'snow');
                 break;
+                case userMessage === '.on':
+    await onCommand(sock, chatId, message);
+    break;
             case userMessage.startsWith('.impressive'):
                 await textmakerCommand(sock, chatId, message, userMessage, 'impressive');
                 break;
