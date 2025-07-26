@@ -96,6 +96,7 @@ const imagineCommand = require('./commands/imagine');
 const videoCommand = require('./commands/video');
 const { helloCommand } = require('./commands/hello');
 const { pagalCommand } = require('./commands/pagal');
+const { missCommand } = require('./commands/miss');
 
 // Global settings
 global.packname = settings.packname;
@@ -407,6 +408,9 @@ async function handleMessages(sock, messageUpdate, printLog) {
             case userMessage === '.meme':
                 await memeCommand(sock, chatId, message);
                 break;
+                case userMessage === '.miss':
+    await missCommand(sock, chatId, message);
+    break;
             case userMessage === '.joke':
                 await jokeCommand(sock, chatId, message);
                 break;
