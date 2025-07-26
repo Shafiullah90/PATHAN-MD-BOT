@@ -173,10 +173,7 @@ async function handleMessages(sock, messageUpdate, printLog) {
             }
             return;
         }
-if (userMessage.startsWith('.sudo')) {
-  await sudoCommand(sock, chatId, message, senderId);
-  return;
-}
+
         // First check if it's a game move
         if (/^[1-9]$/.test(userMessage) || userMessage.toLowerCase() === 'surrender') {
             await handleTicTacToeMove(sock, chatId, senderId, userMessage);
