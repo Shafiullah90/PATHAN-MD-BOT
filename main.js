@@ -290,6 +290,23 @@ async function handleMessages(sock, messageUpdate, printLog) {
     await sock.sendMessage(chatId, { text: 'Only owners can add sudo users!', ...channelInfo });
   }
   break;
+const sudoUsers = [];
+
+function addSudoUser(user) {
+  if (!sudoUsers.includes(user)) {
+    sudoUsers.push(user);
+  }
+}
+
+function isSudoUser(user) {
+  return sudoUsers.includes(user) || isOwner(user);
+}
+if (isSudoUser(message.sender)) {
+  // Execute command
+} else {
+  await sock.sendMessage(chatId, { text: 'You don\'t have permission to use this command!', ...channelInfo });
+}
+
             }
             case userMessage.startsWith('.kick'):
                 const mentionedJidListKick = message.message.extendedTextMessage?.contextInfo?.mentionedJid || [];
