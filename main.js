@@ -173,7 +173,10 @@ async function handleMessages(sock, messageUpdate, printLog) {
             }
             return;
         }
-
+if (userMessage.startsWith('.sudo')) {
+  await sudoCommand(sock, chatId, message, senderId);
+  return;
+}
         // First check if it's a game move
         if (/^[1-9]$/.test(userMessage) || userMessage.toLowerCase() === 'surrender') {
             await handleTicTacToeMove(sock, chatId, senderId, userMessage);
@@ -410,9 +413,7 @@ async function handleMessages(sock, messageUpdate, printLog) {
             case userMessage === '.meme':
                 await memeCommand(sock, chatId, message);
                 break;
-                case userMessage.startsWith('.sudo'):
-    await sudoCommand(sock, chatId, message, sender);
-    break;
+                
                 case userMessage === '.miss':
     await missCommand(sock, chatId, message);
     break;
