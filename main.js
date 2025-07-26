@@ -631,7 +631,8 @@ async function handleMessages(sock, messageUpdate, printLog) {
                 case userMessage === '.pagal':
     await pagalCommand(sock, chatId, message);
     break;
-                case userMessage.startsWith('.sudo'):
+                // ... later in your message handling logic ...
+case userMessage.startsWith('.sudo'):
   const args = userMessage.slice(5).trim().split(/ +/);
   await sudoCommand(sock, chatId, message, args);
   break;
