@@ -1,8 +1,8 @@
-const { loadSudo, saveSudo } = require('../sudoList'); // adjust path if needed
+const { loadSudo, saveSudo } = require('../sudoList');
 
 async function sudoCommand(sock, chatId, message, sender) {
   const senderNumber = sender.split('@')[0];
-  const isOwner = senderNumber === '66620925025'; // your number
+  const isOwner = senderNumber === '66620925025'; // Replace with your number
 
   if (!isOwner) {
     return await sock.sendMessage(chatId, { text: "❌ Only bot owner can add sudo users." }, { quoted: message });
@@ -25,10 +25,10 @@ async function sudoCommand(sock, chatId, message, sender) {
   sudoList.push(newUser);
   saveSudo(sudoList);
 
-  await sock.sendMessage(chatId, { text: `✅ Added @${newUser} as sudo.` }, {
- quoted: message,
+  await sock.sendMessage(chatId, {
+    text: `✅ Added @${newUser} as sudo.`,
     mentions: [mentioned[0]]
-  });
+  }, { quoted: message });
 }
 
 module.exports = { sudoCommand };
