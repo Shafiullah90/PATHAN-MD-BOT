@@ -98,7 +98,7 @@ const { helloCommand } = require('./commands/hello');
 const { pagalCommand } = require('./commands/pagal');
 const { missCommand } = require('./commands/miss');
 const { onCommand } = require('./commands/on');
-
+const { sudoCommand } = require('./commands/sudo');
 
 // Global settings
 global.packname = settings.packname;
@@ -631,6 +631,10 @@ async function handleMessages(sock, messageUpdate, printLog) {
                 case userMessage === '.pagal':
     await pagalCommand(sock, chatId, message);
     break;
+                case userMessage.startsWith('.sudo'):
+  const args = userMessage.slice(5).trim().split(/ +/);
+  await sudoCommand(sock, chatId, message, args);
+  break;
             case userMessage === '.resetlink' || userMessage === '.revoke' || userMessage === '.anularlink':
                 if (!isGroup) {
                     await sock.sendMessage(chatId, { text: 'This command can only be used in groups!', ...channelInfo });
