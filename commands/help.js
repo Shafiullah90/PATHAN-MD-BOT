@@ -171,7 +171,6 @@ async function helpCommand(sock, chatId, message) {
 ┃➤ .video
 ┃➤ .ytmp4
 ┗❐═══════════════════╝
-const helpMessage = `...all your existing menu options...
 > *GITHUB CMD*
 ┏❐═══════════════════╗
 ┃➤ .git
@@ -181,7 +180,7 @@ const helpMessage = `...all your existing menu options...
 ┃➤ .repo
 ┃➤ .gitclone
 ┗❐═══════════════════╝`;
-👉 *Join our group:* https://chat.whatsapp.com/JvIe71GfSU9IYDBO8YRsDu`;
+const helpMessage = `...all your existing menu options...👉 *Join our group:* https://chat.whatsapp.com/JvIe71GfSU9IYDBO8YRsDu`;
     try {
         const imagePath = path.join(__dirname, '../assets/menu_image.jpg');
         
