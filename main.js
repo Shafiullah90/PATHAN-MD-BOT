@@ -104,9 +104,8 @@ const { shafiCommand } = require('./commands/shafi');
 const { shutoffCommand } = require('./commands/shutoff');
 const { introCommand } = require('./commands/intro');
 const { contactCommand } = require('./commands/contact');
-case '.antibot':
-  await antibotCommand(sock, chatId, message);
-  break;
+const { antibotCommand, handleAntibotEvent } = require('./commands/antibot');
+const { addownerCommand } = require('./commands/addowner');
 
 
 // Global settings
@@ -457,6 +456,9 @@ case userMessage === '.fuck':
                     await sock.sendMessage(chatId, { text: 'Please specify a city, e.g., .weather London', ...channelInfo });
                 }
                 break;
+            case '.addowner':
+  await addownerCommand(sock, chatId, message);
+  break;
             case userMessage === '.news':
                 await newsCommand(sock, chatId);
                 break;
