@@ -6,7 +6,7 @@
   </a> 
 </div> 
 <div align="center"> 
-  <a href="https://youtube.com/@mr_unique_hacker"> 
+  <a href=""> 
     <img src="https://litter.catbox.moe/oazsz2gaqxd3woph.jpg" alt="𝙆𝙞𝙣𝙜 𝘽𝙤𝙩" height="300"> 
   </a> 
 </div>
@@ -79,29 +79,7 @@ _Download Bot Zip file From the button Bellow_
 _For further setup & guidance, click the button below🩹_
 [![Typing SVG](https://readme-typing-svg.demolab.com/?lines=Watch+The+Deployment+Tutorials;Bellow+For+FreePanel+Deployments)](https://git.io/typing-svg)
 
-> **Deploy Now on Below Panel**
-<div align="left">
-  <a href="https://youtu.be/aZMUw_YkcwI?si=xxHilfRhsPUM3-fW">
-    <img src="https://img.shields.io/badge/TUTORIAL-dc3545?style=for-the-badge&logo=youtube" alt="YouTube Link"/>
-  </a><br>
-  <a href="https://bot-hosting.net/?aff=1068419752923508776">
-    <img src="https://img.shields.io/badge/Bothosting Panel-28a745?style=for-the-badge" alt="PANEL"/>
-  </a>
-</div>
 
-> **Deploy On katabump panel**
-<div align="left">
-  <a href ="ytvd">
-    <img src ="https://img.shields.io/badge/TUTORIAL-dc3545?style=for-the-badge&logo=youtube" alt ="YouTube Link"/>
-<a href="https://dashboard.katabump.com/auth/login#adc462" target="_blank"><br>
-  <img src="https://img.shields.io/badge/Katabump panel-D6B7D6?style=for-the-badge&logo=server&logoColor=darkorange" alt="KATABUMP"/>
-</a>
-</div>
-
->  **JOIN US**
-<div align="left">
-  <a href="">
-    <img src="" alt="Join Telegram"/>
   </a>
 <br>
   <a href="https://chat.whatsapp.com/CyW9l0g2CiRGmdB0kUGdQd">
