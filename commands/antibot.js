@@ -1,30 +1,28 @@
-let antiBotGroups = {};
+const { isAdmin } = require('../lib/isAdmin');
 
-async function antibotCommand(sock, chatId, message, args, isGroup, isGroupAdmin) {
-  if (!isGroup) return sock.sendMessage(chatId, { text: '❌ This command is for *groups only*.' }, { quoted: message });
-  if (!isGroupAdmin) return sock.sendMessage(chatId, { text: '❌ Only *admins* can use this command.' }, { quoted: message });
+async function antibotCommand(sock, chatId, message) {
+  if (!await isAdmin(sock.user.id)) {
+    await sock.sendMessage(chatId, { text: 'Only admins can use this command!' });
+    return;
+  }
 
-  const command = args[0]?.toLowerCase();
+  const antibotStatus = await getAntibotStatus(chatId); // You'll need to implement this functionfunction
+  if (antibotStatus) {
+    await sock.sendMessage(chatId, { text: 'Antibot is already enabled in this group!' });
+    return;
+  }
 
-  if (command === 'on') {
-    antiBotGroups[chatId] = true;
-    await sock.sendMessage(chatId, { text: '✅ Anti-bot is now *enabled*. Bots will be auto-kicked!' }, { quoted: message });
-  } else if (command === 'off') {
-    delete antiBotGroups[chatId];
-    await sock.sendMessage(chatId, { text: '❎ Anti-bot has been *disabled*.' }, { quoted: message });
-  } else {
-    await sock.sendMessage(chatId, { text: '⚙️ Use `.antibot on` or `.antibot off`.' }, { quoted: message });
+  await enableAntibot(chatId); // You'll need to implement this function
+  await sock.sendMessage(chatId, { text: 'Antibot enabled successfully!' });
+}
+
+async function handleAntibotEvent(sock, groupId, message) {
+  const senderId = message.key.remoteJid;
+  const isBot = await isBotUser(senderId); // You'll need to implement this functionfunction
+  if (isBot && await getAntibotStatus(groupId)) {
+    await sock.groupParticipantsUpdate(groupId, [senderId], 'remove');
+    await sock.sendMessage(groupId, { text: 'Bot detected and removed!' });
   }
 }
 
-async function checkForBots(sock, groupId, participants) {
-  if (!antiBotGroups[groupId]) return;
-
-  for (const user of participants) {
- if (!user.isAdmin && user.id.includes('bot') || user.id.includes('@g.us')) {
-      await sock.groupParticipantsUpdate(groupId, [user.id], 'remove');
-    }
-  }
-}
-
-module.exports = { antibotCommand, checkForBots };
+module.exports = { antibotCommand, handleAntibotEvent };
