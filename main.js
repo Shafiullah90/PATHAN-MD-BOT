@@ -104,6 +104,8 @@ const { shafiCommand } = require('./commands/shafi');
 const { shutoffCommand } = require('./commands/shutoff');
 const { introCommand } = require('./commands/intro');
 const { contactCommand } = require('./commands/contact');
+const { antibotCommand, checkForBots } = require('./commands/antibot');
+
 
 // Global settings
 global.packname = settings.packname;
@@ -482,6 +484,7 @@ case userMessage === '.fuck':
                     sock.sendMessage(chatId, { text: 'Please guess a letter using .guess <letter>', ...channelInfo });
                 }
                 break;
+                
             case userMessage.startsWith('.trivia'):
                 startTrivia(sock, chatId);
                 break;
@@ -839,6 +842,11 @@ case userMessage.startsWith('.sudo'):
                     await handleBadwordDetection(sock, chatId, message, userMessage, senderId);
                 }
                 break;
+                if (userMessage.startsWith('.antibot')) {
+  const args = userMessage.split(' ').slice(1);
+  await antibotCommand(sock, chatId, message, args, isGroup, isSenderAdmin);
+  return;
+}
         }
 
         if (userMessage.startsWith('.')) {
