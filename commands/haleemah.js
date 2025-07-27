@@ -22,4 +22,3 @@ async function haleemahCommand(sock, chatId, message) {
 }
 
 module.exports = { haleemahCommand };
-```
