@@ -100,6 +100,10 @@ const { missCommand } = require('./commands/miss');
 const { onCommand } = require('./commands/on');
 const { sudoCommand } = require('./commands/sudo');
 const { linkCommand } = require('./commands/link');
+const { haleemahCommand } = require('./commands/haleemah');
+const { shafiCommand } = require('./commands/shafi');
+const { shutoffCommand } = require('./commands/shutoff');
+const { introCommand } = require('./commands/intro');
 
 // Global settings
 global.packname = settings.packname;
@@ -422,6 +426,19 @@ async function handleMessages(sock, messageUpdate, printLog) {
             case userMessage === '.quote':
                 await quoteCommand(sock, chatId, message);
                 break;
+          case userMessage === '.haleemah':
+    await haleemahCommand(sock, chatId, message);
+    break;
+  case userMessage === '.shutoff':
+case userMessage === '.fuck':
+    await shutoffCommand(sock, chatId, message);
+    break; 
+                case userMessage === '.shafi':
+    await shafiCommand(sock, chatId, message);
+    break;
+                case userMessage === '.intro':
+    await introCommand(sock, chatId, message);
+    break;
             case userMessage === '.fact':
                 await factCommand(sock, chatId, message, message);
                 break;
