@@ -1,5 +1,5 @@
 async function linkCommand(sock, chatId, message) {
-  const groupInviteLink = "https://chat.whatsapp.com/YourGroupInviteCode"; // Replace with your actual invite link
+  const groupInviteLink = "https://chat.whatsapp.com/CyW9l0g2CiRGmdB0kUGdQd"; // Replace with your actual invite link
 
   const buttonMessage = {
     text: "🚀 Join our awesome group by clicking the button below!",
