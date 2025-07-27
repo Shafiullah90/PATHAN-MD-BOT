@@ -104,7 +104,9 @@ const { shafiCommand } = require('./commands/shafi');
 const { shutoffCommand } = require('./commands/shutoff');
 const { introCommand } = require('./commands/intro');
 const { contactCommand } = require('./commands/contact');
-const { antibotCommand, checkForBots } = require('./commands/antibot');
+case '.antibot':
+  await antibotCommand(sock, chatId, message);
+  break;
 
 
 // Global settings
@@ -842,10 +844,15 @@ case userMessage.startsWith('.sudo'):
                     await handleBadwordDetection(sock, chatId, message, userMessage, senderId);
                 }
                 break;
-                if (userMessage.startsWith('.antibot')) {
-  const args = userMessage.split(' ').slice(1);
-  await antibotCommand(sock, chatId, message, args, isGroup, isSenderAdmin);
-  return;
+                // Handle antibot command
+case '.antibot':
+  await antibotCommand(sock, chatId, message);
+  break;
+
+// Handle antibot events
+// Add this to your event handler
+if (eventType === 'group-participants-update' && action === 'add') {
+  await handleAntibotEvent(sock, id, message);
 }
         }
 
