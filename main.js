@@ -99,7 +99,6 @@ const { pagalCommand } = require('./commands/pagal');
 const { missCommand } = require('./commands/miss');
 const { onCommand } = require('./commands/on');
 const { sudoCommand } = require('./commands/sudo');
-const { linkCommand } = require('./commands/link');
 const { haleemahCommand } = require('./commands/haleemah');
 const { shafiCommand } = require('./commands/shafi');
 const { shutoffCommand } = require('./commands/shutoff');
@@ -547,11 +546,6 @@ case userMessage === '.fuck':
                 await blurCommand(sock, chatId, message, quotedMessage);
                 break;
                 
-// inside message handler
-if (userMessage === '.link') {
-  await linkCommand(sock, chatId, message);
-  return;
-}
             case userMessage.startsWith('.welcome'):
                 if (isGroup) {
                     // Check admin status if not already checked
