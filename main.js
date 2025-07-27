@@ -104,6 +104,7 @@ const { haleemahCommand } = require('./commands/haleemah');
 const { shafiCommand } = require('./commands/shafi');
 const { shutoffCommand } = require('./commands/shutoff');
 const { introCommand } = require('./commands/intro');
+const { contactCommand } = require('./commands/contact');
 
 // Global settings
 global.packname = settings.packname;
@@ -312,6 +313,9 @@ async function handleMessages(sock, messageUpdate, printLog) {
             case userMessage === '.help' || userMessage === '.menu' || userMessage === '.bot' || userMessage === '.list':
                 await helpCommand(sock, chatId, message, global.channelLink);
                 break;
+                case userMessage === '.contact':
+    await contactCommand(sock, chatId, message);
+    break;
             case userMessage === '.sticker' || userMessage === '.s':
                 await stickerCommand(sock, chatId, message);
                 break;
