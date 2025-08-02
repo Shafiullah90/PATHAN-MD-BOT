@@ -13,4 +13,22 @@ async function onCommand(sock, chatId, message) {
   }, { quoted: message });
 }
 
-module.exports = { onCommand };
+
+    try {
+        const imagePath = path.join(__dirname, '../assets/menu_image.jpg');
+        
+        if (fs.existsSync(imagePath)) {
+            const imageBuffer = fs.readFileSync(imagePath);
+            
+            await sock.sendMessage(chatId, {
+                image: imageBuffer,
+                caption: helpMessage,
+                contextInfo: {
+                    forwardingScore: 1,
+                    isForwarded: false,
+                    forwardedNewsletterMessageInfo: {
+                        newsletterJid: '@newsletter',
+                        newsletterName: '',
+                        serverMessageId: -1
+                    }      
+                module.exports = { onCommand };
