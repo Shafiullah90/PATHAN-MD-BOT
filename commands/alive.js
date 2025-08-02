@@ -1,33 +1,16 @@
-const settings = require("../settings");
 async function aliveCommand(sock, chatId, message) {
-    try {
-        const message1 = `*king bot  is Active!*\n\n` +
-                       `*Version:* ${settings.version}\n` +
-                       `*Status:* Online\n` +
-                       `*Mode:* Public\n\n` +
-                       `*🌟 Features:*\n` +
-                       `• Group Management\n` +
-                       `• Antilink Protection\n` +
-                       `• Fun Commands\n` +
-                       `• And more!\n\n` +
-                       `Type *.menu* for full command list`;
+  const caption = `✨ 𝙸'𝚖 𝙰𝚕𝚒𝚟𝚎 & 𝚁𝚞𝚗𝚗𝚒𝚗𝚐 ✨
 
-        await sock.sendMessage(chatId, {
-            text: message1,
-            contextInfo: {
-                forwardingScore: 999,
-                isForwarded: true,
-                forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363420656466131@newsletter',
-                    newsletterName: 'afghan Bot',
-                    serverMessageId: -1
-                }
-            }
-        }, { quoted: message });
-    } catch (error) {
-        console.error('Error in alive command:', error);
-        await sock.sendMessage(chatId, { text: 'Bot is alive and running!' }, { quoted: message });
-    }
+🤴 𝙾𝚠𝚗𝚎𝚛: 𝐇𝐚𝐥𝐢𝐦𝐚𝐡 𝐏𝐚𝐠𝐥𝐢 💫
+🛠️ 𝙲𝚛𝚎𝚊𝚝𝚘𝚛: Shafi pathan 💖
+🚀 𝙿𝚘𝚠𝚎𝚛𝚎𝚍 𝙱𝚢: 𝙻𝚘𝚟𝚎 & 𝙲𝚘𝚍𝚎 ❤️‍🔥`;
+
+  const imageUrl = 'https://files.catbox.moe/7ewe7z.jpeg'; // Replace with your alive pic
+
+  await sock.sendMessage(chatId, {
+    image: { url: imageUrl },
+    caption
+  }, { quoted: message });
 }
 
-module.exports = aliveCommand;
+module.exports = { aliveCommand };
