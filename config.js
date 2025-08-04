@@ -1,30 +1,19 @@
-require('dotenv').config();
+const fs = require("fs");
+if (fs.existsSync("config.env"))
+  require("dotenv").config({ path: "./config.env" });
 
-global.APIs = {
-    xteam: 'https://api.xteam.xyz',
-    dzx: 'https://api.dhamzxploit.my.id',
-    lol: 'https://api.lolhuman.xyz',
-    violetics: 'https://violetics.pw',
-    neoxr: 'https://api.neoxr.my.id',
-    zenzapis: 'https://zenzapis.xyz',
-    akuari: 'https://api.akuari.my.id',
-    akuari2: 'https://apimu.my.id',
-    nrtm: 'https://fg-nrtm.ddns.net',
-    bg: 'http://bochil.ddns.net',
-    fgmods: 'https://api-fgmods.ddns.net'
-};
-
-global.APIKeys = {
-    'https://api.xteam.xyz': 'd90a9e986e18778b',
-    'https://api.lolhuman.xyz': '85faf717d0545d14074659ad',
-    'https://api.neoxr.my.id': 'yourkey',
-    'https://violetics.pw': 'beta',
-    'https://zenzapis.xyz': 'yourkey',
-    'https://api-fgmods.ddns.net': 'fg-dylux'
-};
+function convertToBool(text, fault = "true") {
+  return text === fault ? true : false;
+}
 
 module.exports = {
-    WARN_COUNT: 3,
-    APIs: global.APIs,
-    APIKeys: global.APIKeys
+  SESSION_ID: process.env.SESSION_ID || "",
+  OWNER_NUM: process.env.OWNER_NUM || "263714757857",
+  PREFIX: process.env.PREFIX || ".",
+  AUTO_READ_STATUS: process.env.AUTO_READ_STATUS || "true",
+  AUTO_REACT_STATUS: process.env.AUTO_REACT_STATUS || "true",
+  MODE : process.env.MODE || "public", 
+  AUTO_STATUS_LIKE: process.env.AUTO_STATUS_LIKE || "true", 
+  AUTO_RECORDING: convertToBool(process.env.AUTO_RECORDING || "true"), 
+  ANTI_DELETE: convertToBool(process.env.ANTI_DELETE || "true"),
 };
