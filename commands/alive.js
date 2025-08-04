@@ -1,16 +1,60 @@
-async function aliveCommand(sock, chatId, message) {
-  const caption = `✨ 𝙸'𝚖 𝙰𝚕𝚒𝚟𝚎 & 𝚁𝚞𝚗𝚗𝚒𝚗𝚐 ✨
+const { cmd } = require("../command");
 
-🤴 𝙾𝚠𝚗𝚎𝚛: 𝐇𝐚𝐥𝐢𝐦𝐚𝐡 𝐏𝐚𝐠𝐥𝐢 💫
-🛠️ 𝙲𝚛𝚎𝚊𝚝𝚘𝚛: Shafi pathan 💖
-🚀 𝙿𝚘𝚠𝚎𝚛𝚎𝚍 𝙱𝚢: 𝙻𝚘𝚟𝚎 & 𝙲𝚘𝚍𝚎 ❤️‍🔥`;
+cmd(
+  {
+    pattern: "alive",
+    react: "🤖",
+    desc: "Show bot status",
+    category: "main",
+    filename: __filename,
+    fromMe: false,
+  },
+  async (malvin, mek, m, { reply }) => {
+    try {
+      const from = mek.key.remoteJid;
 
-  const imageUrl = 'https://files.catbox.moe/7ewe7z.jpeg'; // Replace with your alive pic
+      await malvin.sendPresenceUpdate("recording", from);
 
-  await sock.sendMessage(chatId, {
-    image: { url: imageUrl },
-    caption
-  }, { quoted: message });
-}
+      // Alive Image & Caption
+      await malvin.sendMessage(
+        from,
+        {
+          image: {
+            url: "https://i.ibb.co/SDWZFh23/malvin-xd.jpg",
+          },
+          caption: `𝗠𝗔𝗟𝗨 𝗫𝗗 𝗜𝗦 𝗔𝗟𝗜𝗩𝗘 𝗡𝗢𝗪  
+  
+𝗼𝗳𝗳𝗶𝗰𝗶𝗮𝗹 𝘄𝗵𝗮𝘁𝘀𝗮𝗽𝗽 𝗰𝗵𝗮𝗻𝗲𝗹 -: https://whatsapp.com/channel/0029VbB3YxTDJ6H15SKoBv3S
 
-module.exports = { aliveCommand };
+𝗚𝗶𝘁 𝗛𝘂𝗯 𝗥𝗲𝗽𝗼 -: https://github.com/XdKing2/MALU-XD
+
+𝗢𝘄𝗻𝗲𝗿 -: https://t.me/devmalvin
+          
+*We are not responsible for any*  
+*WhatsApp bans that may occur due to*  
+*the usage of this bot. Use it wisely*  
+*and at your own risk* ⚠️`,
+        },
+        { quoted: mek }
+      );
+
+      // Delay
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
+      // Voice Message
+      await malvin.sendMessage(
+        from,
+        {
+          audio: {
+            url: "https://files.catbox.moe/wz8rh7.mp3",
+          },
+          mimetype: "audio/mpeg",
+          ptt: true,
+        },
+        { quoted: mek }
+      );
+    } catch (e) {
+      console.error("❌ Error in .alive command:", e);
+      reply("❌ Error while sending alive message!");
+    }
+          })
