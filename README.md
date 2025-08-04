@@ -7,7 +7,7 @@
 </div> 
 <div align="center"> 
   <a href=""> 
-    <img src="https://litter.catbox.moe/oazsz2gaqxd3woph.jpg" alt="𝙆𝙞𝙣𝙜 𝘽𝙤𝙩" height="300"> 
+    <img src="https://files.catbox.moe/zdjzc7.jpeg" alt="𝙆𝙞𝙣𝙜 𝘽𝙤𝙩" height="300"> 
   </a> 
 </div>
 
