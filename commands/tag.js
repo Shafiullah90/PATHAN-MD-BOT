@@ -1,4 +1,4 @@
-const isAdmin = require('../lib/isAdmin');
+const isOwner = require('../lib/Owner');
 const { downloadContentFromMessage } = require('@whiskeysockets/baileys');
 const fs = require('fs');
 const path = require('path');
@@ -15,14 +15,14 @@ async function downloadMediaMessage(message, mediaType) {
 }
 
 async function tagCommand(sock, chatId, senderId, messageText, replyMessage) {
-    const { isSenderAdmin, isBotAdmin } = await isAdmin(sock, chatId, senderId);
+    const { isSenderOwner, isOwner } = await isOwner(sock, chatId, senderId);
 
-    if (!isBotAdmin) {
+    if (!isBotOwner) {
         await sock.sendMessage(chatId, { text: 'Please make the bot an admin first.' });
         return;
     }
 
-    if (!isSenderAdmin) {
+    if (!isSenderOwner) {
         const stickerPath = './assets/sticktag.webp';  // Path to your sticker
         if (fs.existsSync(stickerPath)) {
             const stickerBuffer = fs.readFileSync(stickerPath);
