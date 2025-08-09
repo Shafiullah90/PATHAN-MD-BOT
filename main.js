@@ -106,7 +106,6 @@ const { introCommand } = require('./commands/intro');
 const { contactCommand } = require('./commands/contact');
 const { antibotCommand, handleAntibotEvent } = require('./commands/antibot');
 const { addownerCommand } = require('./commands/addowner');
-const bedskillsCommand = require('./commands/bedskills');
 
 // Global settings
 global.packname = settings.packname;
@@ -543,11 +542,7 @@ case userMessage === '.fuck':
                 const mentionedJidListDemote = message.message.extendedTextMessage?.contextInfo?.mentionedJid || [];
                 await demoteCommand(sock, chatId, mentionedJidListDemote, message);
                 break;
-                // .bedskills or .bedrate
-            case userMessage === '.bedskills':
-            case userMessage === '.bedrate':
-                await bedskillsCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
-                break;
+                
             case userMessage === '.ping':
                 await pingCommand(sock, chatId, message);
                 break;
