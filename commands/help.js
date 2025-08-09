@@ -192,7 +192,7 @@ async function helpCommand(sock, chatId, message) {
 
  try {
         const imagePath = path.join(__dirname, '../assets/menu_image.jpg');
-        
+        const audioPath = path.join(__dirname, '../assets/menu.mp3');
         if (fs.existsSync(imagePath)) {
             const imageBuffer = fs.readFileSync(imagePath);
             
@@ -229,5 +229,17 @@ async function helpCommand(sock, chatId, message) {
         await sock.sendMessage(chatId, { text: helpMessage });
     }
 }
+// Send menu.mp3
+            if (fs.existsSync(audioPath)) {
+                const audioBuffer = fs.readFileSync(audioPath);
+                await sock.sendMessage(chatId, {
+                    audio: audioBuffer,
+                    mimetype: 'audio/mp4',
+                    ptt: true
+                }, { quoted: message });
+            } else {
+                console.warn('⚠️ menu.mp3 not found in assets.');
+            }
+
 
 module.exports = helpCommand;
