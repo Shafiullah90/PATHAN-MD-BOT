@@ -546,9 +546,9 @@ case userMessage === '.fuck':
             case userMessage === '.ping':
                 await pingCommand(sock, chatId, message);
                 break;
-            case userMessage === "I'm.alive":
-    await aliveCommand(sock, chatId, message);
-    break;
+            case userMessage === '.alive':
+                await aliveCommand(sock, chatId, message);
+                break;
             case userMessage.startsWith('.blur'):
                 const quotedMessage = message.message?.extendedTextMessage?.contextInfo?.quotedMessage;
                 await blurCommand(sock, chatId, message, quotedMessage);
