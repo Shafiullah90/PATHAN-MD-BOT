@@ -127,8 +127,7 @@ async function helpCommand(sock, chatId, message) {
 ━━━━━━━━━━━━━━━━━━━━━━━
 🔗 .git | 🧑‍💻 .github | 📦 .sc | 📂 .script
 📁 .repo | 🌀 .gitclone `;
-    
-    try {
+ try {
         const imagePath = path.join(__dirname, '../assets/menu_image.jpg');
         const audioPath = path.join(__dirname, '../assets/menu.mp3');
         const audio3Path = path.join(__dirname, '../assets/audio3.mp3');
@@ -138,7 +137,7 @@ async function helpCommand(sock, chatId, message) {
             
             await sock.sendMessage(chatId, {
                 image: imageBuffer,
-                caption: helpMessage,
+                caption: menu_image.jpg,
                 contextInfo: {
                     forwardingScore: 1,
                     isForwarded: false,
@@ -149,18 +148,42 @@ async function helpCommand(sock, chatId, message) {
                     }
                 }
             },{ quoted: message });
+            // Send menu.mp3
+            if (fs.existsSync(audioPath)) {
+                const audioBuffer = fs.readFileSync(audioPath);
+                await sock.sendMessage(chatId, {
+                    audio: audioBuffer,
+                    mimetype: 'audio/mp4',
+                    ptt: true
+                }, { quoted: message });
+            } else {
+                console.warn('⚠️ menu.mp3 not found in assets.');
+            }
+
+            // Send audio3.mp3
+            if (fs.existsSync(audio3Path)) {
+                const audio3Buffer = fs.readFileSync(audio3Path);
+                await sock.sendMessage(chatId, {
+                    audio: audio3Buffer,
+                    mimetype: 'audio/mp4',
+                    ptt: true
+                }, { quoted: message });
+            } else {
+                console.warn('⚠️ audio3.mp3 not found in assets.');
+            }
+
         } else {
-            console.error('Bot image not found at:', imagePath);
-            await sock.sendMessage(chatId, { 
+            console.error('⚠️ Bot image not found at:', imagePath);
+            await sock.sendMessage(chatId, {
                 text: helpMessage,
                 contextInfo: {
                     forwardingScore: 1,
                     isForwarded: false,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '@newsletter',
-                        newsletterName: '𝐉ᴜɴᴇ 𝐌ᴅ',
+                        newsletterJid: '120363403266464072@newsletter',
+                        newsletterName: 'IMRAN BOT',
                         serverMessageId: -1
-                    } 
+                    }
                 }
             });
         }
@@ -171,3 +194,4 @@ async function helpCommand(sock, chatId, message) {
 }
 
 module.exports = helpCommand;
+   
