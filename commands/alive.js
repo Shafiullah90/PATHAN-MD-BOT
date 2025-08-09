@@ -1,16 +1,16 @@
-const path = require('path');
+async function aliveCommand(sock, chatId, message) {
+  const caption = `✨ 𝙸'𝚖 𝙰𝚕𝚒𝚟𝚎 & 𝚁𝚞𝚗𝚗𝚒𝚗𝚐 ✨
 
-module.exports = {
-  name: 'alive',
-  alias: ['bot'],
-  category: 'general',
-  desc: 'Check if bot is alive',
-  async exec({ sock, m }) {
-    const audioPath = path.join(__dirname, '../assets/audio1.mp3');
-    await sock.sendMessage(m.chat, {
-      audio: { url: audioPath },
-      mimetype: 'audio/mpeg',
-      ptt: true
-    }, { quoted: m });
-  }
-};
+🤴 𝙾𝚠𝚗𝚎𝚛: 𝐇𝐚𝐥𝐢𝐦𝐚𝐡 𝐏𝐚𝐠𝐥𝐢 💫
+🛠️ 𝙲𝚛𝚎𝚊𝚝𝚘𝚛: Shafi pathan 💖
+🚀 𝙿𝚘𝚠𝚎𝚛𝚎𝚍 𝙱𝚢: 𝙻𝚘𝚟𝚎 & 𝙲𝚘𝚍𝚎 ❤️‍🔥`;
+
+  const imageUrl = 'https://files.catbox.moe/7ewe7z.jpeg'; // Replace with your alive pic
+
+  await sock.sendMessage(chatId, {
+    image: { url: imageUrl },
+    caption
+  }, { quoted: message });
+}
+
+module.exports = { aliveCommand };
