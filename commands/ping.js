@@ -22,13 +22,13 @@ function formatTime(seconds) {
 async function pingCommand(sock, chatId, message) {
     try {
         const start = Date.now();
-        await sock.sendMessage(chatId, { text: '🏓 IMRAN BOT is pinging...' }, { quoted: message });
+        await sock.sendMessage(chatId, { text: '🏓 PATHAN BOT is pinging & RUNNING...' }, { quoted: message });
         const end = Date.now();
         const ping = Math.round((end - start) / 2);
         const uptime = formatTime(process.uptime());
 
         await sock.sendMessage(chatId, {
-            text: `⚡ ${ping}ms | ⏳ ${uptime} | 🤖 Still not dead.`,
+            text: `⚡ ${ping}ms | ⏳ ${uptime} | 🤖 Still not dead how can i help u♻️.`,
             quoted: message
         });
 
