@@ -121,7 +121,7 @@ const channelInfo = {
         isForwarded: false,
         forwardedNewsletterMessageInfo: {
             newsletterJid: '@newsletter',
-            newsletterName: 'afghan bot',
+            newsletterName: 'Pathan bot',
             serverMessageId: -1
         }
     }
@@ -175,7 +175,8 @@ async function handleMessages(sock, messageUpdate, printLog) {
             // Only respond occasionally to avoid spam
             if (Math.random() < 0.1) {
                 await sock.sendMessage(chatId, {
-                    text: '❌ You are banned from using the bot. Contact an admin to get unbanned.',
+                    text: '🛑 PATHAN BOT: You’ve been officially blocked from commands. Talk to an admin.',
+                    ...channelInfo.',
                     ...channelInfo
                 });
             }
@@ -233,7 +234,7 @@ async function handleMessages(sock, messageUpdate, printLog) {
             isBotAdmin = adminStatus.isBotAdmin;
 
             if (!isBotAdmin) {
-                await sock.sendMessage(chatId, { text: 'Please make the bot an admin to use admin commands.', ...channelInfo }, {quoted: message});
+                await sock.sendMessage(chatId, { text: '😈 PATHAN BOT: Nice try, peasant. This button belongs to the kings and queens (admins).', ...channelInfo }, {quoted: message});
                 return;
             }
 
@@ -260,7 +261,7 @@ async function handleMessages(sock, messageUpdate, printLog) {
             // Check if message is from owner (fromMe) or bot itself
             if (!message.key.fromMe) {
                 await sock.sendMessage(chatId, {
-                    text: '❌ This command is only available for the owner!',
+                    text: '❌ This command is only available for the owner PATHAN!',
                     ...channelInfo
                 });
                 return;
