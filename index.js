@@ -246,20 +246,19 @@ async function startconn() {
         const { connection, lastDisconnect } = s
         if (connection == "open") {
             console.log(chalk.magenta(` `))
-            console.log(chalk.yellow(`♻️Connected to => ` + JSON.stringify(conn.user, null, 2)))
+            console.log(chalk.yellow(`♻️ Connected to => ` + JSON.stringify(conn.user, null, 2)))
             
             const botNumber = conn.user.id.split(':')[0] + '@s.whatsapp.net';
             await conn.sendMessage(botNumber, { 
                 text: 
                 `
-
 ┏❐═⭔ *CONNECTED* ⭔═❐
-┃⭔ *Bot:* PATHAN BOT 🇦🇫 
-┃⭔ *Time:* new Date().toLocaleString()
-┃⭔ *Status:* Online
-┃⭔ *User:*{botNumber}
+┃⭔ BOT: KING BOT🇦🇫
+┃⭔ Time: ${new  Date().toLocaleString()}
+┃⭔ Status:Online
+┃⭔ OWNER:${owner}
 ┗❐═⭔════════⭔═❐
-
+♻️ no pain no gain 💪 
 ╭─〔 *🤖 PATHAN BOT* 〕  
 ├─▸ *Ultra Super Fast Powerfull ⚠️*  
 │     *World Best BOT PATHAN-MD* 
