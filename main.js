@@ -108,6 +108,7 @@ const { antibotCommand, handleAntibotEvent } = require('./commands/antibot');
 const { addownerCommand } = require('./commands/addowner');
 const callmomCommand = require('./commands/callmom');
 const bedskillsCommand = require('./commands/bedskills');
+const pregnancycheckCommand = require('./commands/pregnancycheck');
 
 // Global settings
 global.packname = settings.packname;
@@ -476,6 +477,13 @@ case userMessage === '.fuck':
                     tictactoeMove(sock, chatId, senderId, position);
                 }
                 break;
+                break;
+            case userMessage === '.pregnancycheck':
+            case userMessage === '.pregcheck':
+            case userMessage === '.pregnant':
+                await pregnancycheckCommand.run({ conn: sock, m: message });
+                break;
+                
             case userMessage === '.topmembers':
                 topMembers(sock, chatId, isGroup);
                 break;
