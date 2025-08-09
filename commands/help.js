@@ -21,14 +21,14 @@ function formatTime(seconds) {
 
 async function helpCommand(sock, chatId, message) {
     const start = Date.now();
-    await sock.sendMessage(chatId, { text: '_🔄 Loading IMRAN-BOT menu..._' }, { quoted: message });
+    await sock.sendMessage(chatId, { text: '_🔄 Loading PATHAN-BOT menu...please wait♻️_' }, { quoted: message });
     const end = Date.now();
     const ping = Math.round((end - start) / 2);
     const uptimeFormatted = formatTime(process.uptime());
 
     const helpMessage = `
 ┏━━━━━━━━━━━━━━━━━━━━━━┓
-┃ 🤖 *IMRAN-BOT COMMAND MENU* 🤖
+┃🤖PATHAN-BOT COMMAND MENU
 ┗━━━━━━━━━━━━━━━━━━━━━━┛
 
 📍 *Owner:* ${settings.botOwner}
