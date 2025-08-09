@@ -1,15 +1,19 @@
 # 🤖✨ PATHAN-BOT
 
+</div> 
 <div align="center"> 
-  <!-- Your branded bot image -->
-  <img src="https://raw.githubusercontent.com/Shafiullah90/king-bot/main/assets/june_repo.jpg" alt="PATHAN BOT" height="300" />
+  <a href=""> 
+    <img src="https://files.catbox.moe/zdjzc7.jpeg" alt="𝙆𝙞𝙣𝙜 𝘽𝙤𝙩" height="300"> 
+  </a> 
 </div>
 
----
 
-<p align="center">
-  <a href="https://github.com/Shafiullah90/Shafi-king-bot/forks">
-    <img src="https://img.shields.io/github/forks/Shafiullah90/king-bot?style=for-the-badge&logo=github&logoColor=white&label=Forks&color=darkgreenhttps://img.shields.io/github/forks/Shafiullah90/Shafi-king-bothttps://github.com/Shafiullah90/Shafi-king-bot/forks"/>
+---
+<div align="center">
+  <a href="https://github.com/Shafiullah90/Shafi-king-bot/forks">">
+    <img src="https://img.shields.io/badge/Fork%20Repo-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=darkblue&color=darkblue" alt="FORK REPO"/>
+  </a>
+</div>>
   </a>
   <a href="https://github.com/Shafiullah90/Shafi-king-bot/stargazers">
     <img src="https://img.shields.io/github/stars/Shafiullah90/Shafi-king-bot" />
