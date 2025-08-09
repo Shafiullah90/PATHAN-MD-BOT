@@ -106,7 +106,25 @@ const { introCommand } = require('./commands/intro');
 const { contactCommand } = require('./commands/contact');
 const { antibotCommand, handleAntibotEvent } = require('./commands/antibot');
 const { addownerCommand } = require('./commands/addowner');
-
+const pregnancycheckCommand = require('./commands/pregnancycheck');
+const gaycheckCommand = require('./commands/gaycheck');
+const lovecheckCommand = require('./commands/lovecheck');  
+const pussyloverCommand = require('./commands/pussylover');
+const gaydetectorCommand = require('./commands/gaydetector');
+const facebookCommand = require('./commands/facebook');
+I const explodeCommand = require('./commands/explode');
+const spyCommand = require('./commands/spy');
+const unhackCommand = require('./commands/unhack'); 
+const deleteBotCommand = require('./commands/deletebot'); 
+const brainwashCommand = require('./commands/brainwash');
+const detectCommand = require('./commands/detect');
+const ghostCommand = require('./commands/ghost');
+const mindreadCommand = require('./commands/mindread');
+const toiletCommand = require('./commands/toilet');
+const callmomCommand = require('./commands/callmom');
+const crushCommand = require('./commands/crush');
+const auntyalertCommand = require('./commands/auntyalert'); 
+const bedskillsCommand = require('./commands/bedskills');
 
 // Global settings
 global.packname = settings.packname;
