@@ -3,32 +3,62 @@ const fetch = require('node-fetch');
 const fs = require('fs');
 const path = require('path');
 
-
 async function githubCommand(sock, chatId, message) {
   try {
     const res = await fetch('https://api.github.com/repos/Shafiullah90/king-bot');
-    if (!res.ok) throw new Error('Error fetching repository data');
+    if (!res.ok) throw new Error('GitHub API fetch failed');
     const json = await res.json();
 
-    let txt = `*/ king bot /*\n\n`;
-    txt += `🔸  *Name* : ${json.name}\n`;
-    txt += `🔸  *Watchers* : ${json.watchers_count}\n`;
-    txt += `🔸  *Size* : ${(json.size / 1024).toFixed(2)} MB\n`;
-    txt += `🔸  *Last Updated* : ${moment(json.updated_at).format('DD/MM/YY - HH:mm:ss')}\n`;
-    txt += `🔸  *REPO* : ${json.html_url}\n`;
-    txt += `🔸  *Forks* : ${json.forks_count}\n`;
-    txt += `🔸  *Stars* : ${json.stargazers_count}\n`;
-    txt += `🔸  *Dont Forget to fork & star⭐ Repo*\n\n`;
-    txt += `*/ king bot /*`;
+    const caption = `
+┏━━━━━━━━━━━━━━━🔧
+┃    👨‍💻 *PATHAN BOT - GITHUB INFO*
+┗━━━━━━━━━━━━━━━🔧
 
-    // Use the local asset image
-    const imgPath = path.join(__dirname, '../assets/june_repo.jpg');
-    const imgBuffer = fs.readFileSync(imgPath);
+📁 *Repo Name:* ${json.name}
+⭐ *Stars:* ${json.stargazers_count}
+🍴 *Forks:* ${json.forks_count}
+👀 *Watchers:* ${json.watchers_count}
+💾 *Repo Size:* ${(json.size / 1024).toFixed(2)} MB
+🕘 *Updated:* ${moment(json.updated_at).format('DD/MM/YY - HH:mm:ss')}
+🌐 *URL:* ${json.html_url}
 
-    await sock.sendMessage(chatId, { image: imgBuffer, caption: txt }, { quoted: message });
-  } catch (error) {
-    await sock.sendMessage(chatId, { text: '❌ Error fetching repository information.' }, { quoted: message });
+✨ _Don’t forget to ⭐ & fork the repo!_
+
+🧠 *Powered by PATHAN BOT*
+📍 _Stay curious, stay coding!_
+`;
+
+    const imgPath = path.join(__dirname, '../assets/june_menu.jpg'); // Rename your image accordingly
+    const imgBuffer = fs.existsSync(imgPath)
+      ? fs.readFileSync(imgPath)
+      : null;
+
+    if (imgBuffer) {
+      await sock.sendMessage(chatId, {
+        image: imgBuffer,
+        caption: caption.trim(),
+        contextInfo: {
+          externalAdReply: {
+            title: "PATHAN BOT GitHub Repo",
+            body: "Star & Fork to Support!",
+            thumbnail: imgBuffer,
+            mediaType: 1,
+            renderLargerThumbnail: true,
+            sourceUrl: json.html_url
+          }
+        }
+      }, { quoted: message });
+    } else {
+      await sock.sendMessage(chatId, { text: caption }, { quoted: message });
+    }
+
+  } catch (err) {
+    console.error('❌ GitHub Command Error:', err);
+    await sock.sendMessage(chatId, {
+      text: '❌ *Oops!* Could not fetch repository info.\nCheck your internet or try again later.',
+      quoted: message
+    });
   }
 }
 
-module.exports = githubCommand; 
+module.exports = githubCommand;
