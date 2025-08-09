@@ -1,18 +1,23 @@
 {
-  "name": "Shafi pathan",
-  "version": "1.0.0",
-  "description": "WhatsApp Bot",
+  "name": "imran-bot",
+  "version": "2.0.0",
+  "description": "🤖 IMRAN BOT - A Powerful WhatsApp MD Chatbot with Fun, Utilities & Custom Tools",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "docker:build": "docker build -t June md .",
-    "docker:run": "docker run -e SESSION_ID=$SESSION_ID June"
+    "dev": "nodemon index.js",
+    "docker:build": "docker build -t imran-bot .",
+    "docker:run": "docker run -e SESSION_ID=$SESSION_ID imran-bot"
   },
   "keywords": [
-    "whatsapp-bot"
+    "whatsapp-bot",
+    "baileys",
+    "imran-bot",
+    "md-whatsapp",
+    "funbot",
+    "whatsapp-automation"
   ],
-  "author": "",
+  "author": "Imran Hacks",
   "license": "ISC",
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",
@@ -24,7 +29,9 @@
     "axios": "^1.8.4",
     "chalk": "^4.1.2",
     "cheerio": "^1.0.0-rc.12",
+    "child_process": "^1.0.2",
     "cookie": "^0.5.0",
+    "crypto-js": "^4.2.0",
     "dotenv": "^16.4.5",
     "events": "^3.3.0",
     "file-type": "^16.5.4",
@@ -56,6 +63,8 @@
     "safe-stable-stringify": "^2.5.0",
     "set-cookie": "^0.0.4",
     "sharp": "^0.32.6",
+    "similarity": "^1.2.1",
+    "ssh2": "^1.15.0",
     "tough-cookie": "^5.0.0",
     "translate-google-api": "^1.0.4",
     "ws": "^8.17.1",
@@ -67,58 +76,3 @@
     "ytdl-core": "^4.11.5"
   }
 }
-{
-  "name": "𝙋𝘼𝙏𝙃𝘼𝙉-𝙈𝘿",
-  "version": "5.0.0",
-  "description": "A WhatsApp Bot Created By ShafiTechX",
-  "main": "index.js",
-  "engines": {
-    "node": ">=20.x",
-    "npm": ">=10.x"
-  },
-  "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --name 𝙋𝘼𝙏𝙃𝘼𝙉-𝙈𝘿",
-    "stop": "pm2 stop 𝙋𝘼𝙏𝙃𝘼𝙉-𝙈𝘿",
-    "restart": "pm2 restart 𝙋𝘼𝙏𝙃𝘼𝙉-𝙈𝘿"
-  },
-  "dependencies": {
-    "@whiskeysockets/baileys": "github:EdderBot02/bail",
-    "@adiwajshing/keyed-db": "^0.2.4",
-    "@dark-yasiya/yt-dl.js": "1.0.5",
-    "@ffmpeg-installer/ffmpeg": "^1.1.0",
-    "@vitalets/google-translate-api": "^9.2.1",    
-    "pino": "^9.7.0",
-    "pm2": "^6.0.8",
-    "util": "^0.12.5",
-    "express": "^5.1.0",
-    "buffer": "^6.0.3",
-    "moment-timezone": "^0.6.0",
-    "axios": "^1.7.9",
-    "file_size_url": "1.0.6",
-    "fs-extra": "^11.1.0",
-    "fs": "^0.0.1-security",
-    "ffmpeg": "^0.0.4",
-    "file-type": "^21.0.0",
-    "better-sqlite3": "npm:libsql@0.5.12",
-    "fluent-ffmpeg": "^2.1.2",
-    "form-data": "^4.0.3",
-    "google-tts-api": "^2.0.2",
-    "mongodb": "^6.4.0",
-    "node-fetch": "^2.6.1",
-    "megajs": "^1.3.7",
-    "wa_set_pkg": "1.0.5",
-    "wa-sticker-formatter": "^4.4.4",
-    "path": "^0.12.7",
-    "dotenv": "^16.0.0",
-    "mongoose": "^8.0.0",
-    "jimp": "^0.16.1",
-    "adm-zip": "^0.5.16",
-    "cheerio": "^1.0.0-rc.12",
-    "qrcode-terminal": "^0.12.0",
-    "yt-search":"2.13.1",
-    "sequelize": "^6.37.7",
-    "sqlite3": "^5.1.7"
-  }
-}
-
-
