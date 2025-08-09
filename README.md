@@ -12,7 +12,14 @@
     <img src="https://img.shields.io/github/forks/Shafiullah90/king-bot?style=for-the-badge&logo=github&logoColor=white&label=Forks&color=darkgreen" alt="GitHub forks"/>
   </a>
   <a href="https://github.com/Shafiullah90/king-bot/stargazers">
-    <img src="https://img.shields.io/github/stars/Shafiullah90/king-bot?style=for-the-badge&logo=github&label=Stars&color=yellow" alt="GitHub stars" />
+    <img   </a> 
+</div> 
+<div align="center"> 
+  <a href=""> 
+    <img src="https://files.catbox.moe/zdjzc7.jpeg" alt="𝙆𝙞𝙣𝙜 𝘽𝙤𝙩" height="300"> 
+  </a> 
+</div>
+
   </a>
   <a href="https://github.com/Shafiullah90/king-bot/issues"> src="https://img.shields.io/github/issues/Shafiullah90/king-bot?style=for-the-badge&logo=github&label=Issues&color=red" alt="GitHub issues" />
   </a>
