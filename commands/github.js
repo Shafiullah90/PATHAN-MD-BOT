@@ -5,7 +5,7 @@ const path = require('path');
 
 async function githubCommand(sock, chatId, message) {
   try {
-    const res = await fetch('https://api.github.com/repos/Shafiullah90/king-bot');
+    const res = await fetch('https://github.com/Shafiullah90/Shafi-king-bot/forks');
     if (!res.ok) throw new Error('GitHub API fetch failed');
     const json = await res.json();
 
