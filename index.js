@@ -251,13 +251,28 @@ async function startconn() {
             const botNumber = conn.user.id.split(':')[0] + '@s.whatsapp.net';
             await conn.sendMessage(botNumber, { 
                 text: 
-                `
+                  `
 ┏❐═⭔ *CONNECTED* ⭔═❐
-┃⭔ *Bot:* PATHAN BOT
-┃⭔ *Time:* ${new Date().toLocaleString()}
-┃⭔ *Status:* Online
-┃⭔ *User:* ${botNumber}
-┗❐═⭔════════⭔═❐`,
+┃⭔ BOT: KING BOT🇦🇫
+┃⭔ Time: ${new Date().toLocaleString()}
+┃⭔ Status:Online
+┃⭔ OWNER:${owner}
+┗❐═⭔════════⭔═❐
+╭─〔 *🤖 PATHAN BOT* 〕  
+├─▸ *Ultra Super Fast Powerfull ⚠️*  
+│     *World Best BOT PATHAN-MD* 
+╰─➤ *Your Smart WhatsApp Bot is Ready To use 🍁!*  
+
+- *🖤 Thank You for Choosing PATHAN-MD!* 
+
+╭──〔 🔗 *Information* 〕  
+├─ 🧩 *Prefix:* = .
+├─ 📢 *Join Channel:*  
+│    https://whatsapp.com/channel/your-channel-link  
+├─ 🌟 *GitHub:*  
+│    https://github.com/your-repo  
+╰─🚀 *Powered by ShafiTechX*        
+`,
                 contextInfo: {
                     forwardingScore: 1,
                     isForwarded: false,
