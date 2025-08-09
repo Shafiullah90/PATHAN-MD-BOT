@@ -14,4 +14,5 @@ module.exports = {
     }, { quoted: m });
   }
 };
-module.exports = aliveCommand;
+module.exports = { aliveCommand };
+
