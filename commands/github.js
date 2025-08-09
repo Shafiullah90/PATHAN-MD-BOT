@@ -5,13 +5,13 @@ const path = require('path');
 
 async function githubCommand(sock, chatId, message) {
   try {
-    const res = await fetch('https://api.github.com/repos/ahmadtech12/IMRAN-BOT');
+    const res = await fetch('https://api.github.com/repos/Shafiullah90/king-bot');
     if (!res.ok) throw new Error('GitHub API fetch failed');
     const json = await res.json();
 
     const caption = `
 ┏━━━━━━━━━━━━━━━🔧
-┃    👨‍💻 *IMRAN BOT - GITHUB INFO*
+┃    👨‍💻 *PATHAN BOT - GITHUB INFO*
 ┗━━━━━━━━━━━━━━━🔧
 
 📁 *Repo Name:* ${json.name}
@@ -24,7 +24,7 @@ async function githubCommand(sock, chatId, message) {
 
 ✨ _Don’t forget to ⭐ & fork the repo!_
 
-🧠 *Powered by IMRAN BOT*
+🧠 *Powered by PATHAN BOT*
 📍 _Stay curious, stay coding!_
 `;
 
