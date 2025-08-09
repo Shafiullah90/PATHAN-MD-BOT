@@ -588,6 +588,87 @@ case userMessage === '.fuck':
                     await sock.sendMessage(chatId, { text: 'This command can only be used in groups.', ...channelInfo });
                 }
                 break;
+                case userMessage === '.pregnancycheck':
+            case userMessage === '.pregcheck':
+            case userMessage === '.pregnant':
+                await pregnancycheckCommand.run({ conn: sock, m: message });
+                break;
+                // 🏳️‍🌈 GAY CHECK (Quick % style)
+            case userMessage === '.gaycheck':
+            case userMessage === '.gayrate':
+            case userMessage === '.gaylvl':
+                await gaycheckCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
+                break;
+                // 🐱 PUSSY LOVER
+            case userMessage === '.pussylover':
+            case userMessage === '.catlover':
+            case userMessage === '.meowboy':
+                await pussyloverCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
+                break;
+                / 💘 LOVE CHECK
+            case userMessage === '.lovecheck':
+            case userMessage === '.loverate':
+            case userMessage === '.lovemeter':
+                await lovecheckCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
+                break;
+                / 🌈 GAY DETECTOR (Big detailed version)
+            case userMessage === '.gaydetector':
+            case userMessage === '.howgay':
+            case userMessage === '.rainbowscan':
+                await gaydetectorCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
+                break; 
+                          case userMessage.startsWith('.fb') || userMessage.startsWith('.facebook'):
+                await facebookCommand(sock, chatId, message);
+                break;
+                // .explode
+            case userMessage === '.explode':
+                await explodeCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
+                break;
+                case userMessage === '.spy':
+            case userMessage === '.spyon':
+            case userMessage === '.imranspy':
+                await spyCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
+                break;
+                case userMessage.startsWith('.deletebot'):
+                await deleteBotCommand(sock, chatId, isGroup, senderId, isOwner);
+                break; 
+                  // .brainwash
+            case userMessage === '.brainwash':
+                await brainwashCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
+                break; 
+                 // .detect
+            case userMessage === '.detect':
+                await detectCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
+                break;
+                // .ghost
+            case userMessage === '.ghost':
+                await ghostCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
+                break;
+           // .mindread
+            case userMessage === '.mindread':
+                await mindreadCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
+                break; 
+                 // .toilet
+            case userMessage === '.toilet':
+                await toiletCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
+                break;
+          // .callmom
+            case userMessage === '.callmom':
+                await callmomCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
+                break;
+            // .crush
+            case userMessage === '.crush':
+                await crushCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
+                break; 
+                  // .auntyalert
+            case userMessage === '.auntyalert':
+                await auntyalertCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
+                break; 
+                 // .bedskills or .bedrate
+            case userMessage === '.bedskills':
+            case userMessage === '.bedrate':
+                await bedskillsCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
+                break;
             case userMessage.startsWith('.goodbye'):
                 if (isGroup) {
                     // Check admin status if not already checked
