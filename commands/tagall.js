@@ -31,7 +31,7 @@ async function tagAllCommand(sock, chatId, senderId) {
             message += `@${p.id.split('@')[0]}\n`;
         }
 
-        message += `\n🤖 _Powered by IMRAN-BOT_`;
+        message += `\n🤖 _Powered by PATHAN-MD;
 
         await sock.sendMessage(chatId, {
             text: message,
