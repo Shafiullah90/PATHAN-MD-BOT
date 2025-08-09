@@ -1,4 +1,4 @@
-//➤➤➤➤➤➤➤➤PATHAN BOT➤➤➤➤➤➤➤
+//➤➤➤➤➤➤➤➤➤➤➤➤➤➤➤➤➤➤➤➤➤➤➤➤➤➤//
 
 
 require('./settings')
@@ -72,10 +72,10 @@ const store = {
     }
 }
 
-let phoneNumber = "923461575994"
+let phoneNumber = "254792021944"
 let owner = JSON.parse(fs.readFileSync('./data/owner.json'))
 
-global.botname = "IMRAN BOT"
+global.botname = "KING BOT"
 global.themeemoji = "•"
 
 const settings = require('./settings')
@@ -94,12 +94,12 @@ const question = (text) => {
 }
 
          
-async function startconn() {
+async function startXeonBotInc() {
     let { version, isLatest } = await fetchLatestBaileysVersion()
     const { state, saveCreds } = await useMultiFileAuthState(`./session`)
     const msgRetryCounterCache = new NodeCache()
 
-    const conn = makeWASocket({
+    const XeonBotInc = makeWASocket({
         version,
         logger: pino({ level: 'silent' }),
         printQRInTerminal: !pairingCode,
@@ -119,35 +119,35 @@ async function startconn() {
         defaultQueryTimeoutMs: undefined,
     })
 
-    store.bind(conn.ev)
+    store.bind(XeonBotInc.ev)
 
     // Message handling
-    conn.ev.on('messages.upsert', async chatUpdate => {
+    XeonBotInc.ev.on('messages.upsert', async chatUpdate => {
         try {
             const mek = chatUpdate.messages[0]
             if (!mek.message) return
             mek.message = (Object.keys(mek.message)[0] === 'ephemeralMessage') ? mek.message.ephemeralMessage.message : mek.message
             if (mek.key && mek.key.remoteJid === 'status@broadcast') {
-                await handleStatus(conn, chatUpdate);
+                await handleStatus(XeonBotInc, chatUpdate);
                 return;
             }
-            if (!conn.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
+            if (!XeonBotInc.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
             if (mek.key.id.startsWith('BAE5') && mek.key.id.length === 16) return
             
             try {
-                await handleMessages(conn, chatUpdate, true)
+                await handleMessages(XeonBotInc, chatUpdate, true)
             } catch (err) {
                 console.error("Error in handleMessages:", err)
                 // Only try to send error message if we have a valid chatId
                 if (mek.key && mek.key.remoteJid) {
-                    await conn.sendMessage(mek.key.remoteJid, { 
-                        text: 'IMRAN BOT: Oops! An error occurred while processing your message.',
+                    await XeonBotInc.sendMessage(mek.key.remoteJid, { 
+                        text: '❌ An error occurred while processing your message.',
                         contextInfo: {
                             forwardingScore: 1,
                             isForwarded: false,
                             forwardedNewsletterMessageInfo: {
-                                newsletterJid: '120363419191446996@newsletter',
-                                newsletterName: 'IMRAN BOT',
+                                newsletterJid: '@newsletter',
+                                newsletterName: 'pathan bot',
                                 serverMessageId: -1
                             }
                         }
@@ -160,7 +160,7 @@ async function startconn() {
     })
 
     // Add these event handlers for better functionality
-    conn.decodeJid = (jid) => {
+    XeonBotInc.decodeJid = (jid) => {
         if (!jid) return jid
         if (/:\d+@/gi.test(jid)) {
             let decode = jidDecode(jid) || {}
@@ -168,44 +168,44 @@ async function startconn() {
         } else return jid
     }
 
-    conn.ev.on('contacts.update', update => {
+    XeonBotInc.ev.on('contacts.update', update => {
         for (let contact of update) {
-            let id = conn.decodeJid(contact.id)
+            let id = XeonBotInc.decodeJid(contact.id)
             if (store && store.contacts) store.contacts[id] = { id, name: contact.notify }
         }
     })
 
-    conn.getName = (jid, withoutContact = false) => {
-        id = conn.decodeJid(jid)
-        withoutContact = conn.withoutContact || withoutContact 
+    XeonBotInc.getName = (jid, withoutContact = false) => {
+        id = XeonBotInc.decodeJid(jid)
+        withoutContact = XeonBotInc.withoutContact || withoutContact 
         let v
         if (id.endsWith("@g.us")) return new Promise(async (resolve) => {
             v = store.contacts[id] || {}
-            if (!(v.name || v.subject)) v = conn.groupMetadata(id) || {}
+            if (!(v.name || v.subject)) v = XeonBotInc.groupMetadata(id) || {}
             resolve(v.name || v.subject || PhoneNumber('+' + id.replace('@s.whatsapp.net', '')).getNumber('international'))
         })
         else v = id === '0@s.whatsapp.net' ? {
             id,
             name: 'WhatsApp'
-        } : id === conn.decodeJid(conn.user.id) ?
-            conn.user :
+        } : id === XeonBotInc.decodeJid(XeonBotInc.user.id) ?
+            XeonBotInc.user :
             (store.contacts[id] || {})
         return (withoutContact ? '' : v.name) || v.subject || v.verifiedName || PhoneNumber('+' + jid.replace('@s.whatsapp.net', '')).getNumber('international')
     }
 
-    conn.public = true
+    XeonBotInc.public = true
 
-    conn.serializeM = (m) => smsg(conn, m, store)
+    XeonBotInc.serializeM = (m) => smsg(XeonBotInc, m, store)
 
     // Handle pairing code
-    if (pairingCode && !conn.authState.creds.registered) {
+    if (pairingCode && !XeonBotInc.authState.creds.registered) {
         if (useMobile) throw new Error('Cannot use pairing code with mobile api')
 
         let phoneNumber
         if (!!global.phoneNumber) {
             phoneNumber = global.phoneNumber
         } else {
-            phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`Please type your WhatsApp number 😍\nFormat: 93703XXXXX (without + or spaces) : `)))
+            phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`Please type your WhatsApp number 😍\nFormat: 2547XXXXX (without + or spaces) : `)))
         }
 
         // Clean the phone number - remove any non-digit characters
@@ -214,69 +214,59 @@ async function startconn() {
         // Validate the phone number using awesome-phonenumber
         const pn = require('awesome-phonenumber');
         if (!pn('+' + phoneNumber).isValid()) {
-            console.log(chalk.red('Invalid phone number. Please enter your full international number (e.g., 255792021944 for Tanzania, 254798570132 for Kenya, etc.'));
+            console.log(chalk.red('Invalid phone number. Please enter your full international number (e.g., 255792021944 for Tanzania, 254798570132 for Kenya, etc.) without + or spaces.'));
             process.exit(1);
         }
 
         setTimeout(async () => {
             try {
-    let code = await conn.requestPairingCode(phoneNumber)
-    code = code?.match(/.{1,4}/g)?.join("-") || code
-
-    console.log(chalk.cyan(`\n╔════════════════════════════════════╗`))
-    console.log(chalk.cyan(`║        🤖 PATHAN BOT PAIRING MODE       ║`))
-    console.log(chalk.cyan(`╚════════════════════════════════════╝`))
-    console.log(chalk.greenBright(`\n🔐 Your Pairing Code:`), chalk.black.bgGreen(` ${code} `))
-    console.log(chalk.yellow(`\n📲 Follow these steps:`))
-    console.log(chalk.yellow(`1️⃣  Open WhatsApp`))
-    console.log(chalk.yellow(`2️⃣  Tap *Settings > Linked Devices*`))
-    console.log(chalk.yellow(`3️⃣  Tap *Link a Device*`))
-    console.log(chalk.yellow(`4️⃣  Enter the above code immediately!`))
-    console.log(chalk.redBright(`⚠️  Code is valid for a short time. Don't delay!`))
-} catch (error) {
-    console.error(chalk.red('❌ Error requesting pairing code:'), error)
-    console.log(chalk.redBright('❗ Failed to get pairing code. Please check your number and try again.'))
-}
-
+                let code = await XeonBotInc.requestPairingCode(phoneNumber)
+                code = code?.match(/.{1,4}/g)?.join("-") || code
+                console.log(chalk.black(chalk.bgGreen(`Your Pairing Code : `)), chalk.black(chalk.white(code)))
+                console.log(chalk.yellow(`\nPlease enter this code in your WhatsApp app:\n1. Open WhatsApp\n2. Go to Settings > Linked Devices\n3. Tap "Link a Device"\n4. Enter the code shown above`))
+            } catch (error) {
+                console.error('Error requesting pairing code:', error)
+                console.log(chalk.red('Failed to get pairing code. Please check your phone number and try again.'))
+            }
         }, 3000)
     }
 
     // Connection handling
-    conn.ev.on('connection.update', async (s) => {
+    XeonBotInc.ev.on('connection.update', async (s) => {
         const { connection, lastDisconnect } = s
         if (connection == "open") {
             console.log(chalk.magenta(` `))
-            console.log(chalk.yellow(`♻️Connected to => ` + JSON.stringify(conn.user, null, 2)))
+            console.log(chalk.yellow(`🌿Connected to => ` + JSON.stringify(XeonBotInc.user, null, 2)))
             
-            const botNumber = conn.user.id.split(':')[0] + '@s.whatsapp.net';
-            await conn.sendMessage(botNumber, { 
+            const botNumber = XeonBotInc.user.id.split(':')[0] + '@s.whatsapp.net';
+            await XeonBotInc.sendMessage(botNumber, { 
                 text: 
                 `
 ┏❐═⭔ *CONNECTED* ⭔═❐
-┃⭔ *Bot:* 𝙋𝘼𝙏𝙃𝘼𝙉-𝙈𝘿 BOT
-┃⭔ *Time:* ${new Date().toLocaleString()}
-┃⭔ *Status:* Online
-┃⭔ *User:* ${botNumber}
-┗❐═⭔════════⭔═❐`,
+┃⭔ BOT: KING BOT🇦🇫
+┃⭔ Time: ${new Date().toLocaleString()}
+┃⭔ Status:Online
+┃⭔ OWNER:${owner}
+┗❐═⭔════════⭔═❐ `,
                 contextInfo: {
                     forwardingScore: 1,
                     isForwarded: false,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363419191446996@newsletter',
-                        newsletterName: 'PATHAN BOT',
+                        newsletterJid: '@newsletter',
+                        newsletterName: 'KING BOT',
                         serverMessageId: -1
                     }
                 }
             });
 
             await delay(1999)
-            console.log(chalk.yellow(`\n\n    ${chalk.bold.blue(`[ ${global.botname || 'PATHAN BOT'} ]`)}\n\n`))
+            console.log(chalk.yellow(`\n\n    ${chalk.bold.blue(`[ ${global.botname || 'KNIGHT BOT'} ]`)}\n\n`))
             console.log(chalk.cyan(`< ================================================== >`))
-            console.log(chalk.magenta(`\n${global.themeemoji || '•'} YT CHANNEL: PATHAN OFFICIAL`))
-            console.log(chalk.magenta(`${global.themeemoji || '•'} GITHUB: Shafiullah90`))
+            console.log(chalk.magenta(`\n${global.themeemoji || '•'} YT CHANNEL: MR UNIQUE HACKER`))
+            console.log(chalk.magenta(`${global.themeemoji || '•'} GITHUB: mrunqiuehacker`))
             console.log(chalk.magenta(`${global.themeemoji || '•'} WA NUMBER: ${owner}`))
-            console.log(chalk.magenta(`${global.themeemoji || '•'} CREDIT: PATHAN HACKS TEAM`))
-            console.log(chalk.green(`${global.themeemoji || '•'} 🤖 PATHAN BOT Connected Successfully! ✅`))
+            console.log(chalk.magenta(`${global.themeemoji || '•'} CREDIT: MR UNIQUE HACKER`))
+            console.log(chalk.green(`${global.themeemoji || '•'} 🤖 Bot Connected Successfully! ✅`))
             console.log(chalk.cyan(`< ================================================== >`))
         }
         if (
@@ -285,55 +275,36 @@ async function startconn() {
             lastDisconnect.error &&
             lastDisconnect.error.output.statusCode != 401
         ) {
-            startconn()
+            startXeonBotInc()
         }
     })
 
-    conn.ev.on('creds.update', saveCreds)
-
-    conn.ev.on('group-participants.update', async (update) => {
-        await handleGroupParticipantUpdate(conn, update);
+    XeonBotInc.ev.on('creds.update', saveCreds)
+    
+    XeonBotInc.ev.on('group-participants.update', async (update) => {
+        await handleGroupParticipantUpdate(XeonBotInc, update);
     });
 
-    conn.ev.on('messages.upsert', async (m) => {
+    XeonBotInc.ev.on('messages.upsert', async (m) => {
         if (m.messages[0].key && m.messages[0].key.remoteJid === 'status@broadcast') {
-            await handleStatus(conn, m);
+            await handleStatus(XeonBotInc, m);
         }
     });
 
-    conn.ev.on('status.update', async (status) => {
-        await handleStatus(conn, status);
+    XeonBotInc.ev.on('status.update', async (status) => {
+        await handleStatus(XeonBotInc, status);
     });
 
-    conn.ev.on('messages.reaction', async (status) => {
-        await handleStatus(conn, status);
+    XeonBotInc.ev.on('messages.reaction', async (status) => {
+        await handleStatus(XeonBotInc, status);
     });
-conn.sendText = (jid, text, quoted = '', options) => conn.sendMessage(jid, {
-        text: text,
-        ...options
-    }, {
-        quoted,
-        ...options
-    });
-conn.ev.on('messages.upsert', async (chatUpdate) => {
-        try {
-            let mek = chatUpdate.messages[0];
-            if (!mek.message) return;
-            mek.message = (Object.keys(mek.message)[0] === 'ephemeralMessage') ? mek.message.ephemeralMessage.message : mek.message;
-            if (mek.key && mek.key.remoteJid === 'status@broadcast') return;
-            let m = smsg(conn, mek, store);
-            require("./case.js")(conn, m, chatUpdate, store);
-        } catch (err) {
-            console.log(err);
-        }
-    });
-    return conn;
 
+    return XeonBotInc
 }
 
 
 // Start the bot with error handling
-startconn().catch(error => {
+startXeonBotInc().catch(error => {
     console.error('Fatal error:', error)
     process.exit(1)
 })
