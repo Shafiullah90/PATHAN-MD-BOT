@@ -1,3 +1,4 @@
+
 require('./setting/settings');
 const fs = require('fs');
 const ffmpeg = require("fluent-ffmpeg");
@@ -171,7 +172,7 @@ if (global.autorecordtype) {
 }
 
 if (autobio) {
-  supreme.updateProfileStatus(` ⚡ IMRAN BOT Online | Running for: ${runtime(process.uptime())}`)
+  supreme.updateProfileStatus(` ⚡ PATHAN BOT Online | Running for: ${runtime(process.uptime())}`)
     .catch(err => console.error("Error updating status:", err));
 }
 
@@ -190,7 +191,7 @@ if (m.message.extendedTextMessage?.contextInfo?.mentionedJid?.includes(global.ow
 
 if (global.owneroff) {
   if (!isGroup && !isOwner) {
-    let text = `🛑 IMRAN BOT Alert: Owner is away on a secret mission. No spam, or I’ll have to take action 😇`
+    let text = `🛑 PATHAN BOT Alert: Owner is away on a secret mission. No spam, or I’ll have to take action 😇`
     return supreme.sendMessage(m.chat, {
       text: `${text}`,
       contextInfo: {
@@ -212,17 +213,17 @@ if (global.owneroff) {
 }
 switch (command) {        
 case "public": { 
-if (!isBot) return reply(`🌐 IMRAN BOT: To make me public, type .mode public in your inbox.`)
+if (!isBot) return reply(`🌐 PATHAN BOT: To make me public, type .mode public in your inbox.`)
 supreme.public = true
-reply(`✅ IMRAN BOT: Successfully changed bot mode to Public! 🚀`)
+reply(`✅ PATHAN BOT: Successfully changed bot mode to Public! 🚀`)
 }
 break;
 //////////////////self//////////////////
 case "self":
 case "private": { 
-if (!isBot) return reply(`🌐 IMRAN BOT: To make me public, type .mode private in your inbox`)
+if (!isBot) return reply(`🌐 PATHAN BOT: To make me public, type .mode private in your inbox`)
 supreme.public = false
-reply(`✅ IMRAN BOT: Successfully changed bot mode to Self/Private! 🔒`)
+reply(`✅ PATHAN BOT: Successfully changed bot mode to Self/Private! 🔒`)
 }
 break;
         
@@ -354,7 +355,7 @@ const fs = require("fs");
 const path = require("path");
 
   try {
-    if (!text) return m.reply("🎵 IMRAN BOT: Tell me the song name, and I’ll grab it for you in style!");
+    if (!text) return m.reply("🎵 PATHAN BOT: Tell me the song name, and I’ll grab it for you in style!");
 
     let search = await yts(text);
     let link = search.all[0].url;
@@ -383,7 +384,7 @@ const path = require("path");
           });
 
           if (response.status !== 200) {
-            m.reply("⚠️ IMRAN BOT Alert: The API is acting shy… try again later.");
+            m.reply("⚠️ PATHAN BOT Alert: The API is acting shy… try again later.");
             continue;
           }
 		ffmpeg(response.data)
@@ -395,7 +396,7 @@ const path = require("path");
                 {
                   document: { url: outputPath },
                   mimetype: "audio/mp3",
-		  caption: "✦ IMRAN BOT ✦",
+		  caption: "✦ PATHAN BOT ✦",
                   fileName: outputFileName,
                 },
                 { quoted: m }
@@ -403,7 +404,7 @@ const path = require("path");
               fs.unlinkSync(outputPath);
             })
             .on("error", (err) => {
-              m.reply("📥💥 📡 Connection jammed! IMRAN BOT will reattempt soon...\n" + err.message);
+              m.reply("📥💥 📡 Connection jammed! PATHAN BOT will reattempt soon...\n" + err.message);
             });
 
           return;
@@ -415,9 +416,9 @@ const path = require("path");
    }
 
     // If no APIs succeeded
-    m.reply("🤖 IMRAN BOT: Every API just rage quit. I’ll try again when they calm down.");
+    m.reply("🤖 PATHAN BOT: Every API just rage quit. I’ll try again when they calm down.");
   } catch (error) {
-    m.reply("❌ IMRAN BOT: Download crashed harder than my morning Wi-Fi.\n" + error.message);
+    m.reply("❌ PATHAN BOT: Download crashed harder than my morning Wi-Fi.\n" + error.message);
   }
 }
 	  break;
@@ -462,4 +463,3 @@ console.log('\x1b[0;32m' + __filename + ' \x1b[1;32mupdated!\x1b[0m');
 delete require.cache[file];
 require(file);
 });
-
