@@ -1,5 +1,4 @@
-module.exports = {
-  name: "auntyalert",
+ name: "auntyalert",
   description: "Funny command from IMRAN BOT",
   category: "fun",
   async run({ conn, m, args }) {
@@ -11,3 +10,4 @@ module.exports = {
     }
   }
 };
+module.exports = auntyalertCommand;
