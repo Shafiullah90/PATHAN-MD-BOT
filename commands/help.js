@@ -29,104 +29,167 @@ async function helpCommand(sock, chatId, message) {
         const uptimeInSeconds = process.uptime();
         const uptimeFormatted = formatTime(uptimeInSeconds);
     const helpMessage = ` 
-┏━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃🤖*PATHAN-BOTCOMMAND MENU*🤖 ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━┛
-📍 *Owner:* ${settings.botOwner}
-⏳ *Uptime:* ${uptimeFormatted}
-🕐 *Time:* ${new Date().toLocaleString()}
-⚡ *Speed:* ${ping}ms
-🛠️ *Version:* ${settings.version}
-
-    ━━━━━━━━━━━━━━━━━━━━━━━
-     📂 *Owner Commands*
-    ━━━━━━━━━━━━━━━━━━━━━━━
-🔒 .ban | .unban | .promote | .demote
-🔕 .mute | .unmute | .delete | .kick
-⚠️ .warnings | .warn | .antilink | .antibadword
-🧹 .clear | .tag | .tagall | .chatbot
-🔗 .resetlink | .welcome | .goodbye
-
-━━━━━━━━━━━━━━━━━━━━━━━
-🌐 *General Commands*
-━━━━━━━━━━━━━━━━━━━━━━━
-📜 .menu | 📶 .ping | ⏱️ .runtime | 🔊 .tts
-👑 .owner | 😂 .joke | 💬 .quote | 🧠 .fact
-🌦️ .weather | 📰 .news | 💌 .attp | 🎵 .lyrics
-🎱 .8ball | ℹ️ .groupinfo | 👮 .admins | 🔍 .jid
-📸 .ss | 🌍 .trt | 📞 .vv
-━━━━━━━━━━━━━━━━━━━━━━━
+┏❐═══════════════════╗
+┃     🇦🇫 𓆩𝑺𝒉𝒂𝒇𝒊 𝑷𝒂𝒕𝒉𝒂𝒏𓆪 🇦🇫 
+┗❐═══════════════════╝
+ 💔 𝐋𝐞𝐚𝐫𝐧 𝐭𝐨 𝐥𝐢𝐯𝐞 𝐚𝐥𝐨𝐧𝐞...
+    𝐧𝐨 𝐨𝐧𝐞 𝐬𝐭𝐚𝐲𝐬 𝐟𝐨𝐫𝐞𝐯𝐞𝐫 😔
+┏❐═══════════════════╗
+┃▢  *Owner: ${settings.botOwner}*
+┃▢  *Uptime: ${uptimeFormatted}*
+┃▢  *Time: ${new Date().toLocaleString()}*
+┃▢  *Speed: ${ping} ms*
+┃▢  *vassion: v${settings.version}*
+┗❐═══════════════════╝
      *special commands*
-━━━━━━━━━━━━━━━━━━━━━━━
-➤🤭 .pagal (Haleemah)
+┏❐═══════════════════╗
+┃➤🤭 .pagal (Haleemah)
 ┃➤😢 .miss (Haleemah)
 ┃➤♻️ .on (for alive)
-┃➤♻️ .shafi (🇦🇫)
-┃➤♻️ .intro (owner)
+┃➤🤭 .shafi (🇦🇫)
+┃➤😢 .intro (owner)
 ┃➤♻️ .Contact (owner)
-┃➤❇️ .link (for gc link)
-┃➤😠 .shutoff (angry)
+┃➤🤭 .link (for link)
+┃➤😢 .shutoff (angry)
 ┃➤♻️ .Haleemah (for flirt🤭)
-━━━━━━━━━━━━━━━━━━━━━━━
-⚙️ *Settings Commands*
-━━━━━━━━━━━━━━━━━━━━━━━
-🌐 .public | 🔐 .private | 🟢 .autostatus
-📖 .autoread | 🧹 .clearsession | 🛡️ .antidelete
-🧼 .cleartmp | 💬 .autoreact | 🖼️ .getpp | 📸 .setpp
-📜 .autobio | ⌨️ .autotyping | 🎙️ .autorecording
+> ‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎┏❐═══════════════════╗
+┃➤❎ .addowner
+┃➤✅ .antibot
+┃➤♻️ .📛✔
+┃➤❎ .ban
+┃➤✅ .unban
+┃➤♻️ .promote
+┃➤〽️ .demote
+┃➤📛 .mute 
+┃➤✔.unmute
+┃➤🗑 .delete
+┃➤😤 .kick
+┃➤⚠️ .warnings
+┃➤🚸 .warn
+┃➤🚫 .antilink
+┃➤🚫 .antibadword
+┃➤🔄 .clear
+┃➤☸ .tag
+┃➤✡ .tagall
+┃➤💬 .chatbot
+┃➤💫 .resetlink
+┃➤❤ .welcome
+┃➤👋 .goodbye
+┗❐═══════════════════╝
+> *GENERAL CMD*
+┏❐═══════════════════╗
+┃➤ .menu
+┃➤ .ping
+┃➤ .alive
+┃➤ .tts
+┃➤ .owner
+┃➤ .joke
+┃➤ .quote
+┃➤ .fact
+┃➤ .weather 
+┃➤ .news
+┃➤ .attp
+┃➤ .lyrics
+┃➤ .8ball 
+┃➤ .groupinfo
+┃➤ .admins 
+┃➤ .vv
+┃➤ .trt
+┃➤ .ss 
+┃➤ .jid
+┗❐═══════════════════╝
+> *SETTINGS CMD*
+┏❐═══════════════════╗
+┃➤ .mode
+┃➤ .autostatus
+┃➤ .clearsession
+┃➤ .antidelete
+┃➤ .cleartmp
+┃➤ .setpp 
+┃➤ .autoreact
+┗❐═══════════════════╝
+> *STICKER CMD*
+┏❐═══════════════════╗
+┃➤ .blur
+┃➤ .simage 
+┃➤ .sticker
+┃➤ .tgsticker
+┃➤ .meme
+┃➤ .take 
+┃➤ .emojimix
+┗❐═══════════════════╝
+> *GAMEMENU CMD*
+┏❐═══════════════════╗
+┃➤ .tictactoe 
+┃➤ .hangman
+┃➤ .guess 
+┃➤ .trivia
+┃➤ .answer
+┃➤ .truth
+┃➤ .dare
+┗❐═══════════════════╝
+> *SERCH AI*
+┏❐═══════════════════╗
+┃➤ .gpt
+┃➤ .gemini
+┃➤ .imagine
+┃➤ .flux
+┗❐═══════════════════╝
+> *OTHER CMDS* 
+┏❐═══════════════════╗
+┃➤ .compliment
+┃➤ .insult
+┃➤ .flirt 
+┃➤ .shayari
+┃➤ .goodnight
+┃➤ .roseday
+┃➤ .character
+┃➤ .wasted
+┃➤ .ship 
+┃➤ .simp
+┃➤ .stupid
+┗❐═══════════════════╝
+> *MAKER MENU*
+┏❐═══════════════════╗
+┃➤ .metallic 
+┃➤ .ice 
+┃➤ .snow
+┃➤ .impressive
+┃➤ .matrix
+┃➤ .light
+┃➤ .neon
+┃➤ .devil
+┃➤ .purple
+┃➤ .thunder
+┃➤ .leaves
+┃➤ .1917 
+┃➤ .arena
+┃➤ .hacker
+┃➤ .sand
+┃➤ .blackpink
+┃➤ .glitch
+┃➤ .fire 
+┗❐═══════════════════╝
+> *SEACH CMD*
+┏❐═══════════════════╗
+┃➤ .play
+┃➤ .song 
+┃➤ .instagram
+┃➤ .facebook
+┃➤ .tiktok 
+┃➤ .video
+┃➤ .ytmp4
+┗❐═══════════════════╝
+> *GITHUB CMD*
+┏❐═══════════════════╗
+┃➤ .git
+┃➤ .github
+┃➤ .sc
+┃➤ .script
+┃➤ .repo
+┃➤ .gitclone
+┗❐═══════════════════╝`;
 
-━━━━━━━━━━━━━━━━━━━━━━━
-🎨 *Sticker Commands*
-━━━━━━━━━━━━━━━━━━━━━━━
-🌀 .blur | 🖼️ .simage | 🌟 .sticker | 🐯 .tgsticker
-🤣 .meme | 🎯 .take | 🔀 .emojimix
-
-━━━━━━━━━━━━━━━━━━━━━━━
-🎮 *Game Commands*
-━━━━━━━━━━━━━━━━━━━━━━━
-❌⭕ .tictactoe | 🎯 .hangman | ❓ .guess
-🧠 .trivia | ✍️ .answer | 🤐 .truth | 😈 .dare
-
-━━━━━━━━━━━━━━━━━━━━━━━
-🧠 *AI & Search*
-━━━━━━━━━━━━━━━━━━━━━━━
-🤖 .gpt | 💡 .gptgo | 🧬 .gemini | 🧠 .flux
-🎨 .imagine
-
-━━━━━━━━━━━━━━━━━━━━━━━
-🎭 *Fun Commands*
-━━━━━━━━━━━━━━━━━━━━━━━
-💘 .compliment | 😡 .insult | 😍 .flirt
-📜 .shayari | 🌙 .goodnight | 🌹 .roseday
-🎭 .character | ☠️ .wasted | 🚢 .ship
-😈 .simp | 🤪 .stupid | 🧠 .brainwash | 🐔 .detect
-👻 .ghost | 🧠 .mindread | 💩 .toilet | 📞 .callmom
-💘 .crush | 🪞 .mirror | 🛐 .auntyalert | 💣 .explode
-💻 .pathantech | 🔓 .unhack | 🕵️ .spy
-💨 .bombgas | 🛏️ .bedrate | 🤰 .pregnancycheck
-💘 .lovecheck | 🌈 .gaycheck | 🏳️‍🌈 .gaydetector
-🔥 .hornycheck | 😻 .pussylover
-
-━━━━━━━━━━━━━━━━━━━━━━━
-🧰 *Maker Menu*
-━━━━━━━━━━━━━━━━━━━━━━━
-🔥 .fire | ⚡ .thunder | ❄️ .ice | 🌫️ .snow
-👹 .devil | 💜 .purple | 💡 .light | 💻 .matrix
-🎬 .arena | 👾 .hacker | 🌿 .leaves | 💥 .glitch
-🌌 .metallic | 🖤 .blackpink | ✨ .neon | 🚫 .1917
-🎭 .impressive | 🏖️ .sand
-
-━━━━━━━━━━━━━━━━━━━━━━━
-🔍 *Search & Download*
-━━━━━━━━━━━━━━━━━━━━━━━
-🎵 .play | 🎶 .song | 🎥 .video
-📸 .instagram | 📘 .facebook | 🎵 .tiktok | 🔽 .ytmp4
-
-━━━━━━━━━━━━━━━━━━━━━━━
-💻 *GitHub Commands*
-━━━━━━━━━━━━━━━━━━━━━━━
-🔗 .git | 🧑‍💻 .github | 📦 .sc | 📂 .script
-📁 .repo | 🌀 .gitclone `;
  try {
         const imagePath = path.join(__dirname, '../assets/menu_image.jpg');
         const audioPath = path.join(__dirname, '../assets/menu.mp3');
