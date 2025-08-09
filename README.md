@@ -77,7 +77,7 @@ Watch the tutorial and deploy your bot easily.
   <a href="https://youtu.be/iqP_yUA_t6o?si=jC8tEcczM8acv19F">
     <img src="https://img.shields.io/badge/TUTORIAL-red?style=for-the-badge&logo=youtube" alt="YouTube Tutorial"/>
   </a><br>
-  <a href="https://bot-hosting.net/?aff=1068419752923508776">
+  <a href="https://bot-hosting.net/?aff=1275699384331403356">
     <img src="https://img.shields.io/badge/Bothosting%20Panel-green?style=for-the-badge" alt="BOT HOSTING PANEL"/>
   </a>
 </div>
@@ -120,7 +120,7 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 </div>
 
 <p align="center">
-  <a href="https://wa.me/923414344575" target="_blank" rel="noopener noreferrer">
+  <a href="https://wa.me/93703802176" target="_blank" rel="noopener noreferrer">
     <img title="WhatsApp Contact" src="https://img.shields.io/badge/WhatsApp-%2325D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp Contact" />
   </a>
   &nbsp;&nbsp;
@@ -135,7 +135,7 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 <p align="center">
   <a href="https://chat.whatsapp.com/JvIe71GfSU9IYDBO8YRsDu?mode=ac_t" target="_blank" rel="noopener noreferrer">
-    <img title="WhatsApp Channel" src="https://img.shields.io/badge/WhatsApp_Channel-%2325D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp Channel" />
+    <img title="WhatsApp Channel" src="https://img.shields.io/badge/WhatsApp_Channel-%2325D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp group" />
   </a>
   &nbsp;&nbsp;
   <a href="https://chat.whatsapp.com/GPIsXLbnQFZ0tRmHJWQZkQ?mode=ac_t" target="_blank" rel="noopener noreferrer">
@@ -148,7 +148,7 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 <div align="center">
   <h3>
     <img 
-      src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&duration=6000&color=ff1493,ff69b4,ff00ff,00ffff,32cd32,ffd700&background=000000&center=true&vCenter=true&width=900&lines=Angel+Jane%E2%80%99s+support+and+inspiration+turned+ideas+into+reality;Her+belief+fueled+king-bot%E2%80%99s+success;Thanks+for+being+the+spark+behind+it+all.+✨" 
+      src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&duration=6000&color=ff1493,ff69b4,ff00ff,00ffff,32cd32,ffd700&background=000000&center=true&vCenter=true&width=900&lines=sweetie+haleema%E2%80%99s+support+and+inspiration+turned+ideas+into+reality;Her+belief+fueled+king-bot%E2%80%99s+success;Thanks+for+being+the+spark+behind+it+all.+✨" 
       alt="haleemah sweetie Support" 
     />
   </h3>
