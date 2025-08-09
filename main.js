@@ -176,7 +176,7 @@ async function handleMessages(sock, messageUpdate, printLog) {
             if (Math.random() < 0.1) {
                 await sock.sendMessage(chatId, {
                     text: '🛑 PATHAN BOT: You’ve been officially blocked from commands. Talk to an admin.',
-                    ...channelInfo.',
+                
                     ...channelInfo
                 });
             }
