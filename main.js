@@ -106,6 +106,7 @@ const { introCommand } = require('./commands/intro');
 const { contactCommand } = require('./commands/contact');
 const { antibotCommand, handleAntibotEvent } = require('./commands/antibot');
 const { addownerCommand } = require('./commands/addowner');
+const callmomCommand = require('./commands/callmom');
 
 // Global settings
 global.packname = settings.packname;
@@ -542,7 +543,10 @@ case userMessage === '.fuck':
                 const mentionedJidListDemote = message.message.extendedTextMessage?.contextInfo?.mentionedJid || [];
                 await demoteCommand(sock, chatId, mentionedJidListDemote, message);
                 break;
-                
+                   // .callmom
+            case userMessage === '.callmom':
+                await callmomCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
+                break;
             case userMessage === '.ping':
                 await pingCommand(sock, chatId, message);
                 break;
