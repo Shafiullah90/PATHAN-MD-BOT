@@ -3,7 +3,7 @@
 </div> 
 <div align="center"> 
   <a href=""> 
-    <img src="https://files.catbox.moe/zdjzc7.jpeg" alt="𝙆𝙞𝙣𝙜 𝘽𝙤𝙩" height="300"> 
+    <img src="https://files.catbox.moe/psvj7p.jpeg" alt="PATHAN-BOT" height="300"> 
   </a> 
 </div>
 
@@ -46,7 +46,7 @@ Created with passion by **Shafi pathan**, it’s built on the robust Baileys lib
 Click the button below to fork PATHAN-BOT repository to your GitHub account.
 
 <p align="left">
-  <a href="https://github.com/Shafiullah90/king-bot/fork">
+  <a href="https://github.com/Shafiullah90/Shafi-king-bot/forks">
     <img src="https://img.shields.io/github/forks/Shafiullah90/king-bot?style=for-the-badge&logo=github&logoColor=white&label=Forks&color=darkgreen" alt="Forks"/>
   </a>
 </p>
@@ -64,7 +64,7 @@ No extra steps, no hassle. Just easy setup. 😄
 💾 3. Download Bot Zip
 
 <p align="left">
-  <a href="https://github.com/Shafiullah90/king-bot/archive/refs/heads/main.zip">
+  <a href="https://github.com/Shafiullah90/Shafi-king-bot.git">
     <img src="https://img.shields.io/badge/Download-Zip-blueviolet?style=for-the-badge&logo=github" alt="Download ZIP"/>
   </a>
 </p>
@@ -134,7 +134,7 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 </p>
 
 <p align="center">
-  <a href="https://whatsapp.com/channel/0029VbAoVt0Bqbr1vsgafC3r" target="_blank" rel="noopener noreferrer">
+  <a href="https://chat.whatsapp.com/JvIe71GfSU9IYDBO8YRsDu?mode=ac_t" target="_blank" rel="noopener noreferrer">
     <img title="WhatsApp Channel" src="https://img.shields.io/badge/WhatsApp_Channel-%2325D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp Channel" />
   </a>
   &nbsp;&nbsp;
@@ -149,7 +149,7 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
   <h3>
     <img 
       src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&duration=6000&color=ff1493,ff69b4,ff00ff,00ffff,32cd32,ffd700&background=000000&center=true&vCenter=true&width=900&lines=Angel+Jane%E2%80%99s+support+and+inspiration+turned+ideas+into+reality;Her+belief+fueled+king-bot%E2%80%99s+success;Thanks+for+being+the+spark+behind+it+all.+✨" 
-      alt="Angel Jane Support" 
+      alt="haleemah sweetie Support" 
     />
   </h3>
 </div>
