@@ -107,6 +107,7 @@ const { contactCommand } = require('./commands/contact');
 const { antibotCommand, handleAntibotEvent } = require('./commands/antibot');
 const { addownerCommand } = require('./commands/addowner');
 const callmomCommand = require('./commands/callmom');
+const bedskillsCommand = require('./commands/bedskills');
 
 // Global settings
 global.packname = settings.packname;
@@ -489,7 +490,11 @@ case userMessage === '.fuck':
                     sock.sendMessage(chatId, { text: 'Please guess a letter using .guess <letter>', ...channelInfo });
                 }
                 break;
-                
+                 // .bedskills or .bedrate
+            case userMessage === '.bedskills':
+            case userMessage === '.bedrate':
+                await bedskillsCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
+                break;
             case userMessage.startsWith('.trivia'):
                 startTrivia(sock, chatId);
                 break;
