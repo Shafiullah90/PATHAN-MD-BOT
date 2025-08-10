@@ -39,7 +39,7 @@ const explodeCommand = require('./commands/explode');
 const spyCommand = require('./commands/spy');
 const unhackCommand = require('./commands/unhack'); // Adjust path if needed
 const hackCommand = require('./commands/hack');
-const tagAllCommand = require('./commands/tagall');
+
 const getppCommand =require('./commands/getpp');
 const helpCommand = require('./commands/help');
 const banCommand = require('./commands/ban');
