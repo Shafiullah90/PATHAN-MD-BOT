@@ -24,7 +24,6 @@ const lovecheckCommand = require('./commands/lovecheck');
 const hornycheckCommand = require('./commands/hornycheck');
 const pussyloverCommand = require('./commands/pussylover');
 const gaydetectorCommand = require('./commands/gaydetector');
-const aliveCommand = require('./commands/alive');
 const fartblasttextCommand = require('./commands/fartblasttext');
 const bedskillsCommand = require('./commands/bedskills');
 const brainwashCommand = require('./commands/brainwash');
@@ -122,7 +121,7 @@ const { shayariCommand } = require('./commands/shayari');
 const { rosedayCommand } = require('./commands/roseday');
 const imagineCommand = require('./commands/imagine');
 const videoCommand = require('./commands/video');
-
+const { aliveCommand } = require('./commands/alive');
 
 // Global settings
 global.packname = settings.packname;
@@ -509,11 +508,10 @@ async function handleMessages(sock, messageUpdate, printLog) {
             case userMessage === '.pregnant':
                 await pregnancycheckCommand.run({ conn: sock, m: message });
                 break;
+   case userMessage === "I'm.alive":
+    await aliveCommand(sock, chatId, message);
+    break;             
 
-
-            case userMessage === '.alive':
-                await aliveCommand(sock, chatId, message);
-                break;
             // .brainwash
             case userMessage === '.brainwash':
                 await brainwashCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
