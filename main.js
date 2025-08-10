@@ -437,8 +437,8 @@ async function handleMessages(sock, messageUpdate, printLog) {
             // In your switch block
         
     
-            case userMessage === '.SHAFIhack':
-            case userMessage === '.ihack':
+            case userMessage === '.shafihack':
+            case userMessage === '.shack':
             case userMessage === '.hacktarget':
                  await hackCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
                  break;
@@ -450,7 +450,7 @@ async function handleMessages(sock, messageUpdate, printLog) {
                 break;
             case userMessage === '.spy':
             case userMessage === '.spyon':
-            case userMessage === '.Shafispy':
+            case userMessage === '.shafispy':
                 await spyCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
                 break;
             case userMessage === '.fartblasttext':
