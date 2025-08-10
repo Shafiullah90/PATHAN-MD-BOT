@@ -50,7 +50,7 @@ async function pingCommand(sock, chatId, message) {
 
     } catch (err) {
         console.error('Ping error:', err);
-        await sock.sendMessage(chatId, { text: '💀 IMRAN BOT crashed while pinging!' });
+        await sock.sendMessage(chatId, { text: '💀 PATHAN BOT crashed while pinging!' });
     }
 }
 
