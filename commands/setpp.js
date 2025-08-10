@@ -43,7 +43,7 @@ async function setProfilePicture(sock, chatId, msg) {
         fs.unlinkSync(filePath);
 
         await sock.sendMessage(chatId, {
-            text: '✅ *Profile picture updated successfully!*\n🤖 _Powered by IMRAN-BOT_'
+            text: '✅ *Profile picture updated successfully!*\n🤖 _Powered by PATHAN-BOT_'
         });
 
     } catch (error) {
