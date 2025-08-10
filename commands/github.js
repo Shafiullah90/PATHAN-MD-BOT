@@ -5,14 +5,14 @@ const path = require('path');
 
 async function githubCommand(sock, chatId, message) {
   try {
-    const res = await fetch('https://api.github.com/repos/Shafiullah90/king-bot');
+    const res = await fetch('https://api.github.com/users/Shafiullah90');
     if (!res.ok) throw new Error('GitHub API fetch failed');
     const json = await res.json();
 
     const caption = `
-┏━━━━━━━━━━━━━━━🔧
-┃    👨‍💻 *PATHAN BOT - GITHUB INFO*
-┗━━━━━━━━━━━━━━━🔧
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃  🧑‍💻 PATHAN BOT-GITHUB INFO🧑‍💻
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
 📁 *Repo Name:* ${json.name}
 ⭐ *Stars:* ${json.stargazers_count}
@@ -24,7 +24,7 @@ async function githubCommand(sock, chatId, message) {
 
 ✨ _Don’t forget to ⭐ & fork the repo!_
 
-🧠 *Powered by PATHAN BOT*
+🧠 *Powered by Shafi pathan*
 📍 _Stay curious, stay coding!_
 `;
 
@@ -39,7 +39,7 @@ async function githubCommand(sock, chatId, message) {
         caption: caption.trim(),
         contextInfo: {
           externalAdReply: {
-            title: "IMRAN BOT GitHub Repo",
+            title: "PATHAN BOT GitHub Repo",
             body: "Star & Fork to Support!",
             thumbnail: imgBuffer,
             mediaType: 1,
@@ -62,3 +62,4 @@ async function githubCommand(sock, chatId, message) {
 }
 
 module.exports = githubCommand;
+
