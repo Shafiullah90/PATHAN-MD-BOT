@@ -5,8 +5,7 @@ module.exports = {
   async run({ conn, m, args }) {
     const delay = ms => new Promise(res => setTimeout(res, ms));
     Here’s a more meaningful, stylish, and extended version of that line with added humor and a natural vibe:
-
-```js
+    
 const messages = [
   '📞 *Incoming Call: Mom is Calling...*',
   '👩‍👦 *Mom:* "Son, what you doing on WhatsApp still ?"',
