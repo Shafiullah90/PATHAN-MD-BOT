@@ -5,7 +5,7 @@ async function muteCommand(sock, chatId, senderId, durationInMinutes) {
 
     const { isSenderAdmin, isBotAdmin } = await isAdmin(sock, chatId, senderId);
     if (!isBotAdmin) {
-        await sock.sendMessage(chatId, { text: 'Please make the bot an admin first.' });
+        await sock.sendMessage(chatId, { text: 'Please make the pathab bot an admin first.' });
         return;
     }
 
