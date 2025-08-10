@@ -38,7 +38,7 @@ module.exports = {
       `🧠 You’ve been hacked by... your own imagination 😂`,
       `🎉 This was just a prank from *PATHAN BOT* 🤖`,
       `🪞 Next time, don’t trust commands that sound like “hack” 😈`,
-      `💬 Go ahead and prank someone else using *.imranhack* 😎`,
+      `💬 Go ahead and prank someone else using *.shafinhack* 😎`,
       `📢 Share the laugh — but don’t forget to *breathe again* 😵‍💫`
     ];
 
