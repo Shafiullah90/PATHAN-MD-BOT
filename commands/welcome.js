@@ -4,7 +4,7 @@ async function welcomeCommand(sock, chatId, message, match) {
     // Ensure command is used in a group
     if (!chatId.endsWith('@g.us')) {
         await sock.sendMessage(chatId, { 
-            text: '🛑 This command can only be used in *group chats*.\n🔰 *IMRAN BOT WELCOME SYSTEM*'
+            text: '🛑 This command can only be used in *group chats*.\n🔰 *PATHAN BOT WELCOME SYSTEM*'
         });
         return;
     }
