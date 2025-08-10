@@ -30,87 +30,152 @@ async function helpCommand(sock, chatId, message) {
 ┏━━━━━━━━━━━━━━━━━━┓
 ┃  💻Commands Menu💻
 ┗━━━━━━━━━━━━━━━━━━┛
-   📝 _Owner Information_
+ 📝 _Owner Information_
   ━━━━━━━━━━━━━━━━━━
 📍 *Owner:* ${settings.botOwner}
 ⏳ *Uptime:* ${uptimeFormatted}
 🕐 *Time:* ${new Date().toLocaleString()}
-⚡ *Speed:* ${ping}ms
-🛠️ *Version:* ${settings.version}
-┏━━━━━━━━━━━━━━━━━━┓
-┃ 🔒 _Owner Commands_
-┗━━━━━━━━━━━━━━━━━━┛
-🔴 .ban | 🔵 .unban | 👑 .promote | 👥 .demote
-🔕 .mute | 🔊 .unmute | 🗑️ .delete | 👋 .kick
-⚠️ .warnings | ⚠️ .warn | 🚫 .antilink | 🚫 .antibadword
-🧹 .clear | 👥 .tag | 👥 .tagall | 🤖 .chatbot
-🔗 .resetlink | 👋 .welcome | 👋 .goodbye
+⚡ *Speed:* ${ping}
 
-┏━━━━━━━━━━━━━━━━━┓
-┃ 🌐 _General Commands_
-┗━━━━━━━━━━━━━━━━━┛
-📜 .menu | 📶 .ping | ⏱️ .runtime | 🔊 .tts
-👑 .owner | 😂 .joke | 💬 .quote | 🧠 .fact
-🌦️ .weather | 📰 .news | 💌 .attp | 🎵 .lyrics
-🎱 .8ball | ℹ️ .groupinfo | 👮 .admins | 🔍 .jid
-📸 .ss | 🌍 .trt | 📞 .vv
+┏❐═══════════════════╗
+┃ 🔒 *Owner Commands*
+┗❐═══════════════════╝
+➤ 🔴 .ban 
+➤ 🔵 .unban 
+➤ 👑 .promote 
+➤ 👥 .demote 
+➤ 🔕 .mute 
+➤ 🔊 .unmute 
+➤ 🗑️ .delete 
+➤ 👋 .kick 
+➤ ⚠️ .warnings 
+➤ ⚠️ .warn 
+➤ 🚫 .antilink 
+➤ 🚫 .antibadword 
+➤ 🧹 .clear 
+➤ 👥 .tag 
+➤ 👥 .tagall 
+➤ 🤖 .chatbot 
+➤ 🔗 .resetlink 
+➤ 👋 .welcome 
+➤ 👋 .goodbye
 
-┏━━━━━━━━━━━━━━━━━━┓
-┃⚙️ _Settings Commands_
-┗━━━━━━━━━━━━━━━━━━┛
-🌐 .public | 🔐 .private | 🟢 .autostatus
-📖 .autoread | 🧹 .clearsession | 🛡️ .antidelete
-🧼 .cleartmp | 💬 .autoreact | 🖼️ .getpp | 📸 .setpp
-📜 .autobio | ⌨️ .autotyping | 🎙️ .autorecording
+┏❐═══════════════════╗
+┃ 🌐 *General Commands*
+┗❐═══════════════════╝
+➤ 📜 .menu 
+➤ 📶 .ping 
+➤ ⏱️ .runtime 
+➤ 🔊 .tts 
+➤ 👑 .owner 
+➤ 😂 .joke 
+➤ 💬 .quote 
+➤ 🧠 .fact 
+➤ 🌦️ .weather 
+➤ 📰 .news 
+➤ 💌 .attp 
+➤ 🎵 .lyrics 
+➤ 🎱 .8ball 
+➤ ℹ️ .groupinfo 
+➤ 👮 .admins 
+➤ 🔍 .jid 
+➤ 📸 .ss 
+➤ 🌍 .trt 
+➤ 📞 .vv
 
-┏━━━━━━━━━━━━━━━━━━━┓
-┃ 🎨 _Sticker Commands_
-┗━━━━━━━━━━━━━━━━━━━┛
-🌀 .blur | 🖼️ .simage | 🌟 .sticker | 🐯 .tgsticker
-🤣 .meme | 🎯 .take | 🔀 .emojimix
+┏❐═══════════════════╗
+┃ ⚙️ *Settings Commands*
+┗❐═══════════════════╝
+➤ 🌐 .public 
+➤ 🔐 .private 
+➤ 🟢 .autostatus 
+➤ 📖 .autoread 
+➤ 🧹 .clearsession 
+➤ 🛡️ .antidelete 
+➤ 🧼 .cleartmp 
+➤ 💬 .autoreact 
+➤ 🖼️ .getpp 
+➤ 📸 .setpp 
+➤ 📜 .autobio 
+➤ ⌨️ .autotyping 
+➤ 🎙️ .autorecording
 
-┏━━━━━━━━━━━━━━━━━━━┓
-  🎮 _Game Commands_
-┗━━━━━━━━━━━━━━━━━━━┛
-❌⭕ .tictactoe | 🎯 .hangman | ❓ .guess
-🧠 .trivia | ✍️ .answer | 🤐 .truth | 😈 .dare
+┏❐═══════════════════╗
+┃ 🎨 *Sticker Commands*
+┗❐═══════════════════╝
+➤ 🌀 .blur 
+➤ 🖼️ .simage 
+➤ 🌟 .sticker 
+➤ 🐯 .tgsticker 
+➤ 🤣 .meme 
+➤ 🎯 .take 
+➤ 🔀 .emojimix
 
-┏━━━━━━━━━━━━━━━━━━┓
-┃     🧠 _AI & Search_
-┗━━━━━━━━━━━━━━━━━━┛
-🤖 .gpt | 💡 .gptgo | 🧬 .gemini | 🧠 .flux
-🎨 .imagine
+┏❐═══════════════════╗
+┃ 🎮 *Game Commands*
+┗❐═══════════════════╝
+➤ ❌⭕ .tictactoe 
+➤ 🎯 .hangman 
+➤ ❓ .guess 
+➤ 🧠 .trivia 
+➤ ✍️ .answer 
+➤ 🤐 .truth 
+➤ 😈 .dare
 
-┏━━━━━━━━━━━━━━━━━━┓
-┃     🎭 _Fun Commands_
-┗━━━━━━━━━━━━━━━━━━┛
-💘 .compliment | 😡 .insult | 😍 .flirt
-📜 .shayari | 🌙 .goodnight | 🌹 .roseday
-🎭 .character | ☠️ .wasted | 🚢 .ship
-😈 .simp | 🤪 .stupid | 🧠 .brainwash | 🐔 .detect
-👻 .ghost | 🧠 .mindread | 💩 .toilet | 📞 .callmom
-💘 .crush | 🪞 .mirror | 🛐 .auntyalert | 💣 
- .explode
- | 🔓 .unhack | 🕵️ .spy
-💨 .bombgas | 🛏️ .bedrate | 🤰 .pregnancycheck
-💘 .lovecheck | 🌈 .gaycheck | 🏳️‍🌈 .gaydetector
-🔥 .hornycheck | 😻 .pussylover
+┏❐═══════════════════╗
+┃ 🧠 *AI & Search*
+┗❐═══════════════════╝
+➤ 🤖 .gpt 
+➤ 💡 .gptgo 
+➤ 🧬 .gemini 
+➤ 🧠 .flux 
+➤ 🎨 .imagine
 
-┏━━━━━━━━━━━━━━━━━━━┓
-┃      🧰 _Maker Menu_
-┗━━━━━━━━━━━━━━━━━━━┛
-🔥 .fire | ⚡ .thunder | ❄️ .ice | 🌫️ .snow
-👹 .devil | 💜 .purple | 💡 .light | 💻 .matrix
-🎬 .arena | 👾 .hacker | 🌿 .leaves | 💥 .glitch
-🌌 .metallic | 🖤 .blackpink | ✨ .neon | 🚫 .1917
-🎭 .impressive | 🏖️ .sand
+┏❐═══════════════════╗
+┃ 🎭 *Fun Commands*
+┗❐═══════════════════╝
+➤ 💘 .compliment 
+➤ 😡 .insult 
+➤ 😍 .flirt 
+➤ 📜 .shayari 
+➤ 🌙 .goodnight 
+➤ 🌹 .roseday 
+➤ 🎭 .character 
+➤ ☠️ .wasted 
+➤ 🚢 .ship 
+➤ 😈 .simp 
+➤ 🤪 .stupid 
+➤ 🧠 .brainwash 
+➤ 🐔 .detect 
+➤ 👻 .ghost 
+➤ 🧠 .mindread 
+➤ 💩 .toilet 
+➤ 📞 .callmom 
+➤ 💘 .crush 
+➤ 🪞 .mirror 
+➤ 🛐 .auntyalert 
+➤ 💣 .explode 
+➤ 🔓 .unhack 
+➤ 🕵️ .spy 
+➤ 💨 .bombgas 
+➤ 🛏️ .bedrate 
+➤ 🤰 .pregnancycheck 
+➤ 💘 .lovecheck 
+➤ 🌈 .gaycheck 
+➤ 🏳️‍🌈 .gaydetector 
+➤ 🔥 .hornycheck 
+➤ 😻 .pussylover
 
-┏━━━━━━━━━━━━━━━━━━━┓
-┃   🔍 _Search & Download_
-┗━━━━━━━━━━━━━━━━━━━┛
-🎵 .play | 🎶 .song | 🎥 .video
-📸 .instagram |
-━━━━━━━━━━━━━━━━━━━━━
+┏❐═══════════════════╗
+┃ 🧰 *Maker Menu*
+┗❐═══════════════════╝
+➤ 🔥 .fire
+➤ ⚡ .thunder 
+➤ ❄️ .ice 
+➤ 🌫️ .snow 
+➤ 👹 .devil 
+➤ 💜 .purple 
+➤ 💡 .light 
 `;
 
     try {
