@@ -60,8 +60,8 @@ module.exports = playCommand;
 
 /*
 ╭──────────────────────────────╮
-│ 🔊 Powered by IMRAN-BOT 🎵   │
+│ 🔊 Powered by PATHAN-BOT 🎵   │
 │ 🎧 YT-MP3 Auto Downloader    │
-│ 🔗 GitHub: github.com/ahmadtech12 │
+│ 🔗 GitHub: github.com/Shafiullah90 │
 ╰──────────────────────────────╯
 */
