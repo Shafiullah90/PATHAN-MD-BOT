@@ -31,7 +31,7 @@ async function takeCommand(sock, chatId, message, args) {
         const metadata = {
             'sticker-pack-id': crypto.randomBytes(16).toString('hex'),
             'sticker-pack-name': packname,
-            'sticker-pack-publisher': 'PATHAN-BOT,
+            'sticker-pack-publisher': 'pathanbot,
             'emojis': ['🤖']
         };
 
