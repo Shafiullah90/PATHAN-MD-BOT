@@ -22,7 +22,7 @@ async function warnCommand(sock, chatId, senderId, mentionedJids, message) {
 
         if (!chatId.endsWith('@g.us')) {
             await sock.sendMessage(chatId, { 
-                text: '🔒 This command only works in *group chats*! 🔰 *IMRAN BOT WARNING SYSTEM*'
+                text: '🔒 This command only works in *group chats*! 🔰 *PATHAN BOT WARNING SYSTEM*'
             });
             return;
         }
@@ -32,21 +32,21 @@ async function warnCommand(sock, chatId, senderId, mentionedJids, message) {
             
             if (!isBotAdmin) {
                 await sock.sendMessage(chatId, { 
-                    text: '⚠️ Please promote the bot to *admin* to use this feature.\n🔰 *IMRAN BOT WARNING SYSTEM*'
+                    text: '⚠️ Please promote the bot to *admin* to use this feature.\n🔰 *PATHAN BOT WARNING SYSTEM*'
                 });
                 return;
             }
 
             if (!isSenderAdmin) {
                 await sock.sendMessage(chatId, { 
-                    text: '⛔ Only *group admins* can issue warnings!\n🔰 *IMRAN BOT WARNING SYSTEM*'
+                    text: '⛔ Only *group admins* can issue warnings!\n🔰 *PATHAN BOT WARNING SYSTEM*'
                 });
                 return;
             }
         } catch (adminError) {
             console.error('Error checking admin status:', adminError);
             await sock.sendMessage(chatId, { 
-                text: '🛑 Could not verify admin status. Make sure the bot is admin.\n🔰 *IMRAN BOT WARNING SYSTEM*'
+                text: '🛑 Could not verify admin status. Make sure the bot is admin.\n🔰 *PATHAN BOT WARNING SYSTEM*'
             });
             return;
         }
@@ -60,7 +60,7 @@ async function warnCommand(sock, chatId, senderId, mentionedJids, message) {
 
         if (!userToWarn) {
             await sock.sendMessage(chatId, { 
-                text: '❗ Please *mention* a user or *reply* to their message to warn them.\n🔰 *IMRAN BOT WARNING SYSTEM*'
+                text: '❗ Please *mention* a user or *reply* to their message to warn them.\n🔰 *PATHAN BOT WARNING SYSTEM*'
             });
             return;
         }
@@ -82,7 +82,7 @@ async function warnCommand(sock, chatId, senderId, mentionedJids, message) {
             fs.writeFileSync(warningsPath, JSON.stringify(warnings, null, 2));
 
             const warningMessage = 
-`🔰 *IMRAN BOT WARNING SYSTEM*
+`🔰 *PATHAN BOT WARNING SYSTEM*
 
 🚨 *Warning Issued!*
 
@@ -104,7 +104,7 @@ async function warnCommand(sock, chatId, senderId, mentionedJids, message) {
                 fs.writeFileSync(warningsPath, JSON.stringify(warnings, null, 2));
                 
                 const kickMessage = 
-`🔰 *IMRAN BOT WARNING SYSTEM*
+`🔰 *PATHAN BOT WARNING SYSTEM*
 
 ❌ @${userToWarn.split('@')[0]} has been *removed* from the group after reaching 3 warnings.`;
 
@@ -116,7 +116,7 @@ async function warnCommand(sock, chatId, senderId, mentionedJids, message) {
         } catch (error) {
             console.error('🛑 Error in warn command:', error);
             await sock.sendMessage(chatId, { 
-                text: '🛑 Failed to warn user!\n🔰 *IMRAN BOT WARNING SYSTEM*'
+                text: '🛑 Failed to warn user!\n🔰 *PATHAN BOT WARNING SYSTEM*'
             });
         }
     } catch (error) {
@@ -124,11 +124,11 @@ async function warnCommand(sock, chatId, senderId, mentionedJids, message) {
         if (error.data === 429) {
             await new Promise(resolve => setTimeout(resolve, 2000));
             await sock.sendMessage(chatId, { 
-                text: '🛑 Rate limit reached. Try again shortly.\n🔰 *IMRAN BOT WARNING SYSTEM*'
+                text: '🛑 Rate limit reached. Try again shortly.\n🔰 *PATHAN BOT WARNING SYSTEM*'
             });
         } else {
             await sock.sendMessage(chatId, { 
-                text: '🛑 Unexpected error occurred. Ensure bot has admin rights.\n🔰 *IMRAN BOT WARNING SYSTEM*'
+                text: '🛑 Unexpected error occurred. Ensure bot has admin rights.\n🔰 *PATHAN BOT WARNING SYSTEM*'
             });
         }
     }
