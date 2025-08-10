@@ -1,8 +1,8 @@
 // File: commands/hack.js
 
 module.exports = {
-  name: "imranhack",
-  alias: ["imranhack", "ihack", "hacktarget"],
+  name: "shafihack",
+  alias: ["shafihack", "shack", "hacktarget"],
   description: "Simulate a terrifying 2-minute hacking sequence with funny twist",
   category: "fun",
   async run({ conn, m, args }) {
@@ -29,14 +29,14 @@ module.exports = {
       `🚔 Police drone deployed to your house`,
       `🔴 RED ALERT: 12 satellites now tracking you`,
       `📵 All your contacts have been added to “Hack Victims 2025” group`,
-      `☠️ SYSTEM OVERRIDE COMPLETE — Target owned by ImranBot`
+      `☠️ SYSTEM OVERRIDE COMPLETE — Target owned by pathanbot`
     ];
 
     const funnyTwist = [
       `🤣 Wait wait wait...`,
       `📴 Just kidding!`,
       `🧠 You’ve been hacked by... your own imagination 😂`,
-      `🎉 This was just a prank from *IMRAN BOT* 🤖`,
+      `🎉 This was just a prank from *PATHAN BOT* 🤖`,
       `🪞 Next time, don’t trust commands that sound like “hack” 😈`,
       `💬 Go ahead and prank someone else using *.imranhack* 😎`,
       `📢 Share the laugh — but don’t forget to *breathe again* 😵‍💫`
