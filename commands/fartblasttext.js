@@ -65,7 +65,7 @@ module.exports = {
 
     // Bot branding
     await conn.sendMessage(m.chat, {
-      text: `💨 *Fart mission complete.*\n🤖 *Powered by IMRAN BOT*`,
+      text: `💨 *Fart mission complete.*\n🤖 *Powered by PATHAN BOT*`,
       mentions: [target],
     }, { quoted: m });
   }
