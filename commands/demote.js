@@ -14,7 +14,7 @@ async function demoteCommand(sock, chatId, mentionedJids, message) {
 
             if (!adminStatus.isBotAdmin) {
                 await sock.sendMessage(chatId, {
-                    text: '🔒 *IMRAN BOT* needs admin powers to swing the demotion hammer! 🔨'
+                    text: '🔒 *PATHAN BOT* needs admin powers to swing the demotion hammer! 🔨'
                 });
                 return;
             }
@@ -28,7 +28,7 @@ async function demoteCommand(sock, chatId, mentionedJids, message) {
         } catch (adminError) {
             console.error('Error checking admin status:', adminError);
             await sock.sendMessage(chatId, {
-                text: '⚠️ IMRAN BOT can’t check admin status. Make sure the bot has permissions.'
+                text: '⚠️ PATHAN BOT can’t check admin status. Make sure the bot has permissions.'
             });
             return;
         }
@@ -59,7 +59,7 @@ async function demoteCommand(sock, chatId, mentionedJids, message) {
         const demoter = message.key.participant || message.key.remoteJid;
 
         const demotionMessage =
-            `💔 *IMRAN BOT - DEMOTION NOTICE* 💔\n\n` +
+            `💔 *PATHAN BOT - DEMOTION NOTICE* 💔\n\n` +
             `👎 *User${userToDemote.length > 1 ? 's' : ''} Demoted:*\n` +
             `${usernames.map(name => `• ${name}`).join('\n')}\n\n` +
             `👑 *By:* @${demoter.split('@')[0]}\n` +
@@ -76,7 +76,7 @@ async function demoteCommand(sock, chatId, mentionedJids, message) {
             await new Promise(resolve => setTimeout(resolve, 2000));
             try {
                 await sock.sendMessage(chatId, {
-                    text: '⚠️ Rate limit reached! Let IMRAN BOT catch its breath. 😮‍💨'
+                    text: '⚠️ Rate limit reached! Let PATHAN BOT catch its breath. 😮‍💨'
                 });
             } catch (retryError) {
                 console.error('Error sending retry message:', retryError);
@@ -84,7 +84,7 @@ async function demoteCommand(sock, chatId, mentionedJids, message) {
         } else {
             try {
                 await sock.sendMessage(chatId, {
-                    text: '❌ IMRAN BOT failed to demote! Is the user already powerless or bot not admin?'
+                    text: '❌ PATHAN BOT failed to demote! Is the user already powerless or bot not admin?'
                 });
             } catch (sendError) {
                 console.error('Error sending error message:', sendError);
@@ -120,7 +120,7 @@ async function handleDemotionEvent(sock, groupId, participants, author) {
 
         await new Promise(resolve => setTimeout(resolve, 1000));
 
-        const demotionMessage = `💢 *AUTO-DEMOTION DETECTED BY IMRAN BOT* 💢\n\n` +
+        const demotionMessage = `💢 *AUTO-DEMOTION DETECTED BY PATHAN BOT* 💢\n\n` +
             `👤 *Demoted:*\n${demotedUsernames.map(name => `• ${name}`).join('\n')}\n\n` +
             `👑 *By:* ${demotedBy}\n` +
             `📆 *Time:* ${new Date().toLocaleString()}\n\n` +
