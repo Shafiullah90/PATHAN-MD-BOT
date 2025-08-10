@@ -12,7 +12,7 @@ async function promoteCommand(sock, chatId, mentionedJids, message) {
 
     if (userToPromote.length === 0) {
         await sock.sendMessage(chatId, {
-            text: '🫵 Tag a user or reply to their message to *promote them with IMRAN BOT power!* 🚀'
+            text: '🫵 Tag a user or reply to their message to *promote them with PATHAN BOT power!* 🚀'
         });
         return;
     }
@@ -27,7 +27,7 @@ async function promoteCommand(sock, chatId, mentionedJids, message) {
         const promoterJid = sock.user.id;
 
         const promotionMessage = `
-👑 *ADMIN ALERT FROM IMRAN BOT!* 👑
+👑 *ADMIN ALERT FROM PATHAN BOT!* 👑
 
 🎉 ${usernames.length > 1 ? 'Legends' : 'Legend'} Promoted:
 ${usernames.map(name => `🔺 ${name}`).join('\n')}
@@ -46,7 +46,7 @@ Use them wisely or prepare for *DEMODIFICATION* 🔨`;
     } catch (error) {
         console.error('Promotion Error:', error);
         await sock.sendMessage(chatId, {
-            text: '❌ IMRAN BOT failed to promote the user(s). Maybe try again after praying. 😅'
+            text: '❌ PATHAN BOT failed to promote the user(s). Maybe try again after praying. 😅'
         });
     }
 }
@@ -70,7 +70,7 @@ async function handlePromotionEvent(sock, groupId, participants, author) {
         }
 
         const promotionMessage = `
-🔔 *IMRAN BOT DETECTED A PROMOTION!* 🔔
+🔔 *PATHAN BOT DETECTED A PROMOTION!* 🔔
 
 🙌 Promoted:
 ${promotedUsernames.map(name => `✨ ${name}`).join('\n')}
