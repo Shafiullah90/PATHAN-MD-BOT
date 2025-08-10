@@ -54,7 +54,7 @@ async function tiktokCommand(sock, chatId, message) {
                 const title = data.result.title || "TikTok Video";
 
                 // Custom caption with branding
-                const caption = `🎬 *TikTok Download Complete!*\n\n📄 *Title:* ${title}\n\n🔗 *Source:* TikTok\n\n🤖 Powered by *IMRAN-BOT*`;
+                const caption = `🎬 *TikTok Download Complete!*\n\n📄 *Title:* ${title}\n\n🔗 *Source:* TikTok\n\n🤖 Powered by *Shafi pathan;
 
                 await sock.sendMessage(chatId, {
                     video: { url: videoUrl },
