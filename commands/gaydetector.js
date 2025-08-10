@@ -71,7 +71,7 @@ ${emojiReact}
 🧰 Tools Found: *${gayTools[Math.floor(Math.random() * gayTools.length)]}*
 🌟 Gay Icon Vibe: *${celebs[Math.floor(Math.random() * celebs.length)]}*
 
-📝 *IMRAN BOT Analysis:*
+📝 *PATHAN BOT Analysis:*
 "${
   percent > 80
     ? 'This user’s rainbow energy is OFF the charts. They don’t walk — they strut!'
