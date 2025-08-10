@@ -24,7 +24,7 @@ module.exports = {
       `🤣 JUST KIDDING!`,
       `😳 You were spying on your own face!`,
       `💡 Tip: Next time, at least *pretend* to be FBI 😂`,
-      `👻 IMRAN BOT logs everything... but only for fun.`
+      `👻 PATHAN-BOT logs everything... but only for fun.`
     ];
 
     await conn.sendMessage(m.chat, {
