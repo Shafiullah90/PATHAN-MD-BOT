@@ -16,7 +16,7 @@ async function memeCommand(sock, chatId, message) {
 
             await sock.sendMessage(chatId, { 
                 image: imageBuffer,
-                caption: "> Here's your imran meme! 🐕",
+                caption: "> Here's your pagal meme! 🐕",
                 buttons: buttons,
                 headerType: 1
             },{ quoted: message});
