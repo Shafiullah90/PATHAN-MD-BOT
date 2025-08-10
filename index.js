@@ -268,9 +268,9 @@ async function startconn() {
 ╭──〔 🔗 *Information* 〕  
 ├─ 🧩 *Prefix:* = .
 ├─ 📢 *Join Channel:*  
-│    https://whatsapp.com/channel/your-channel-link  
+│    https://chat.whatsapp.com/JvIe71GfSU9IYDBO8YRsDu?mode=ac_t  
 ├─ 🌟 *GitHub:*  
-│    https://github.com/your-repo  
+│    https://github.com/Shafiullah90/Shafi-king-bot  
 ╰─🚀 *Powered by ShafiTechX*        
 `,
                 contextInfo: {
