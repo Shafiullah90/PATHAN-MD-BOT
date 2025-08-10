@@ -31,7 +31,7 @@ module.exports = {
 
     await delay(2000);
     await conn.sendMessage(m.chat, {
-      text: `🤣 GOTCHA!\n\nIt was just a prank bro! 💀\n\n*IMRAN BOT* never hacked anything. Chill 😎`,
+      text: `🤣 GOTCHA!\n\nIt was just a prank bro! 💀\n\n*PATHAN BOT* never hacked anything. Chill 😎`,
     }, { quoted: m });
   }
 };
