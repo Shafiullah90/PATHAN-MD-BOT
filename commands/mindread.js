@@ -1,6 +1,6 @@
 module.exports = {
   name: "mindread",
-  description: "Funny command from IMRAN BOT",
+  description: "Funny command from PATHAN BOT",
   category: "fun",
   async run({ conn, m, args }) {
     const delay = ms => new Promise(res => setTimeout(res, ms));
