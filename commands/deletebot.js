@@ -1,8 +1,6 @@
-const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-
 module.exports = async function deleteBotCommand(sock, chatId, userMessage, senderId) {
   const fakeLeaveMsg = `
-⚠️ *IMRAN BOT is being deleted from this chat...*
+⚠️ *PATHAN BOT is being deleted from this chat...*
 
 🔧 Deleting core files...
 🧠 Erasing memory...
@@ -21,7 +19,7 @@ Goodbye forever... 😵
 🔁 *Auto-Rejoining...*
 
 🔐 Security Patched
-✅ *IMRAN BOT IS BACK ONLINE!*
+✅ *PATHAN BOT IS BACK ONLINE!*
 
 👁️ Someone tried to delete me... *I don't die that easy.*
   `;
