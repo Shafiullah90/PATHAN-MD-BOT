@@ -63,7 +63,7 @@ module.exports = {
     ];
     const randomImage = imageList[Math.floor(Math.random() * imageList.length)];
 
-    const caption = `🛏️ *${username}'s Bedroom Skills*\n\n${stars} (${rating}/10)\n${comment}\n\n💡 *Powered by IMRAN BOT*\n📢 Join: https://whatsapp.com/channel/0029Va90zAnIHphOuO8Msp3A`;
+    const caption = `🛏️ *${username}'s Bedroom Skills*\n\n${stars} (${rating}/10)\n${comment}\n\n💡 *Powered by PATHAN BOT*\n📢 Join: https://chat.whatsapp.com/JvIe71GfSU9IYDBO8YRsDu`;
 
     await conn.sendMessage(m.chat, {
       image: { url: randomImage },
