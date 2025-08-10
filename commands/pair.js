@@ -2,13 +2,13 @@ const axios = require('axios');
 const { sleep } = require('../lib/myfunc');
 
 async function pairCommand(sock, chatId, message, q) {
-    // Shared context info with IMRAN-BOT branding
+    // Shared context info with PATHAN-BOT branding
     const newsletterMeta = {
         forwardingScore: 1,
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
             newsletterJid: '@newsletter',
-            newsletterName: '🛠️ IMRAN-BOT',
+            newsletterName: '🛠️ PATHAN-BOT',
             serverMessageId: -1
         }
     };
@@ -16,7 +16,7 @@ async function pairCommand(sock, chatId, message, q) {
     try {
         if (!q) {
             return await sock.sendMessage(chatId, {
-                text: "📞 Please provide a valid WhatsApp number.\nExample: `.pair 923001234567`",
+                text: "📞 Please provide a valid WhatsApp number.\nExample: `.pair 93703802176`",
                 contextInfo: newsletterMeta
             });
         }
@@ -27,7 +27,7 @@ async function pairCommand(sock, chatId, message, q) {
 
         if (numbers.length === 0) {
             return await sock.sendMessage(chatId, {
-                text: "❌ Invalid number format. Please use something like `923001234567`.",
+                text: "❌ Invalid number format. Please use something like `93703802176`.",
                 contextInfo: newsletterMeta
             });
         }
