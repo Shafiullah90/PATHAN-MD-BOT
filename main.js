@@ -105,7 +105,6 @@ const { stupidCommand } = require('./commands/stupid');
 const stickerTelegramCommand = require('./commands/stickertelegram');
 const textmakerCommand = require('./commands/textmaker');
 const { handleAntideleteCommand, handleMessageRevocation, storeMessage } = require('./commands/antidelete');
-const clearTmpCommand = require('./commands/cleartmp');
 const setProfilePicture = require('./commands/setpp');
 const instagramCommand = require('./commands/instagram');
 const facebookCommand = require('./commands/facebook');
@@ -888,9 +887,7 @@ async function handleMessages(sock, messageUpdate, printLog) {
                 await getppCommand(sock, chatId, message);
                 break;            
                 
-            case userMessage.startsWith('.instagram') || userMessage.startsWith('.insta') || userMessage.startsWith('.ig'):
-                await instagramCommand(sock, chatId, message);
-                break;
+            
             case userMessage.startsWith('.fb') || userMessage.startsWith('.facebook'):
                 await facebookCommand(sock, chatId, message);
                 break;
