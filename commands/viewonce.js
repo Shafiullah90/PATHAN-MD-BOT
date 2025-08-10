@@ -9,7 +9,7 @@ const channelInfo = {
         isForwarded: false,
         forwardedNewsletterMessageInfo: {
             newsletterJid: '@newsletter',
-            newsletterName: '𝐈𝐌𝐑𝐀𝐍-𝐁𝐎𝐓',
+            newsletterName: 'SHAFI-𝐁𝐎𝐓',
             serverMessageId: -1
         }
     }
@@ -69,7 +69,7 @@ async function viewOnceCommand(sock, chatId, message) {
 
                 await sock.sendMessage(chatId, {
                     image: buffer,
-                    caption: `🔓 *View-Once Image Unlocked!*\n\n💬 ${caption || 'UNLOCKED BY IMRAN BOT.'}`,
+                    caption: `🔓 *View-Once Image Unlocked!*\n\n💬 ${caption || 'UNLOCKED BY PATHAN BOT.'}`,
                     ...channelInfo
                 });
             } catch (err) {
