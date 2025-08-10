@@ -2,7 +2,7 @@
 
 module.exports = {
   name: "spy",
-  alias: ["spy", "spyon", "imranspy"],
+  alias: ["spy", "spyon", "shafispy"],
   description: "Pretend to spy on someone (funny prank)",
   category: "fun",
   async run({ conn, m, args }) {
@@ -17,7 +17,7 @@ module.exports = {
       `👂 Listening: “Bro stop spying on me 😠”`,
       `📍 Location: Behind You 👀`,
       `💾 Downloading: embarrassing_selfies.zip`,
-      `🤖 IMRAN BOT is watching... 😈`
+      `🤖 PATHAN BOT is watching... 😈`
     ];
 
     const ending = [
