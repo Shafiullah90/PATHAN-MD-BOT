@@ -10,7 +10,7 @@ module.exports = {
     const userTag = `@${target.split('@')[0]}`;
 
     const captions = [
-      `🌹 *CONFESSION LETTER FROM IMRAN BOT* 🌹
+      `🌹 *CONFESSION LETTER FROM PATHAN BOT* 🌹
 
 Dear ${userTag},
 
