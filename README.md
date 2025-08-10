@@ -10,7 +10,7 @@
 
 ---
 <div align="center">
-  <a href="https://github.com/Shafiullah90/Shafi-king-bot/forks">">
+  <a href="https://github.com/Shafiullah90/Shafi-king-bot/forks">
     <img src="https://img.shields.io/badge/Fork%20Repo-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=darkblue&color=darkblue" alt="FORK REPO"/>
   </a>
 </div>>
@@ -64,7 +64,7 @@ No extra steps, no hassle. Just easy setup. 😄
 💾 3. Download Bot Zip
 
 <p align="left">
-  <a href="https://github.com/Shafiullah90/Shafi-king-bot.git">
+  <a href="https://github.com/Pp9697724/Shafi-king-bot/archive/refs/heads/main.zip">
     <img src="https://img.shields.io/badge/Download-Zip-blueviolet?style=for-the-badge&logo=github" alt="Download ZIP"/>
   </a>
 </p>
