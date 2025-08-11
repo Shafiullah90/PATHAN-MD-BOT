@@ -14,7 +14,7 @@ async function takeCommand(sock, chatId, message, args) {
             });
         }
 
-        const packname = args.join(' ') || 'PATHAN-BOT;
+        const packname = args.join(' ') || 'PATHAN-BOT';
 
         // Download sticker
         const stream = await downloadContentFromMessage(quoted.stickerMessage, 'sticker');
@@ -31,7 +31,7 @@ async function takeCommand(sock, chatId, message, args) {
         const metadata = {
             'sticker-pack-id': crypto.randomBytes(16).toString('hex'),
             'sticker-pack-name': packname,
-            'sticker-pack-publisher': 'pathanbot,
+            'sticker-pack-publisher': 'PATHAN-BOT',
             'emojis': ['🤖']
         };
 
@@ -67,3 +67,4 @@ async function takeCommand(sock, chatId, message, args) {
 }
 
 module.exports = takeCommand;
+
