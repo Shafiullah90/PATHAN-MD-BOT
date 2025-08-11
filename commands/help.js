@@ -28,7 +28,7 @@ async function helpCommand(sock, chatId, message) {
 
     const helpMessage = `
 ┏━━━━━━━━━━━━━━━━━━┓
-┃  💻Commands Menu💻
+┃🇦🇫 💻Commands Menu💻🇦🇫 
 ┗━━━━━━━━━━━━━━━━━━┛
  📝 _Owner Information_
   ━━━━━━━━━━━━━━━━━━
@@ -165,7 +165,7 @@ async function helpCommand(sock, chatId, message) {
 ➤ 🏳️‍🌈 .gaydetector 
 ➤ 🔥 .hornycheck 
 ➤ 😻 .pussylover
-
+➤.🧑‍💻 .shafihack/shack
 ┏❐═══════════════════╗
 ┃ 🧰 *Maker Menu*
 ┗❐═══════════════════╝
