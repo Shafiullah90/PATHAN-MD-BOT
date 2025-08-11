@@ -10,7 +10,7 @@ const path = require('path');
 const axios = require('axios');
 const ffmpeg = require('fluent-ffmpeg');
 const { addWelcome, delWelcome, isWelcomeOn, addGoodbye, delGoodBye, isGoodByeOn } = require('./lib/index');
-
+const tagAllCommand = require('./commands/tagall');
 
 // Command imports
 const flirtCommand = require('./commands/flirt');
