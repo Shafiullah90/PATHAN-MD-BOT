@@ -506,9 +506,10 @@ async function handleMessages(sock, messageUpdate, printLog) {
             case userMessage === '.pregnant':
                 await pregnancycheckCommand.run({ conn: sock, m: message });
                 break;
-   case userMessage === "I'm.alive":
-    await aliveCommand(sock, chatId, message);
-    break;             
+   // .alive
+case userMessage === '.alive':
+    await aliveCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
+    break;
 
             // .brainwash
             case userMessage === '.brainwash':
