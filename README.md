@@ -7,9 +7,16 @@
   </a> 
 </div>
 
-*✅ Fork the Repository (A MUST): [CLICK HERE](https://github.com/Shafiullah90/Shafi-king-bot/fork)*  
+this is a PATHAN-MD BOT and it's easy to deploy just follow step by step 
+
+First 👇👇👇👇clcik All link
+
+*✅ Fork the Repository (A MUST): [CLICK HERE](https://github.com/Shafiullah90/Shafi-king-bot/forks)*  
 *⭐ Star the Repo for Motivation: [CLICK HERE](https://github.com/Shafiullah90/Shafi-king-bot/stargazers)*  
-*💾 Download Bot ZIP File: [CLICK HERE](https://github.com/Pp9697724/Shafi-king-bot/archive/refs/heads/main.zip)*
+*💾 Download Bot ZIP File: [CLICK HERE](https://github.com/Shafiullah90/Shafi-king-bot/archive/refs/heads/main.zip)*
+
+now clcik here to deploy on bot hosting 
+no need session-id just upload file in bot hosting 
 
 ---
 <div align="center">
