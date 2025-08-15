@@ -18,6 +18,8 @@ First 👇👇👇👇clcik All link
 now clcik here to deploy on bot hosting 
 no need session-id just upload file in bot hosting 
 
+ **Deploy on [BOT HOSTING PANEL(DISCORD)](https://bot-hosting.net/?aff=1251693529084723300)**
+
 ---
 <div align="center">
   <a href="https://github.com/Shafiullah90/Shafi-king-bot/forks">
