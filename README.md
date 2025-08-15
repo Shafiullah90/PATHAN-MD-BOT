@@ -7,7 +7,8 @@
   </a> 
 </div>
 
-
+  **Fork Repo First, [CLICK HERE](https://github.com/Shafiullah90/Shafi-king-bot/forks) (A MUST) and [CLICK HERE] FOR STAR (A MUST)(https://github.com/Shafiullah90/Shafi-king-bot/stargazers) Star ⭐ Repository for Courage.**
+[CLICK HERE] For 💾 . Download Bot Zip file(https://github.com/Pp9697724/Shafi-king-bot/archive/refs/heads/main.zip)
 ---
 <div align="center">
   <a href="https://github.com/Shafiullah90/Shafi-king-bot/forks">
