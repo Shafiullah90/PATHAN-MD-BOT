@@ -18,9 +18,35 @@ First 👇👇👇👇clcik All link
 now clcik here to deploy on bot hosting 
 no need session-id just upload file in bot hosting 
 
- **Deploy on [BOT HOSTING PANEL(DISCORD)](https://bot-hosting.net/?aff=1251693529084723300)**
+ **Deploy on [BOT HOSTING PANEL(DISCORD)]: [CLICK HERE](https://bot-hosting.net/?aff=1251693529084723300)**
 
----
+ </a>
+
+</details>
+
+<a><img src='https://i.imgur.com/LyHic3i.gif'/>
+
+<details>
+<summary>𝘏𝘖𝘞 𝘛𝘖 𝘋𝘌𝘗𝘓𝘖𝘠 𝘖𝘕 𝘗𝘈𝘕𝘌𝘓𝘚</summary>
+ 
+1. `Fork` the Repository.
+2. If already forked then `sync` fork repository.
+3. Click on the green `Code` button and click `download as zip`.
+4. `Upload` the script zip file to your `panel`.
+5. `Unarchieve` the uploaded zip file.
+66.and delete the old file which uploaded 
+7. Open the `unarchieved folder` and `move` all files to container by typing (`../`)
+8. Now go to `console` and `start` bot.
+9. Wait for `5-10 mins` to enter your number.
+10. Enter your number when requested to get the pair code.
+11. Enter pair code in link devices in whatsapp.
+12. Deployment successful.
+</details>
+ 
+<a><img src='https://i.imgur.com/LyHic3i.gif'/>
+
+
+
 <div align="center">
   <a href="https://github.com/Shafiullah90/Shafi-king-bot/forks">
     <img src="https://img.shields.io/badge/Fork%20Repo-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=darkblue&color=darkblue" alt="FORK REPO"/>
