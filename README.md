@@ -18,7 +18,7 @@ First 👇👇👇👇clcik All link
 now clcik here to deploy on bot hosting 
 no need session-id just upload file in bot hosting 
 
- **Deploy on [BOT HOSTING PANEL(DISCORD)]: [CLICK HERE](https://bot-hosting.net/?aff=1251693529084723300)**
+ **Deploy on [BOT HOSTING PANEL(DISCORD)]: [CLICK HERE](https://bot-hosting.net/?aff=1275699384331403356)**
 
  </a>
 
@@ -48,21 +48,7 @@ no need session-id just upload file in bot hosting
 
 
 <div align="center">
-  <a href="https://github.com/Shafiullah90/Shafi-king-bot/forks">
-    <img src="https://img.shields.io/badge/Fork%20Repo-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=darkblue&color=darkblue" alt="FORK REPO"/>
-  </a>
-</div>>
-  </a>
-  <a href="https://github.com/Shafiullah90/Shafi-king-bot/stargazers">
-    <img src="https://img.shields.io/github/stars/Shafiullah90/Shafi-king-bot" />
-  </a>
-  <a href="https://github.com/Shafiullah90/king-bot/issues">
-    <img src="https://img.shields.io/github/issues/Shafiullah90/king-bot?style=for-the-badge&logo=github&label=Issues&color=red" alt="GitHub issues" />
-  </a>
-  <a href="https://www.npmjs.com/package/king-bot">
-    <img src="https://img.shields.io/npm/v/king-bot?style=for-the-badge&color=blue" alt="NPM version" />
-  </a>
-</p>
+
 
 ---
 
