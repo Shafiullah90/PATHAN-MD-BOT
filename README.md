@@ -15,14 +15,28 @@ First 👇👇👇👇clcik All link
 *⭐ Star the Repo for Motivation: [CLICK HERE](https://github.com/Shafiullah90/Shafi-king-bot/stargazers)*  
 *💾 Download Bot ZIP File: [CLICK HERE](https://github.com/Shafiullah90/Shafi-king-bot/archive/refs/heads/main.zip)*
 
-now clcik here to deploy on bot hosting 
-no need session-id just upload file in bot hosting 
+
 
  **Deploy on [BOT HOSTING PANEL(DISCORD)]: [CLICK HERE](https://bot-hosting.net/?aff=1275699384331403356)**
 
  </a>
 
 </details>
+
+
+🌐 Don't Have a Hosting Panel Account?
+
+No worries! If you don’t have a hosting panel account, just follow these simple steps:
+
+1. 👉 [*Click Here to Register*](https://bot-hosting.net/login) on the Hosting Panel.  
+2. 🎁 After signing up, you can *collect 10 coins for free every day* just by logging in.  
+3. 🪙 Once you’ve saved enough coins, you can *create a server*.  
+4. 🚀 After creating your server, you’ll be ready to *deploy your bot easily*!
+
+It’s that simple. No coding skills needed — just follow the steps and enjoy your bot live 24/7!
+
+
+
 
 <a><img src='https://i.imgur.com/LyHic3i.gif'/>
 
