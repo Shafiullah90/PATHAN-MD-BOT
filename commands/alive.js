@@ -1,18 +1,43 @@
-module.exports = {
-  name: "alive",
-  description: "Shows the bot is running",
-  category: "info",
-  async run({ conn, m }) {
-    const text = `
-🤖 *PATHAN BOT IS ALIVE!*
+// commands/alive.js
+const os = require("os");
 
-╭─〔 *Bot Status* 〕
-├ 🔋 *Power:* ON
-├ 📡 *Connection:* Stable
-├ 👤 *Owner:* Shafiullah
-├ 🌐 *GitHub:* github.com/Shafiullah90/Shafi-king-bot
-╰─🛠️ *Made with love & code!*
-    `;
-    await conn.sendMessage(m.chat, { text }, { quoted: m });
-  }
+module.exports = {
+    name: 'alive',
+    alias: ['bot', 'online'],
+    category: 'general',
+    desc: 'Check if bot is alive',
+    async run({ conn, m, args }) {
+        try {
+            // ✅ Safe extraction
+            const sender = m.key?.participant || m.key?.remoteJid || "unknown";
+            const chatId = m.key?.remoteJid;
+            const tagUser = sender.includes("@") ? "@" + sender.split("@")[0] : sender;
+
+            // 🕒 Uptime calculation
+            let uptimeSec = process.uptime();
+            let hours = Math.floor(uptimeSec / 3600);
+            let minutes = Math.floor((uptimeSec % 3600) / 60);
+            let seconds = Math.floor(uptimeSec % 60);
+            let uptime = `${hours}h ${minutes}m ${seconds}s`;
+
+            const aliveMsg = `
+╔══✪〘 PATHAN-𝗕𝗢𝗧 〙✪══
+┃
+┃   ✅ Bot is Alive & Running
+┃   ⏱️ Uptime: ${uptime}
+┃   👤 Requested by: ${tagUser}
+┃
+╚══════════════════╝
+            `;
+
+            await conn.sendMessage(chatId, { 
+                text: aliveMsg, 
+                mentions: [sender] 
+            }, { quoted: m });
+
+        } catch (e) {
+            console.error("Error in alive command:", e);
+            await conn.sendMessage(m.key.remoteJid, { text: "❌ Something went wrong in alive command." }, { quoted: m });
+        }
+    }
 };
