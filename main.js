@@ -9,8 +9,10 @@ const ytdl = require('ytdl-core');
 const path = require('path');
 const axios = require('axios');
 const ffmpeg = require('fluent-ffmpeg');
-const { addWelcome, delWelcome, isWelcomeOn, addGoodbye, delGoodBye, isGoodByeOn } = require('./lib/index');
+const { addWelcome, delWelcome, isWelcomeOn, addGoodbye, delGoodBye, isGoodByeOn, isSudo } = require('./lib/index');
 const tagAllCommand = require('./commands/tagall');
+
+
 
 // Command imports
 const flirtCommand = require('./commands/flirt');
@@ -23,6 +25,7 @@ const gaycheckCommand = require('./commands/gaycheck');
 const lovecheckCommand = require('./commands/lovecheck');
 const hornycheckCommand = require('./commands/hornycheck');
 const pussyloverCommand = require('./commands/pussylover');
+const sudoCommand = require('./commands/sudo');
 const gaydetectorCommand = require('./commands/gaydetector');
 const fartblasttextCommand = require('./commands/fartblasttext');
 const bedskillsCommand = require('./commands/bedskills');
@@ -159,10 +162,13 @@ async function handleMessages(sock, messageUpdate, printLog) {
             return;
         }
 
+        
         const chatId = message.key.remoteJid;
         const senderId = message.key.participant || message.key.remoteJid;
         const isGroup = chatId.endsWith('@g.us');
+  const senderIsSudo = await isSudo(senderId);
 
+        
         const userMessage = (
             message.message?.conversation?.trim() ||
             message.message?.extendedTextMessage?.text?.trim() ||
