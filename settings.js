@@ -1,13 +1,14 @@
 const settings = {
-  packname: '✨PATHAN-BOT✨',
-  author: '👑 Shafi PATHAN🇦🇫',
-  botName: '🤖 PATHAN BOT',
-  botOwner: 'Shafi PATHAN🇦🇫', // Your name here u can change 
-  ownerNumber: '93703802176', // Set your number here without + symbol.
+  packname: 'Knight Bot',
+  author: '‎',
+  botName: "Knight Bot",
+  botOwner: 'Professor', // Your name
+  ownerNumber: '919876543210', //Set your number here without + symbol, just add country code & number without any space
   giphyApiKey: 'qnl7ssQChTdPjsKta2Ax2LMaGXz303tq',
-  commandMode: 'public', // can be 'public' or 'private'
-  description: '💬 A powerful fun WhatsApp MD bot built with ❤️ by pathan power.',
-  version: '2.0.0',
+  commandMode: "public",
+  description: "This is a bot for managing group commands and automating tasks.",
+  version: "2.1.5",
+  updateZipUrl: "https://github.com/mruniquehacker/Knightbot-MD/archive/refs/heads/main.zip",
 };
 
 module.exports = settings;
