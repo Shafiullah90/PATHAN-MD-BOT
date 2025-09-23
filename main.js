@@ -66,7 +66,6 @@ const factCommand = require('./commands/fact');
 const weatherCommand = require('./commands/weather');
 const newsCommand = require('./commands/news');
 const kickCommand = require('./commands/kick');
-const simageCommand = require('./commands/simage');
 const attpCommand = require('./commands/attp');
 const { startHangman, guessLetter } = require('./commands/hangman');
 const { startTrivia, answerTrivia } = require('./commands/trivia');
@@ -812,9 +811,7 @@ case userMessage === '.alive':
                 const autoStatusArgs = userMessage.split(' ').slice(1);
                 await autoStatusCommand(sock, chatId, message, autoStatusArgs);
                 break;
-            case userMessage.startsWith('.simp'):
-                await simpCommand(sock, chatId, message);
-                break;
+
             case userMessage.startsWith('.metallic'):
                 await textmakerCommand(sock, chatId, message, userMessage, 'metallic');
                 break;
