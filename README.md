@@ -62,7 +62,7 @@
 1. Fork the Repository  
 2. Sync fork if already forked  
 3. Download ZIP → Upload to your panel  
-4. Extract files & delete ZIP  
+4. Unarchieve files & delete another 
 5. Move all files into container (../)  
 6. Go to console → Start bot  
 7. Wait 5–10 mins  
