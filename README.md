@@ -1,125 +1,120 @@
 # 🤖✨ PATHAN-BOT
 
-</div>  
 <div align="center">  
-  <a href="">  
-    <img src="https://files.catbox.moe/psvj7p.jpeg" alt="PATHAN-BOT" height="300">  
-  </a>  
+  <img src="https://files.catbox.moe/psvj7p.jpeg" alt="PATHAN-BOT" height="300"/>  
+  <br><br>  
+
+  <img src="https://readme-typing-svg.demolab.com?font=Fredoka+One&size=40&pause=1000&color=ff00ff,00ffff,32cd32,ffa500&center=true&vCenter=true&width=800&height=60&lines=Welcome+to+PATHAN-BOT!;Multi-Device+WhatsApp+Bot;Fast+%7C+Reliable+%7C+Powerful;Made+with+%E2%9D%A4+by+Shafi+Pathan"/>  
 </div>  
 
 <p align="center">  
-🚀 A **Powerful Multi-Device WhatsApp Bot** made with ❤️ by <b>Shafi Pathan</b>  
+  🚀 A next-gen **Multi-Device WhatsApp Bot** with 400+ features.  
+  <br>Run it on Hosting Panel, VPS, or even **Termux on Android**!  
 </p>  
 
 ---
 
-## 🌟 Start Here
+## 🏆 GitHub Stats
 
-*✅ Fork the Repository (A MUST): [CLICK HERE](https://github.com/Shafiullah90/Shafi-king-bot/forks)*
-*⭐ Star the Repo for Motivation: [CLICK HERE](https://github.com/Shafiullah90/Shafi-king-bot/stargazers)*
-*💾 Download Bot ZIP File: [CLICK HERE](https://github.com/Shafiullah90/Shafi-king-bot/archive/refs/heads/main.zip)*
-
-**Deploy on Hosting Panel (Discord): [CLICK HERE](https://bot-hosting.net/?aff=1275699384331403356)**
+<p align="center">  
+  <a href="https://github.com/Shafiullah90/Shafi-king-bot/forks"><img src="https://img.shields.io/github/forks/Shafiullah90/Shafi-king-bot?style=for-the-badge&logo=github&color=darkgreen"/></a>  
+  <a href="https://github.com/Shafiullah90/Shafi-king-bot/stargazers"><img src="https://img.shields.io/github/stars/Shafiullah90/Shafi-king-bot?style=for-the-badge&logo=github&color=yellow"/></a>  
+  <a href="https://github.com/Shafiullah90/Shafi-king-bot/issues"><img src="https://img.shields.io/github/issues/Shafiullah90/Shafi-king-bot?style=for-the-badge&logo=github&color=red"/></a>  
+  <a href="https://github.com/Shafiullah90/Shafi-king-bot"><img src="https://img.shields.io/badge/Made%20By-Shafi%20Pathan-blueviolet?style=for-the-badge"/></a>  
+</p>  
 
 ---
 
-## 🌐 Don’t Have a Hosting Panel?
+<div align="center">  
+  <img src="https://readme-typing-svg.demolab.com?font=Fredoka+One&size=30&pause=1000&color=32cd32,ff6347,1e90ff&center=true&width=500&height=40&lines=Quick+Links"/>  
+</div>  
 
-No worries! Just follow these steps:
-
-1. 👉 [*Click Here to Register*](https://bot-hosting.net/login) on Hosting Panel.
-2. 🎁 Log in daily to collect **10 free coins**.
-3. 🪙 Save coins → create your **server**.
-4. 🚀 Deploy your bot live, 24/7!
+*✅ Fork the Repository: [CLICK HERE](https://github.com/Shafiullah90/Shafi-king-bot/forks)*
+*⭐ Star the Repo: [CLICK HERE](https://github.com/Shafiullah90/Shafi-king-bot/stargazers)*
+*💾 Download ZIP: [CLICK HERE](https://github.com/Shafiullah90/Shafi-king-bot/archive/refs/heads/main.zip)*
+*🚀 Deploy on Hosting Panel: [CLICK HERE](https://bot-hosting.net/?aff=1275699384331403356)*
 
 ---
 
 <a><img src="https://i.imgur.com/LyHic3i.gif"/></a>
 
-<details>  
-<summary>⚡ HOW TO DEPLOY ON PANELS (CLICK TO EXPAND)</summary>  
+## 🌐 No Hosting Panel?
 
-1. `Fork` the Repository.
-2. If already forked → `Sync` your fork.
-3. Click the green `Code` button → Download ZIP.
-4. Upload the ZIP to your **panel**.
-5. Extract files & delete the ZIP.
-6. Move all files into container (`../`).
-7. Go to **console** → Start bot.
-8. Wait **5–10 mins**.
-9. Enter your WhatsApp number when asked.
-10. Enter **pair code** in WhatsApp → Link device.
-11. ✅ Done! Your bot is live.
+1. 👉 [Register here](https://bot-hosting.net/login)
+2. 🎁 Log in daily → Collect **10 free coins**
+3. 🪙 Save coins → Create your **server**
+4. 🚀 Deploy bot → 24/7 uptime
+
+---
+
+<details>  
+<summary>⚡ Deployment on Panels (CLICK TO EXPAND)</summary>  
+
+```markdown
+1. Fork the Repository  
+2. Sync fork if already forked  
+3. Download ZIP → Upload to your panel  
+4. Extract files & delete ZIP  
+5. Move all files into container (../)  
+6. Go to console → Start bot  
+7. Wait 5–10 mins  
+8. Enter your WhatsApp number → Get Pair Code  
+9. Link device → ✅ Bot Online!  
+```
 
 </details>  
 
 ---
 
 <div align="center">  
-  <img src="https://readme-typing-svg.demolab.com?font=Fredoka+One&size=30&pause=1000&color=32cd32,ff6347,1e90ff&center=true&width=400&height=40&lines=What+is+PATHAN-BOT%3F"/>  
+  <img src="https://readme-typing-svg.demolab.com?font=Fredoka+One&size=30&pause=1000&color=ff4500,32cd32,00ced1&center=true&width=500&height=40&lines=Run+on+Termux+(Android)"/>  
 </div>  
-
-PATHAN-BOT is a **multi-device WhatsApp bot** with **400+ commands** — fun, moderation, automation & more.
-Built on **Baileys**, optimized for speed & reliability.
-
----
-
-<div align="center">  
-  <img src="https://readme-typing-svg.demolab.com?font=Fredoka+One&size=30&pause=1000&color=00ced1,ff4500,32cd32&center=true&width=400&height=40&lines=Deployment+Guide"/>  
-</div>  
-
-🎉 No external pair links needed!
-✅ Just run the bot → Enter your WhatsApp number → Get **pairing code** instantly in terminal.
-
----
-
-## 📱 Run on Termux
 
 <details>  
-<summary>📌 Termux Installation (CLICK TO EXPAND)</summary>  
+<summary>📱 Termux Installation (CLICK TO EXPAND)</summary>  
 
 ```bash
-# Update & install dependencies
+# Update Termux
 pkg update && pkg upgrade
+
+# Install Node.js & Git
 pkg install git nodejs -y
 
 # Clone repo
 git clone https://github.com/Shafiullah90/Shafi-king-bot.git
 
-# Go inside folder
+# Enter folder
 cd Shafi-king-bot
 
-# Install packages
+# Install dependencies
 npm install
 
 # Start the bot
 node index.js
 ```
 
-👉 Enter your WhatsApp number → Get **pair code** → Link device → Bot is live 🎉
+👉 Enter your WhatsApp number → Get **pairing code** → Link device → 🎉 Bot is live
 
 </details>  
 
 ---
 
-## 🔑 Key Features
+<div align="center">  
+  <img src="https://readme-typing-svg.demolab.com?font=Fredoka+One&size=30&pause=1000&color=ffa500,ff6347,1e90ff&center=true&width=500&height=40&lines=Key+Features"/>  
+</div>  
 
 * 💬 Multi-Device WhatsApp Support
-* 🎉 400+ Fun Commands (`.shafihack`, `.gaydetector`, etc.)
-* 🔧 Group Moderation Tools (ban, promote, mute)
-* 📁 Media Downloader (videos, stickers, audio, etc.)
-* 🤖 Customizable (prefix, modes, owner control)
-* ⚡ Fast & Reliable
+* 🎉 400+ Fun Commands (games, pranks, tools)
+* 🔧 Group Moderation Tools
+* 📁 Media Downloader (YT, IG, TikTok, etc.)
+* 🤖 Fully Customizable (prefix, owner/admin control)
+* ⚡ Fast & Reliable (auto reconnect, error handling)
 
 ---
 
-## 📜 License
-
-This project is licensed under the **MIT License** — see [LICENSE](LICENSE).
-
----
-
-## 📞 Contact Me
+<div align="center">  
+  <img src="https://readme-typing-svg.demolab.com?font=Fredoka+One&size=30&pause=1000&color=00ff7f,ff1493,1e90ff&center=true&width=500&height=40&lines=Contacts"/>  
+</div>  
 
 <p align="center">  
   <a href="https://wa.me/93703802176"><img src="https://img.shields.io/badge/WhatsApp-%2325D366?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>  
@@ -134,10 +129,12 @@ This project is licensed under the **MIT License** — see [LICENSE](LICENSE).
 
 ---
 
-<p align="center">✨ Made with ❤️ by <b>Shafi Pathan</b> — Star ⭐ the repo if you like it! ✨</p>  
+<div align="center">  
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&duration=3000&color=ff69b4,ffd700,00ffff&center=true&vCenter=true&width=800&lines=✨+Made+with+love+by+Shafi+Pathan;⭐+Star+the+repo+if+you+like+it!"/>  
+</div>  
 
 ---
 
-👉 Now your README has the **same “click here → expand” style**, links stay blue, and code/tutorials are hidden until opened.
+⚡ This version uses **gradients, animations, collapsible sections, badges, and glowing headings** — it will truly stand out.
 
-Do you want me to also **add GitHub shields/badges at the very top** (forks, stars, issues, version) for an even more pro look?
+Do you also want me to add a **moving rainbow gradient footer banner** (like a glowing neon footer that scrolls endlessly)?
