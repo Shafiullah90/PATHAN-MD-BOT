@@ -4,12 +4,17 @@
   <img src="https://files.catbox.moe/psvj7p.jpeg" alt="PATHAN-BOT" height="300"/>  
   <br><br>  
 
-  <img src="https://readme-typing-svg.demolab.com?font=Fredoka+One&size=40&pause=1000&color=ff00ff,00ffff,32cd32,ffa500&center=true&vCenter=true&width=800&height=60&lines=Welcome+to+PATHAN-BOT!;Multi-Device+WhatsApp+Bot;Fast+%7C+Reliable+%7C+Powerful;Made+with+%E2%9D%A4+by+Shafi+Pathan"/>  
+  <img src="https://readme-typing-svg.demolab.com?font=Fredoka+One&size=40&pause=1000&color=ff00ff,00ffff,32cd32,ffa500&center=true&vCenter=true&width=900&height=70&lines=Welcome+to+PATHAN-BOT!;Multi-Device+WhatsApp+Bot;Fast+%7C+Reliable+%7C+Powerful;Made+with+%E2%9D%A4+by+Shafi+Pathan"/>  
 </div>  
 
+---
+
+## 📊 Repo Stats
+
 <p align="center">  
-  🚀 A next-gen **Multi-Device WhatsApp Bot** with 400+ features.  
-  <br>Run it on Hosting Panel, VPS, or even **Termux on Android**!  
+  <img src="https://komarev.com/ghpvc/?username=Shafiullah90&label=👀+Profile+Views&color=ff69b4&style=for-the-badge"/>  
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=Shafiullah90.Shafi-king-bot&left_color=blueviolet&right_color=brightgreen&left_text=Unique+Visitors"/>  
+  <img src="https://img.shields.io/github/repo-size/Shafiullah90/Shafi-king-bot?color=gold&style=for-the-badge&logo=github&label=Repo+Size"/>  
 </p>  
 
 ---
@@ -129,12 +134,21 @@ node index.js
 
 ---
 
+## 🌈 Rainbow Footer
+
 <div align="center">  
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&duration=3000&color=ff69b4,ffd700,00ffff&center=true&vCenter=true&width=800&lines=✨+Made+with+love+by+Shafi+Pathan;⭐+Star+the+repo+if+you+like+it!"/>  
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=90&section=footer&animation=twinkling"/>  
+  <br>  
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=ff00ff,00ffff,32cd32,ffa500&center=true&vCenter=true&width=900&lines=✨+Made+with+Love+by+Shafi+Pathan;⭐+Star+the+Repo+if+you+Love+It!;🚀+The+Future+of+WhatsApp+Bots+is+Here"/>  
 </div>  
 
 ---
 
-⚡ This version uses **gradients, animations, collapsible sections, badges, and glowing headings** — it will truly stand out.
+⚡ Now your README is:
 
-Do you also want me to add a **moving rainbow gradient footer banner** (like a glowing neon footer that scrolls endlessly)?
+* ✅ 100% stylish (rainbow gradient works always)
+* ✅ Professional + easy for new users
+* ✅ Collapsible guides keep it clean
+* ✅ Looks like a premium project page 🚀
+
+Do you also want me to add the **GitHub contribution snake animation** 🐍 at the bottom (it crawls & eats your commits, looks fire 🔥)?
