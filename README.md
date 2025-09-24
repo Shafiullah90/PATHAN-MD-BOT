@@ -48,7 +48,7 @@
 
 ## 🌐 No Hosting Panel?
 
-1. 👉 [Register here](https://bot-hosting.net/login)
+1. 👉 [Register here](https://control.bot-hosting.net/)
 2. 🎁 Log in daily → Collect **10 free coins**
 3. 🪙 Save coins → Create your **server**
 4. 🚀 Deploy bot → 24/7 uptime
