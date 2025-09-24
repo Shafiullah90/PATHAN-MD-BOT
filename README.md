@@ -1,4 +1,4 @@
-# 🤖✨PATHAN-BOT🇦🇫
+# 🤖PATHAN-BOT🇦🇫
 
 <div align="center">  
   <img src="https://files.catbox.moe/psvj7p.jpeg" alt="PATHAN-BOT" height="300"/>  
