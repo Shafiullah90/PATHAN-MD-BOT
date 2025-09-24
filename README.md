@@ -1,4 +1,4 @@
-# 🤖✨ PATHAN-BOT
+# 🤖✨ PATHAN-BOT🇦🇫
 
 <div align="center">  
   <img src="https://files.catbox.moe/psvj7p.jpeg" alt="PATHAN-BOT" height="300"/>  
@@ -140,8 +140,7 @@ node index.js
 ## 🌈 Rainbow Footer
 
 <div align="center">  
-  <img src="https://files.catbox.moe/psvj7p.jpeg
-  type=waving&color=gradient&height=90&section=footer&animation=twinkling"/>  
+  <img src="https://capsule-render.vercel.app/api?  type=waving&color=gradient&height=90&section=footer&animation=twinkling"/>  
   <br>  
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=ff00ff,00ffff,32cd32,ffa500&center=true&vCenter=true&width=900&lines=✨+Made+with+Love+by+Shafi+Pathan;⭐+Star+the+Repo+if+you+Love+It!;🚀+The+Future+of+WhatsApp+Bots+is+Here"/>  
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=ff00ff,00ffff,32cd32,ffa500&center=true&vCenter=true&width=900&lines=✨+Made+with+Love+by+Shafi+Pathan🇦🇫;⭐+Star+the+Repo+if+you+Love+It!;🚀+The+Future+of+WhatsApp+Bots+is+Here"/>  
 </div>  
