@@ -78,7 +78,6 @@ const { truthCommand } = require('./commands/truth');
 const { clearCommand } = require('./commands/clear');
 const pingCommand = require('./commands/ping');
 //const aliveCommand = require('./commands/alive');
-const blurCommand = require('./commands/img-blur');
 const welcomeCommand = require('./commands/welcome');
 const goodbyeCommand = require('./commands/goodbye');
 const githubCommand = require('./commands/github');
@@ -675,10 +674,7 @@ case userMessage === '.alive':
             //case userMessage === '.uptime':
            //     await aliveCommand(sock, chatId, message);
             //    break;
-            case userMessage.startsWith('.blur'):
-                const quotedMessage = message.message?.extendedTextMessage?.contextInfo?.quotedMessage;
-                await blurCommand(sock, chatId, message, quotedMessage);
-                break;
+            
             case userMessage.startsWith('.welcome'):
                 if (isGroup) {
                     // Check admin status if not already checked
