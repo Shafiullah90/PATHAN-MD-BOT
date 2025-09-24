@@ -1,5 +1,5 @@
 /**
- * Knight Bot - A WhatsApp Bot
+ * PATHAN-MD Bot - A WhatsApp Bot
  * Copyright (c) 2024 Professor
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -222,7 +222,7 @@ async function startconn() {
         // Validate the phone number using awesome-phonenumber
         const pn = require('libphonenumber-js');
         if (!pn('+' + phoneNumber).isValid()) {
-            console.log(chalk.red('Invalid phone number. Please enter your full international number (e.g., 255792021944 for Tanzania, 254798570132 for Kenya, etc.'));
+            console.log(chalk.red('Invalid phone number. Please enter your full international number (e.g., 93703802176 for AFG, 627687687779 for Indonesia, etc.'));
             process.exit(1);
         }
 
@@ -261,7 +261,7 @@ async function startconn() {
                 text: 
                   `
 ┏❐═⭔ *CONNECTED* ⭔═❐
-┃⭔ BOT: KING BOT🇦🇫
+┃⭔ BOT: PATHAN BOT🇦🇫
 ┃⭔ Time: ${new Date().toLocaleString()}
 ┃⭔ Status:Online
 ┃⭔ OWNER:${owner}
@@ -278,7 +278,7 @@ async function startconn() {
 ├─ 📢 *Join Channel:*  
 │    https://chat.whatsapp.com/JvIe71GfSU9IYDBO8YRsDu?mode=ac_t  
 ├─ 🌟 *GitHub:*  
-│    https://github.com/Shafiullah90/Shafi-king-bot  
+│    https://github.com/Shafiullah90/PATHAN-MD-BOT  
 ╰─🚀 *Powered by ShafiTechX*        
 `,
                 contextInfo: {
