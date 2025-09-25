@@ -1,6 +1,4 @@
 const settings = require('../settings.js');
-const fs = require('fs');
-const path = require('path');
 
 function formatTime(seconds) {
     const days = Math.floor(seconds / (24 * 60 * 60));
@@ -22,31 +20,21 @@ function formatTime(seconds) {
 async function pingCommand(sock, chatId, message) {
     try {
         const start = Date.now();
-        await sock.sendMessage(chatId, { text: '🏓 PATHAN BOT is pinging & RUNNING...' }, { quoted: message });
+        await sock.sendMessage(chatId, { text: '🏓 PATHAN-MD-BOT IS PINGING & RUNNING...' }, { quoted: message });
         const end = Date.now();
         const ping = Math.round((end - start) / 2);
         const uptime = formatTime(process.uptime());
 
-        await sock.sendMessage(chatId, {
-            text: `⚡ ${ping}ms | ⏳ ${uptime} | 🤖 Still not dead how can i help u♻️.`,
-            quoted: message
-        });
+        const replyText = 
+`✨ *PATHAN BOT STATUS* ✨
 
-        // Select a random audio from audio1.mp3 to audio4.mp3
-        const audioNumber = Math.floor(Math.random() * 4) + 1; // 1 to 4
-        const audioPath = path.join(__dirname, `../assets/audio${audioNumber}.mp3`);
+⚡ *Speed:* ${ping}ms
+⏳ *Uptime:* ${uptime}
+🤖 *Mode:* ${settings.mode || 'Public'}
 
-        if (fs.existsSync(audioPath)) {
-            await sock.sendMessage(chatId, {
-                audio: { url: audioPath },
-                mimetype: 'audio/mp4',
-                ptt: true
-            }, { quoted: message });
-        } else {
-            await sock.sendMessage(chatId, {
-                text: `⚠️ audio${audioNumber}.mp3 not found!`
-            }, { quoted: message });
-        }
+💖 *I’m alive, running smoothly, and ready to serve you!*`;
+
+        await sock.sendMessage(chatId, { text: replyText, quoted: message });
 
     } catch (err) {
         console.error('Ping error:', err);
