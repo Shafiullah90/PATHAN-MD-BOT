@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "docker:build": "docker build -t imran-bot .",
+    "docker:build": "docker build -t PATHAN-BOT.",
     "docker:run": "docker run -e SESSION_ID=$SESSION_ID imran-bot"
   },
   "keywords": [
