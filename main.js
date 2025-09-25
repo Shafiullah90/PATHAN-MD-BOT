@@ -654,10 +654,10 @@ case userMessage === '.alive':
             case userMessage === '.dare':
                 await dareCommand(sock, chatId, message);
                 break;
-                // .shafi
-case userMessage === '.shafi':
-    await shafiCommand(sock, chatId, message);
+                case userMessage === '.shafi':
+    await shafiCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
     break;
+
 
             case userMessage === '.truth':
                 await truthCommand(sock, chatId, message);
