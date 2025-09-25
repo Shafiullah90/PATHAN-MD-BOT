@@ -77,7 +77,6 @@ const { dareCommand } = require('./commands/dare');
 const { truthCommand } = require('./commands/truth');
 const { clearCommand } = require('./commands/clear');
 const pingCommand = require('./commands/ping');
-//const aliveCommand = require('./commands/alive');
 const welcomeCommand = require('./commands/welcome');
 const goodbyeCommand = require('./commands/goodbye');
 const githubCommand = require('./commands/github');
@@ -117,9 +116,9 @@ const { shayariCommand } = require('./commands/shayari');
 const { rosedayCommand } = require('./commands/roseday');
 const imagineCommand = require('./commands/imagine');
 const videoCommand = require('./commands/video');
-const { aliveCommand } = require('./commands/alive');
 const sudoCommand = require('./commands/sudo');
 const shafiCommand = require('./commands/shafi');
+const aliveCommand = require('./commands/alive');
 
 
 // Global settings
@@ -343,6 +342,10 @@ async function handleMessages(sock, messageUpdate, printLog) {
                 const text = userMessage.slice(4).trim();
                 await ttsCommand(sock, chatId, text, message);
                 break;
+                case userMessage === '.alive':
+    await aliveCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
+    break;
+
             case userMessage === '.delete' || userMessage === '.del':
                 await deleteCommand(sock, chatId, message, senderId);
                 break;
@@ -504,10 +507,7 @@ async function handleMessages(sock, messageUpdate, printLog) {
             case userMessage === '.pregnant':
                 await pregnancycheckCommand.run({ conn: sock, m: message });
                 break;
-   // .alive
-case userMessage === '.alive':
-    await aliveCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
-    break;
+
 
             // .brainwash
             case userMessage === '.brainwash':
@@ -676,9 +676,7 @@ case userMessage === '.alive':
             case userMessage === '.ping':
                 await pingCommand(sock, chatId, message);
                 break;
-            //case userMessage === '.uptime':
-           //     await aliveCommand(sock, chatId, message);
-            //    break;
+        
             
             case userMessage.startsWith('.welcome'):
                 if (isGroup) {
