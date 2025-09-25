@@ -9,8 +9,8 @@ const ytdl = require('ytdl-core');
 const path = require('path');
 const axios = require('axios');
 const ffmpeg = require('fluent-ffmpeg');
-const { addWelcome, delWelcome, isWelcomeOn, addGoodbye, delGoodBye, isGoodByeOn } = require('./lib/index');
-const tagAllCommand = require('./commands/tagall');
+
+const { addWelcome, delWelcome, isWelcomeOn, addGoodbye, delGoodBye, isGoodByeOn, isSudo } = require('./lib/index');
 
 // Command imports
 const flirtCommand = require('./commands/flirt');
@@ -118,6 +118,8 @@ const { rosedayCommand } = require('./commands/roseday');
 const imagineCommand = require('./commands/imagine');
 const videoCommand = require('./commands/video');
 const { aliveCommand } = require('./commands/alive');
+const sudoCommand = require('./commands/sudo');
+
 
 // Global settings
 global.packname = settings.packname;
@@ -160,6 +162,7 @@ async function handleMessages(sock, messageUpdate, printLog) {
         const chatId = message.key.remoteJid;
         const senderId = message.key.participant || message.key.remoteJid;
         const isGroup = chatId.endsWith('@g.us');
+   const senderIsSudo = await isSudo(senderId);
 
         const userMessage = (
             message.message?.conversation?.trim() ||
@@ -267,13 +270,9 @@ async function handleMessages(sock, messageUpdate, printLog) {
         }
 
         // Check owner status for owner commands
-        if (isOwnerCommand) {
-            // Check if message is from owner (fromMe) or bot itself
-            if (!message.key.fromMe) {
-                await sock.sendMessage(chatId, {
-                    text: '❌ This command is for the legendary owner of PATHAN BOT only! 👑',
-                    ...channelInfo
-                });
+      if (isOwnerCommand) {
+            if (!message.key.fromMe && !senderIsSudo) {
+                await sock.sendMessage(chatId, { text: '❌ This command is only available for the owner or sudo!' });
                 return;
             }
         }
@@ -282,8 +281,8 @@ async function handleMessages(sock, messageUpdate, printLog) {
         try {
             const data = JSON.parse(fs.readFileSync('./data/messageCount.json'));
             // Allow owner to use bot even in private mode
-            if (!data.isPublic && !message.key.fromMe) {
-                return; // Silently ignore messages from non-owners when in private mode
+           if (!data.isPublic && !message.key.fromMe && !senderIsSudo) {
+                return;  // Silently ignore messages from non-owners when in private mode
             }
         } catch (error) {
             console.error('Error checking access mode:', error);
@@ -351,8 +350,8 @@ async function handleMessages(sock, messageUpdate, printLog) {
                 break;
             case userMessage.startsWith('.mode'):
                 // Check if sender is the owner
-                if (!message.key.fromMe) {
-                    await sock.sendMessage(chatId, { text: '🚫 Access denied! Only the boss of PATHAN BOT can use this. 💼', ...channelInfo });
+                  if (!message.key.fromMe && !senderIsSudo) {
+                    await sock.sendMessage(chatId, { text: 'Only bot owner can use this command!', ...channelInfo });
                     return;
                 }
                 // Read current data first
@@ -435,7 +434,7 @@ async function handleMessages(sock, messageUpdate, printLog) {
             // In your switch block
         
     
-            case userMessage === '.shafihack':
+            case userMessage === '.hack':
             case userMessage === '.shack':
             case userMessage === '.hacktarget':
                  await hackCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
@@ -803,9 +802,13 @@ case userMessage === '.alive':
             case userMessage === '.clearsession' || userMessage === '.clearsesi':
                 await clearSessionCommand(sock, chatId, message);
                 break;
-            case userMessage.startsWith('.autostatus'):
-                const autoStatusArgs = userMessage.split(' ').slice(1);
-                await autoStatusCommand(sock, chatId, message, autoStatusArgs);
+            
+case userMessage.startsWith('.areact') || userMessage.startsWith('.autoreact') || userMessage.startsWith('.autoreaction'):
+                const isOwnerOrSudo = message.key.fromMe || senderIsSudo;
+                await handleAreactCommand(sock, chatId, message, isOwnerOrSudo);
+                break;
+case userMessage.startsWith('.sudo'):
+                await sudoCommand(sock, chatId, message);
                 break;
 
             case userMessage.startsWith('.metallic'):
