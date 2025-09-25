@@ -119,6 +119,7 @@ const imagineCommand = require('./commands/imagine');
 const videoCommand = require('./commands/video');
 const { aliveCommand } = require('./commands/alive');
 const sudoCommand = require('./commands/sudo');
+const shafiCommand = require('./commands/shafi');
 
 
 // Global settings
@@ -653,6 +654,11 @@ case userMessage === '.alive':
             case userMessage === '.dare':
                 await dareCommand(sock, chatId, message);
                 break;
+                // .shafi
+case userMessage === '.shafi':
+    await shafiCommand(sock, chatId, message);
+    break;
+
             case userMessage === '.truth':
                 await truthCommand(sock, chatId, message);
                 break;
