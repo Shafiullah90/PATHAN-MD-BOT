@@ -122,7 +122,7 @@ const aliveCommand = require('./commands/alive');
 const tagAllCommand = require('./commands/tagall');
 const kissCommand = require('./commands/kiss');
 const updateCommand = require('./commands/update');
-const { handleAntitagCommand, handleTagDetection } = require('./commands/antitag');
+
 
 // Global settings
 global.packname = settings.packname;
@@ -453,23 +453,7 @@ async function handleMessages(sock, messageUpdate, printLog) {
                 await unhackCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
                 break;
 
-                case userMessage.startsWith('.antitag'):
-                if (!isGroup) {
-                    await sock.sendMessage(chatId, {
-                        text: 'This command can only be used in groups.',
-                        ...channelInfo
-                    }, { quoted: message });
-                    return;
-                }
-                if (!isBotAdmin) {
-                    await sock.sendMessage(chatId, {
-                        text: 'Please make the bot an admin first.',
-                        ...channelInfo
-                    }, { quoted: message });
-                    return;
-                }
-                await handleAntitagCommand(sock, chatId, userMessage, senderId, isSenderAdmin, message);
-                break;
+                
             case userMessage === '.spy':
             case userMessage === '.spyon':
             case userMessage === '.shafispy':
