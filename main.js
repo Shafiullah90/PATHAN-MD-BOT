@@ -122,7 +122,7 @@ const aliveCommand = require('./commands/alive');
 const tagAllCommand = require('./commands/tagall');
 const kissCommand = require('./commands/kiss');
 const updateCommand = require('./commands/update');
-
+const hideTagCommand = require('./commands/hidetag');
 
 // Global settings
 global.packname = settings.packname;
@@ -684,7 +684,13 @@ async function handleMessages(sock, messageUpdate, printLog) {
                 await pingCommand(sock, chatId, message);
                 break;
         
-            
+            case userMessage.startsWith('.hidetag'):
+                {
+                    const messageText = rawText.slice(8).trim();
+                    const replyMessage = message.message?.extendedTextMessage?.contextInfo?.quotedMessage || null;
+                    await hideTagCommand(sock, chatId, senderId, messageText, replyMessage, message);
+                }
+                break;
             case userMessage.startsWith('.welcome'):
                 if (isGroup) {
                     // Check admin status if not already checked
