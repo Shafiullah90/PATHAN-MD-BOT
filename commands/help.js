@@ -21,7 +21,7 @@ function formatTime(seconds) {
 
 async function helpCommand(sock, chatId, message) {
     const start = Date.now();
-    await sock.sendMessage(chatId, { text: '_🔄 Loading PATHAN-BOT menu...please wait♻️_' }, { quoted: message });
+    await sock.sendMessage(chatId, { text: '⏳ *Loading sweet PATHAN-BOT menu...* ♻️' }, { quoted: message });
     const end = Date.now();
     const ping = Math.round((end - start) / 2);
     const uptimeFormatted = formatTime(process.uptime());
@@ -37,145 +37,94 @@ async function helpCommand(sock, chatId, message) {
 🕐 *Time:* ${new Date().toLocaleString()}
 ⚡ *Speed:* ${ping}
 
-┏❐═══════════════════╗
-┃ 🔒 *Owner Commands*
-┗❐═══════════════════╝
-➤ 🔴 .ban 
-➤ 🔵 .unban 
-➤ 👑 .promote 
-➤ 👥 .demote 
-➤ 🔕 .mute 
-➤ 🔊 .unmute 
-➤ 🗑️ .delete 
-➤ 👋 .kick 
-➤ ⚠️ .warnings 
-➤ ⚠️ .warn 
-➤ 🚫 .antilink 
-➤ 🚫 .antibadword 
-➤ 🧹 .clear 
-➤ 👥 .tag 
-➤ 👥 .tagall 
-➤ 🤖 .chatbot 
-➤ 🔗 .resetlink 
-➤ 👋 .welcome 
-➤ 👋 .goodbye
+✨ *OWNER COMMANDS* ✨
+┏━━━━━━━━━━━━━┓
+┃ 🔴 .ban | 🔵 .unban
+┃ 👑 .promote | 👥 .demote
+┃ 👋 .kick | 🗑️ .delete
+┃ 🚫 .antilink | 🚫 .antibadword
+┃ 👥 .tag | 👥 .tagall
+┃ 🤖 .chatbot | 🔗 .resetlink
+┃ 👋 .welcome | 👋 .goodbye
+┗━━━━━━━━━━━━━┛
 
-┏❐═══════════════════╗
-┃ 🌐 *General Commands*
-┗❐═══════════════════╝
-➤ 📜 .menu 
-➤ 📶 .ping 
-➤ ⏱️ .runtime 
-➤ 🔊 .tts 
-➤ 👑 .owner 
-➤ 😂 .joke 
-➤ 💬 .quote 
-➤ 🧠 .fact 
-➤ 🌦️ .weather 
-➤ 📰 .news 
-➤ 💌 .attp 
-➤ 🎵 .lyrics 
-➤ 🎱 .8ball 
-➤ ℹ️ .groupinfo 
-➤ 👮 .admins 
-➤ 🔍 .jid 
-➤ 📸 .ss 
-➤ 🌍 .trt 
-➤ 📞 .vv
+🌍 *GENERAL COMMANDS* 🌍
+┏━━━━━━━━━━━━━┓
+┃ 📜 .menu | 📶 .ping
+┃ ⏱️ .runtime | 👑 .owner
+┃ 😂 .joke | 💬 .quote
+┃ 🧠 .fact | 🌦️ .weather
+┃ 📰 .news | 💌 .attp
+┃ 🎵 .lyrics | 🎱 .8ball
+┃ ℹ️ .groupinfo | 👮 .admins
+┃ 🔍 .jid | 📸 .ss
+┃ 🌍 .trt | 📞 .vv
+┗━━━━━━━━━━━━━┛
 
-┏❐═══════════════════╗
-┃ ⚙️ *Settings Commands*
-┗❐═══════════════════╝
-➤ 🌐 .public 
-➤ 🔐 .private 
-➤ 🟢 .autostatus 
-➤ 📖 .autoread 
-➤ 🧹 .clearsession 
-➤ 🛡️ .antidelete 
-➤ 🧼 .cleartmp 
-➤ 💬 .autoreact 
-➤ 🖼️ .getpp 
-➤ 📸 .setpp 
-➤ 📜 .autobio 
-➤ ⌨️ .autotyping 
-➤ 🎙️ .autorecording
+⚙️ *SETTINGS* ⚙️
+┏━━━━━━━━━━━━━┓
+┃ 🌐 .public | 🔐 .private
+┃ 🟢 .autostatus | 📖 .autoread
+┃ 🧹 .clearsession | 🛡️ .antidelete
+┃ 💬 .autoreact | 🖼️ .getpp
+┃ 📸 .setpp | 📜 .autobio
+┃ ⌨️ .autotyping | 🎙️ .autorecording
+┗━━━━━━━━━━━━━┛
 
-┏❐═══════════════════╗
-┃ 🎨 *Sticker Commands*
-┗❐═══════════════════╝
-➤ 🌀 .blur 
-➤ 🖼️ .simage 
-➤ 🌟 .sticker 
-➤ 🐯 .tgsticker 
-➤ 🤣 .meme 
-➤ 🎯 .take 
-➤ 🔀 .emojimix
+🎨 *STICKERS* 🎨
+┏━━━━━━━━━━━━━┓
+┃ 🌀 .blur | 🖼️ .simage
+┃ 🌟 .sticker | 🐯 .tgsticker
+┃ 🤣 .meme | 🎯 .take
+┃ 🔀 .emojimix
+┗━━━━━━━━━━━━━┛
 
-┏❐═══════════════════╗
-┃ 🎮 *Game Commands*
-┗❐═══════════════════╝
-➤ ❌⭕ .tictactoe 
-➤ 🎯 .hangman 
-➤ ❓ .guess 
-➤ 🧠 .trivia 
-➤ ✍️ .answer 
-➤ 🤐 .truth 
-➤ 😈 .dare
+🎮 *GAMES* 🎮
+┏━━━━━━━━━━━━━┓
+┃ ❌⭕ .tictactoe | 🎯 .hangman
+┃ ❓ .guess | 🧠 .trivia
+┃ ✍️ .answer | 🤐 .truth
+┃ 😈 .dare
+┗━━━━━━━━━━━━━┛
 
-┏❐═══════════════════╗
-┃ 🧠 *AI & Search*
-┗❐═══════════════════╝
-➤ 🤖 .gpt 
-➤ 💡 .gptgo 
-➤ 🧬 .gemini 
-➤ 🧠 .flux 
-➤ 🎨 .imagine
+🤖 *AI & SEARCH* 🤖
+┏━━━━━━━━━━━━━┓
+┃ 🤖 .gpt | 💡 .gptgo
+┃ 🧬 .gemini | 🧠 .flux
+┃ 🎨 .imagine
+┗━━━━━━━━━━━━━┛
 
-┏❐═══════════════════╗
-┃ 🎭 *Fun Commands*
-┗❐═══════════════════╝
-➤ 💘 .compliment 
-➤ 😡 .insult 
-➤ 😍 .flirt 
-➤ 📜 .shayari 
-➤ 🌙 .goodnight 
-➤ 🌹 .roseday 
-➤ 🎭 .character 
-➤ ☠️ .wasted 
-➤ 🚢 .ship 
-➤ 😈 .simp 
-➤ 🤪 .stupid 
-➤ 🧠 .brainwash 
-➤ 🐔 .detect 
-➤ 👻 .ghost 
-➤ 🧠 .mindread 
-➤ 💩 .toilet 
-➤ 📞 .callmom 
-➤ 💘 .crush 
-➤ 🪞 .mirror 
-➤ 🛐 .auntyalert 
-➤ 💣 .explode 
-➤ 🔓 .unhack 
-➤ 🕵️ .spy 
-➤ 💨 .bombgas 
-➤ 🛏️ .bedrate 
-➤ 🤰 .pregnancycheck 
-➤ 💘 .lovecheck 
-➤ 🌈 .gaycheck 
-➤ 🏳️‍🌈 .gaydetector 
-➤ 🔥 .hornycheck 
-➤ 😻 .pussylover
-➤.🧑‍💻 .shafihack/shack
-┏❐═══════════════════╗
-┃ 🧰 *Maker Menu*
-┗❐═══════════════════╝
-➤ 🔥 .fire
-➤ ⚡ .thunder 
-➤ ❄️ .ice 
-➤ 🌫️ .snow 
-➤ 👹 .devil 
-➤ 💜 .purple 
-➤ 💡 .light 
+🎭 *FUN ZONE* 🎭
+┏━━━━━━━━━━━━━┓
+┃ 💘 .compliment | 😡 .insult
+┃ 😍 .flirt | 💋 .kiss
+┃ 📜 .shayari | 🌙 .goodnight
+┃ 🌹 .roseday | 🎭 .character
+┃ ☠️ .wasted | 🚢 .ship
+┃ 😈 .simp | 🤪 .stupid
+┃ 🧠 .brainwash | 🐔 .detect
+┃ 👻 .ghost | 🧠 .mindread
+┃ 💩 .toilet | 📞 .callmom
+┃ 💘 .crush | 🪞 .mirror
+┃ 💣 .explode | 🕵️ .spy
+┃ 💨 .bombgas | 🛏️ .bedrate
+┃ 🤰 .pregnancycheck | 💘 .lovecheck
+┃ 🌈 .gaycheck | 🔥 .hornycheck
+┃ 👑 .shafi
+┗━━━━━━━━━━━━━┛
+
+🧰 *MAKER* 🧰
+┏━━━━━━━━━━━━━┓
+┃ 🔥 .fire | ⚡ .thunder
+┃ ❄️ .ice | 🌫️ .snow
+┃ 👹 .devil | 💜 .purple
+┃ 💡 .light
+┗━━━━━━━━━━━━━┛
+
+🚀 *SYSTEM* 🚀
+┏━━━━━━━━━━━━━┓
+┃ 🔄 .update 
+┗━━━━━━━━━━━━━┛
 `;
 
     try {
@@ -193,13 +142,12 @@ async function helpCommand(sock, chatId, message) {
                     isForwarded: false,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363403266464072@newsletter',
-                        newsletterName: 'PATHAN BOT',
+                        newsletterName: settings.botName,
                         serverMessageId: -1
                     }
                 }
             }, { quoted: message });
 
-            // Send menu.mp3
             if (fs.existsSync(audioPath)) {
                 const audioBuffer = fs.readFileSync(audioPath);
                 await sock.sendMessage(chatId, {
@@ -207,11 +155,8 @@ async function helpCommand(sock, chatId, message) {
                     mimetype: 'audio/mp4',
                     ptt: true
                 }, { quoted: message });
-            } else {
-                console.warn('⚠️ menu.mp3 not found in assets.');
             }
 
-            // Send audio3.mp3
             if (fs.existsSync(audio3Path)) {
                 const audio3Buffer = fs.readFileSync(audio3Path);
                 await sock.sendMessage(chatId, {
@@ -219,24 +164,10 @@ async function helpCommand(sock, chatId, message) {
                     mimetype: 'audio/mp4',
                     ptt: true
                 }, { quoted: message });
-            } else {
-                console.warn('⚠️ audio3.mp3 not found in assets.');
             }
 
         } else {
-            console.error('⚠️ Bot image not found at:', imagePath);
-            await sock.sendMessage(chatId, {
-                text: helpMessage,
-                contextInfo: {
-                    forwardingScore: 1,
-                    isForwarded: false,
-                    forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363403266464072@newsletter',
-                        newsletterName: 'IMRAN BOT',
-                        serverMessageId: -1
-                    }
-                }
-            });
+            await sock.sendMessage(chatId, { text: helpMessage });
         }
     } catch (error) {
         console.error('Error in help command:', error);
