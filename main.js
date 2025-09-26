@@ -315,7 +315,7 @@ async function handleMessages(sock, messageUpdate, printLog) {
                     await muteCommand(sock, chatId, senderId, muteDuration);
                 }
                 break;
-            case userMessage === '.unmute':
+            case userMessage === '. Unmute' || userMessage === '.Unmute' || userMessage === '.unmute':
                 await unmuteCommand(sock, chatId, senderId);
                 break;
             case userMessage.startsWith('.deletebot'):
@@ -327,7 +327,7 @@ async function handleMessages(sock, messageUpdate, printLog) {
             case userMessage.startsWith('.unban'):
                 await unbanCommand(sock, chatId, message);
                 break;
-            case userMessage === '.help' || userMessage === '.menu' || userMessage === '.bot' || userMessage === '.list':
+            case userMessage === '.Menu' || userMessage === '.menu' || userMessage === '. Menu' || userMessage === '. menu':
                 await helpCommand(sock, chatId, message, global.channelLink);
                 break;
             case userMessage === '.sticker' || userMessage === '.s':
@@ -345,7 +345,7 @@ async function handleMessages(sock, messageUpdate, printLog) {
                 const text = userMessage.slice(4).trim();
                 await ttsCommand(sock, chatId, text, message);
                 break;
-                case userMessage === '.alive':
+                case userMessage === '. Alive' || userMessage === '. alive' || userMessage === '.Alive' || userMessage === '.alive':
     await aliveCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
     break;
 
@@ -661,7 +661,7 @@ async function handleMessages(sock, messageUpdate, printLog) {
             case userMessage === '.dare':
                 await dareCommand(sock, chatId, message);
                 break;
-                case userMessage === '.shafi':
+                case userMessage === '. Shafi' || userMessage === '. shafi' || userMessage === '.Shafi' || userMessage === '.shafi':
     await shafiCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
     break;
 
@@ -680,7 +680,7 @@ async function handleMessages(sock, messageUpdate, printLog) {
                 const mentionedJidListDemote = message.message.extendedTextMessage?.contextInfo?.mentionedJid || [];
                 await demoteCommand(sock, chatId, mentionedJidListDemote, message);
                 break;
-            case userMessage === '.ping':
+            case userMessage === '. ping' || userMessage === '.Ping' || userMessage === '. Ping' || userMessage === '.ping':
                 await pingCommand(sock, chatId, message);
                 break;
         
