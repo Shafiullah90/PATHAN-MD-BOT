@@ -40,6 +40,7 @@ async function helpCommand(sock, chatId, message) {
 ✨ *OWNER COMMANDS* ✨
 ┏━━━━━━━━━━━━━┓
 ┃ 🔴 .ban | 🔵 .unban
+┃ ✅️ .sudo | ❌️ .delsudo 
 ┃ 👑 .promote | 👥 .demote
 ┃ 👋 .kick | 🗑️ .delete
 ┃ 🚫 .antilink | 🚫 .antibadword
@@ -78,6 +79,26 @@ async function helpCommand(sock, chatId, message) {
 ┃ 🤣 .meme | 🎯 .take
 ┃ 🔀 .emojimix
 ┗━━━━━━━━━━━━━┛
+┏━━━━━━━━━━━━━┓
+┃ 🎶 DOWNLOAD COMMANDS
+┃
+┃ ▶️ .play <song> 
+┃ 🎥 .video <name|url>
+┃ 🎵 .song <name>
+┃ 📥 .ytmp3 <url>
+┃ 📥 .ytmp4 <url>
+┃ ▶️ .fb <url>
+┣━━━━━━━━━━━━━┫
+┃ 🔴 .ban | 🔵 .unban
+┃ 👑 .promote | 👥 .demote
+┃ 👋 .kick | 🗑️ .delete
+┃ 🚫 .antilink | 🚫 .antibadword
+┃ 👥 .tag | 👥 .tagall
+┃ 🤖 .chatbot | 🔗 .resetlink
+┃ 👋 .welcome | 👋 .goodbye
+┃ 🛡️ .sudo | ❌ .delsudo
+┗━━━━━━━━━━━━━┛
+
 
 🎮 *GAMES* 🎮
 ┏━━━━━━━━━━━━━┓
