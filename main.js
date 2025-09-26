@@ -119,7 +119,8 @@ const videoCommand = require('./commands/video');
 const sudoCommand = require('./commands/sudo');
 const shafiCommand = require('./commands/shafi');
 const aliveCommand = require('./commands/alive');
-
+const tagAllCommand = require('./commands/tagall');
+const kissCommand = require('./commands/kiss');
 
 // Global settings
 global.packname = settings.packname;
@@ -651,6 +652,10 @@ async function handleMessages(sock, messageUpdate, printLog) {
                 const stupidArgs = userMessage.split(' ').slice(1);
                 await stupidCommand(sock, chatId, stupidQuotedMsg, stupidMentionedJid, senderId, stupidArgs);
                 break;
+                case userMessage.startsWith('.kiss'):
+  await kissCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
+  break;
+
             case userMessage === '.dare':
                 await dareCommand(sock, chatId, message);
                 break;
