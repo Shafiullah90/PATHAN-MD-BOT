@@ -149,7 +149,7 @@ async function helpCommand(sock, chatId, message) {
 `;
 
     try {
-        const imagePath = path.join(__dirname, '../assets/june_repo.jpg');
+        const imagePath = path.join(__dirname, '../assets/menu_image.jpg');
         const audioPath = path.join(__dirname, '../assets/menu.mp3');
         const audio3Path = path.join(__dirname, '../assets/audio3.mp3');
 
