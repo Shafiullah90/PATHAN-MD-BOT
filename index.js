@@ -275,7 +275,7 @@ async function startconn() {
 
 ╭──〔 🔗 *Information* 〕  
 ├─ 🧩 *Prefix:* = .
-├─ 📢 *Join Channel:*  
+├─ 📢 *Join Group:*  
 │    https://chat.whatsapp.com/JvIe71GfSU9IYDBO8YRsDu?mode=ac_t  
 ├─ 🌟 *GitHub:*  
 │    https://github.com/Shafiullah90/PATHAN-MD-BOT  
