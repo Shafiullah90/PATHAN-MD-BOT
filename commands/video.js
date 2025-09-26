@@ -1,15 +1,56 @@
-const fetch = require('node-fetch');
+const axios = require('axios');
 const yts = require('yt-search');
-const fs = require('fs');
-const path = require('path');
-const { exec } = require('child_process');
-const util = require('util');
-const execPromise = util.promisify(exec);
+
+// Izumi API configuration
+const izumi = {
+    baseURL: "https://izumiiiiiiii.dpdns.org"
+};
+
+const AXIOS_DEFAULTS = {
+    timeout: 60000,
+    headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'application/json, text/plain, */*'
+    }
+};
+
+async function tryRequest(getter, attempts = 3) {
+    let lastError;
+    for (let attempt = 1; attempt <= attempts; attempt++) {
+        try {
+            return await getter();
+        } catch (err) {
+            lastError = err;
+            if (attempt < attempts) {
+                await new Promise(r => setTimeout(r, 1000 * attempt));
+            }
+        }
+    }
+    throw lastError;
+}
+
+async function getIzumiVideoByUrl(youtubeUrl) {
+    const apiUrl = `${izumi.baseURL}/downloader/youtube?url=${encodeURIComponent(youtubeUrl)}&format=720`;
+    const res = await tryRequest(() => axios.get(apiUrl, AXIOS_DEFAULTS));
+    if (res?.data?.result?.download) return res.data.result; // { download, title, ... }
+    throw new Error('Izumi video api returned no download');
+}
+
+async function getOkatsuVideoByUrl(youtubeUrl) {
+    const apiUrl = `https://okatsu-rolezapiiz.vercel.app/downloader/ytmp4?url=${encodeURIComponent(youtubeUrl)}`;
+    const res = await tryRequest(() => axios.get(apiUrl, AXIOS_DEFAULTS));
+    // shape: { status, creator, url, result: { status, title, mp4 } }
+    if (res?.data?.result?.mp4) {
+        return { download: res.data.result.mp4, title: res.data.result.title };
+    }
+    throw new Error('Okatsu ytmp4 returned no mp4');
+}
 
 async function videoCommand(sock, chatId, message) {
     try {
         const text = message.message?.conversation || message.message?.extendedTextMessage?.text;
         const searchQuery = text.split(' ').slice(1).join(' ').trim();
+        
         
         if (!searchQuery) {
             await sock.sendMessage(chatId, { text: 'What video do you want to download?' }, { quoted: message });
@@ -18,6 +59,8 @@ async function videoCommand(sock, chatId, message) {
 
         // Determine if input is a YouTube link
         let videoUrl = '';
+        let videoTitle = '';
+        let videoThumbnail = '';
         if (searchQuery.startsWith('http://') || searchQuery.startsWith('https://')) {
             videoUrl = searchQuery;
         } else {
@@ -28,8 +71,23 @@ async function videoCommand(sock, chatId, message) {
                 return;
             }
             videoUrl = videos[0].url;
+            videoTitle = videos[0].title;
+            videoThumbnail = videos[0].thumbnail;
         }
 
+        // Send thumbnail immediately
+        try {
+            const ytId = (videoUrl.match(/(?:youtu\.be\/|v=)([a-zA-Z0-9_-]{11})/) || [])[1];
+            const thumb = videoThumbnail || (ytId ? `https://i.ytimg.com/vi/${ytId}/sddefault.jpg` : undefined);
+            const captionTitle = videoTitle || searchQuery;
+            if (thumb) {
+                await sock.sendMessage(chatId, {
+                    image: { url: thumb },
+                    caption: `*${captionTitle}*\nDownloading...`
+                }, { quoted: message });
+            }
+        } catch (e) { console.error('[VIDEO] thumb error:', e?.message || e); }
+        
 
         // Validate YouTube URL
         let urls = videoUrl.match(/(?:https?:\/\/)?(?:youtu\.be\/|(?:www\.|m\.)?youtube\.com\/(?:watch\?v=|v\/|embed\/|shorts\/|playlist\?list=)?)([a-zA-Z0-9_-]{11})/gi);
@@ -38,92 +96,26 @@ async function videoCommand(sock, chatId, message) {
             return;
         }
 
-        const apiUrl = `https://api.dreaded.site/api/ytdl/video?url=${encodeURIComponent(videoUrl)}`;
-        
-        const response = await fetch(apiUrl, {
-            headers: {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                'Accept': 'application/json'
-            }
-        });
-
-        if (!response.ok) {
-            await sock.sendMessage(chatId, { text: 'Failed to fetch video from the API.' }, { quoted: message });
-            return;
-        }
-
-        const data = await response.json();
-
-        if (!data || !data.result || !data.result.download || !data.result.download.url) {
-            await sock.sendMessage(chatId, { text: 'Failed to get a valid download link from the API.' }, { quoted: message });
-            return;
-        }
-
-        const videoDownloadUrl = data.result.download.url;
-        const title = data.result.download.filename || 'video.mp4';
-        const filename = title;
-
-
-        // Download the video file first
-        const tempDir = path.join(__dirname, '../temp');
-        if (!fs.existsSync(tempDir)) fs.mkdirSync(tempDir);
-        const tempFile = path.join(tempDir, `${Date.now()}.mp4`);
-        const convertedFile = path.join(tempDir, `converted_${Date.now()}.mp4`);
-        
-        const videoRes = await fetch(videoDownloadUrl);
-        if (!videoRes.ok) {
-            await sock.sendMessage(chatId, { text: 'Failed to download the video file.' }, { quoted: message });
-            return;
-        }
-        
-        const buffer = await videoRes.buffer();
-        if (!buffer || buffer.length < 1024) {
-            await sock.sendMessage(chatId, { text: 'Downloaded file is empty or too small.' }, { quoted: message });
-            return;
-        }
-        
-        fs.writeFileSync(tempFile, buffer);
-
+        // Get video: try Izumi first, then Okatsu fallback
+        let videoData;
         try {
-            await execPromise(`ffmpeg -i "${tempFile}" -c:v libx264 -c:a aac -preset fast -crf 23 -movflags +faststart "${convertedFile}"`);
-            
-            // Check if conversion was successful
-            const stats = fs.statSync(convertedFile);
-            if (stats.size < 1024) {
-                throw new Error('Conversion failed - file too small');
-            }
-            
-            // Send the converted video
-            await sock.sendMessage(chatId, {
-                video: { url: convertedFile },
-                mimetype: 'video/mp4',
-                fileName: filename,
-                caption: `*${title}*\n\n*_Download by 𝐉ᴜɴᴇ 𝐌ᴅ_*`
-            }, { quoted: message });
-            
-        } catch (conversionError) {
-            console.log('📹 Conversion failed, trying original file:', conversionError.message);
-            // If conversion fails, try sending original file
-            await sock.sendMessage(chatId, {
-                video: { url: tempFile },
-                mimetype: 'video/mp4',
-                fileName: filename,
-                caption: `*${title}*\n\n*_Download by 𝐉ᴜɴᴇ 𝐌ᴅ_*`
-            }, { quoted: message });
+            videoData = await getIzumiVideoByUrl(videoUrl);
+        } catch (e1) {
+            videoData = await getOkatsuVideoByUrl(videoUrl);
         }
 
-        // Clean up temp files
-        setTimeout(() => {
-            try {
-                if (fs.existsSync(tempFile)) fs.unlinkSync(tempFile);
-                if (fs.existsSync(convertedFile)) fs.unlinkSync(convertedFile);
-            } catch {}
-        }, 5000);
+        // Send video directly using the download URL
+        await sock.sendMessage(chatId, {
+            video: { url: videoData.download },
+            mimetype: 'video/mp4',
+            fileName: `${videoData.title || videoTitle || 'video'}.mp4`,
+            caption: `*${videoData.title || videoTitle || 'Video'}*\n\n> *_Downloaded by PATHAN-MDBOT_😊*`
+        }, { quoted: message });
 
 
     } catch (error) {
-        console.log('📹 Video Command Error:', error.message);
-        await sock.sendMessage(chatId, { text: 'Download failed: ' + error.message }, { quoted: message });
+        console.error('[VIDEO] Command Error:', error?.message || error);
+        await sock.sendMessage(chatId, { text: 'Download failed: ' + (error?.message || 'Unknown error') }, { quoted: message });
     }
 }
 
