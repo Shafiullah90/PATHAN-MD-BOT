@@ -237,7 +237,7 @@ async function handleMessages(sock, messageUpdate, printLog) {
         const isAdminCommand = adminCommands.some(cmd => userMessage.startsWith(cmd));
 
         // List of owner commands
-                const adminCommands = ['.mute', '.unmute', '.ban', '.unban', '.promote', '.demote', '.kick', '.tagall', '.tagnotadmin', '.hidetag', '.antilink', '.antitag', '.setgdesc', '.setgname', '.setgpp'];
+        const ownerCommands = ['.mode', '.autostatus', '.antidelete', '.cleartmp', '.setpp', '.clearsession', '.areact', '.autoreact'];
         const isOwnerCommand = ownerCommands.some(cmd => userMessage.startsWith(cmd));
 
         let isSenderAdmin = false;
@@ -452,8 +452,6 @@ async function handleMessages(sock, messageUpdate, printLog) {
             case userMessage === '.reversehack':
                 await unhackCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
                 break;
-
-                
             case userMessage === '.spy':
             case userMessage === '.spyon':
             case userMessage === '.shafispy':
