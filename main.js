@@ -121,6 +121,8 @@ const shafiCommand = require('./commands/shafi');
 const aliveCommand = require('./commands/alive');
 const tagAllCommand = require('./commands/tagall');
 const kissCommand = require('./commands/kiss');
+const updateCommand = require('./commands/update');
+
 
 // Global settings
 global.packname = settings.packname;
@@ -761,6 +763,16 @@ async function handleMessages(sock, messageUpdate, printLog) {
                 const takeArgs = userMessage.slice(5).trim().split(' ');
                 await takeCommand(sock, chatId, message, takeArgs);
                 break;
+// Update commands for update bot auto 
+                case userMessage.startsWith('.update'):
+                {
+                    const parts = rawText.trim().split(/\s+/);
+                    const zipArg = parts[1] && parts[1].startsWith('http') ? parts[1] : '';
+                    await updateCommand(sock, chatId, message, senderIsSudo, zipArg);
+                }
+                commandExecuted = true;
+                break;
+                
            // case userMessage === '.flirt':
            //     await flirtCommand(sock, chatId, message);
      //           break;
