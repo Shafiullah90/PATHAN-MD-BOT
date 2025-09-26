@@ -20,6 +20,8 @@ const settings = {
   // 📝 Meta Information
   description: '💬 A fun, powerful & stylish WhatsApp MD bot created with ❤️ by PATHAN POWER.',
   version: '2.0.0',
+updateZipUrl: "https://github.com/Shafiullah90/PATHAN-MD-BOT/archive/refs/heads/main.zip",
+  
 };
 
 // Export so other files can use it
