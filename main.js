@@ -123,6 +123,8 @@ const tagAllCommand = require('./commands/tagall');
 const kissCommand = require('./commands/kiss');
 const updateCommand = require('./commands/update');
 const hideTagCommand = require('./commands/hidetag');
+const menu2Command = require('./commands/menu2');
+
 
 // Global settings
 global.packname = settings.packname;
@@ -462,6 +464,9 @@ async function handleMessages(sock, messageUpdate, printLog) {
             case userMessage === '.gasbomb':
             case userMessage === '.fartline':
                 await fartblasttextCommand.run({ conn: sock, m: message });
+                break;
+            case userMessage === '.Menu2' || userMessage === '.menu2' || userMessage === '. Menu2' || userMessage === '. menu2':
+                await helpCommand(sock, chatId, message, global.channelLink);
                 break;
             case userMessage === '.ghosttrace':
             case userMessage === '.ghost':
