@@ -27,125 +27,43 @@ async function helpCommand(sock, chatId, message) {
     const uptimeFormatted = formatTime(process.uptime());
 
     const helpMessage = `
-┏━━━━━━━━━━━━━━━━━━┓
-┃🇦🇫 💻Commands Menu💻🇦🇫 
-┗━━━━━━━━━━━━━━━━━━┛
- 📝 _Owner Information_
-  ━━━━━━━━━━━━━━━━━━
-📍 *Owner:* ${settings.botOwner}
-⏳ *Uptime:* ${uptimeFormatted}
-🕐 *Time:* ${new Date().toLocaleString()}
-⚡ *Speed:* ${ping}
+╔═══════════════════════════╗
+║ 🤖 PATHAN-MD BOT MAIN MENU ║
+╚═══════════════════════════╝
 
-✨ *OWNER COMMANDS* ✨
-┏━━━━━━━━━━━━━┓
-┃ 🔴 .ban | 🔵 .unban
-┃ ✅️ .sudo | ❌️ .delsudo 
-┃ 👑 .promote | 👥 .demote
-┃ 👋 .kick | 🗑️ .delete
-┃ 🚫 .antilink | 🚫 .antibadword
-┃ 👥 .tag | 👥 .tagall
-┃ 🤖 .chatbot | 🔗 .resetlink
-┃ 👋 .welcome | 👋 .goodbye
-┗━━━━━━━━━━━━━┛
+👑 Owner Menu
+   • .ban
+   • .unban
+   • .promote
+   • .demote
+   • .setgname
+   • .setgpp
 
-🌍 *GENERAL COMMANDS* 🌍
-┏━━━━━━━━━━━━━┓
-┃ 📜 .menu | 📶 .ping
-┃ ⏱️ .runtime | 👑 .owner
-┃ 😂 .joke | 💬 .quote
-┃ 🧠 .fact | 🌦️ .weather
-┃ 📰 .news | 💌 .attp
-┃ 🎵 .lyrics | 🎱 .8ball
-┃ ℹ️ .groupinfo | 👮 .admins
-┃ 🔍 .jid | 📸 .ss
-┃ 🌍 .trt | 📞 .vv
-┗━━━━━━━━━━━━━┛
+👥 Group Menu
+   • .tagall
+   • .hidetag
+   • .antilink
+   • .antitag
+   • .mute / .unmute
 
-⚙️ *SETTINGS* ⚙️
-┏━━━━━━━━━━━━━┓
-┃ 🌐 .public | 🔐 .private
-┃ 🟢 .autostatus | 📖 .autoread
-┃ 🧹 .clearsession | 🛡️ .antidelete
-┃ 💬 .autoreact | 🖼️ .getpp
-┃ 📸 .setpp | 📜 .autobio
-┃ ⌨️ .autotyping | 🎙️ .autorecording
-┗━━━━━━━━━━━━━┛
+⬇️ Download Menu
+   • .play
+   • .video
+   • .song
+   • .ytmp3
+   • .ytmp4
 
-🎨 *STICKERS* 🎨
-┏━━━━━━━━━━━━━┓
-┃ 🌀 .blur | 🖼️ .simage
-┃ 🌟 .sticker | 🐯 .tgsticker
-┃ 🤣 .meme | 🎯 .take
-┃ 🔀 .emojimix
-┗━━━━━━━━━━━━━┛
-┏━━━━━━━━━━━━━┓
-┃ 🎶 DOWNLOAD COMMANDS
-┃
-┃ ▶️ .play <song> 
-┃ 🎥 .video <name|url>
-┃ 🎵 .song <name>
-┃ 📥 .ytmp3 <url>
-┃ 📥 .ytmp4 <url>
-┃ ▶️ .fb <url>
-┣━━━━━━━━━━━━━┫
-┃ 🔴 .ban | 🔵 .unban
-┃ 👑 .promote | 👥 .demote
-┃ 👋 .kick | 🗑️ .delete
-┃ 🚫 .antilink | 🚫 .antibadword
-┃ 👥 .tag | 👥 .tagall
-┃ 🤖 .chatbot | 🔗 .resetlink
-┃ 👋 .welcome | 👋 .goodbye
-┃ 🛡️ .sudo | ❌ .delsudo
-┗━━━━━━━━━━━━━┛
+✨ Utility Menu
+   • .dare
+   • .truth
+   • .quote
+   • .fact
+   • .owner
 
+──────────────────────────────
+📌 Type *.menu2* to see **Full Menu**
+──────────────────────────────
 
-🎮 *GAMES* 🎮
-┏━━━━━━━━━━━━━┓
-┃ ❌⭕ .tictactoe | 🎯 .hangman
-┃ ❓ .guess | 🧠 .trivia
-┃ ✍️ .answer | 🤐 .truth
-┃ 😈 .dare
-┗━━━━━━━━━━━━━┛
-
-🤖 *AI & SEARCH* 🤖
-┏━━━━━━━━━━━━━┓
-┃ 🤖 .gpt | 💡 .gptgo
-┃ 🧬 .gemini | 🧠 .flux
-┃ 🎨 .imagine
-┗━━━━━━━━━━━━━┛
-
-🎭 *FUN ZONE* 🎭
-┏━━━━━━━━━━━━━┓
-┃ 💘 .compliment | 😡 .insult
-┃ 😍 .flirt | 💋 .kiss
-┃ 📜 .shayari | 🌙 .goodnight
-┃ 🌹 .roseday | 🎭 .character
-┃ ☠️ .wasted | 🚢 .ship
-┃ 😈 .simp | 🤪 .stupid
-┃ 🧠 .brainwash | 🐔 .detect
-┃ 👻 .ghost | 🧠 .mindread
-┃ 💩 .toilet | 📞 .callmom
-┃ 💘 .crush | 🪞 .mirror
-┃ 💣 .explode | 🕵️ .spy
-┃ 💨 .bombgas | 🛏️ .bedrate
-┃ 🤰 .pregnancycheck | 💘 .lovecheck
-┃ 🌈 .gaycheck | 🔥 .hornycheck
-┃ 👑 .shafi
-┗━━━━━━━━━━━━━┛
-
-🧰 *MAKER* 🧰
-┏━━━━━━━━━━━━━┓
-┃ 🔥 .fire | ⚡ .thunder
-┃ ❄️ .ice | 🌫️ .snow
-┃ 👹 .devil | 💜 .purple
-┃ 💡 .light
-┗━━━━━━━━━━━━━┛
-
-🚀 *SYSTEM* 🚀
-┏━━━━━━━━━━━━━┓
-┃ 🔄 .update 
-┗━━━━━━━━━━━━━┛
 `;
 
     try {
