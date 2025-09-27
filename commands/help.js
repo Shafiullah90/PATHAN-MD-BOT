@@ -27,42 +27,157 @@ async function helpCommand(sock, chatId, message) {
     const uptimeFormatted = formatTime(process.uptime());
 
     const helpMessage = `
-╔═══════════════════════════╗
-║ 🤖 PATHAN-MD BOT MAIN MENU ║
-╚═══════════════════════════╝
 
-👑 Owner Menu
-   • .ban
-   • .unban
-   • .promote
-   • .demote
-   • .setgname
-   • .setgpp
+━━━━━━━━━━━━━━━━━┓
+┃🇦🇫 💻 PATHAN BOT MENU 💻🇦🇫
+┗━━━━━━━━━━━━━━━━━┛
 
-👥 Group Menu
-   • .tagall
-   • .hidetag
-   • .antilink
-   • .antitag
-   • .mute / .unmute
+📝 *Owner Information*
+━━━━━━━━━━━━━━━━━━
+📍 Owner: ${settings.botOwner}
+⏳ Uptime: ${uptimeFormatted}
+🕐 Time: ${new Date().toLocaleString()}
+⚡ Speed: ${ping}
 
-⬇️ Download Menu
-   • .play
-   • .video
-   • .song
-   • .ytmp3
-   • .ytmp4
+✨ *OWNER COMMANDS* ✨
+━━━━━━━━━━━━━━━━━━
+🔴 .ban <@user>
+🔵 .unban <@user>
+✅ .sudo <@user>
+❌ .delsudo <@user>
+👑 .promote <@user>
+👥 .demote <@user>
+👋 .kick <@user>
+🗑️ .delete <msg>
+🚫 .antilink on/off
+🚫 .antibadword on/off
+👥 .tag <msg>
+👥 .tagall
+🤖 .chatbot on/off
+🔗 .resetlink
+👋 .welcome on/off
+👋 .goodbye on/off
 
-✨ Utility Menu
-   • .dare
-   • .truth
-   • .quote
-   • .fact
-   • .owner
+🌍 *GENERAL COMMANDS* 🌍
+━━━━━━━━━━━━━━━━━━
+📜 .menu
+📶 .ping
+⏱️ .runtime
+👑 .owner
+😂 .joke
+💬 .quote
+🧠 .fact
+🌦️ .weather
+📰 .news
+💌 .attp <text>
+🎵 .lyrics <song>
+🎱 .8ball <question>
+ℹ️ .groupinfo
+👮 .admins
+🔍 .jid <number>
+📸 .ss <url>
+🌍 .trt <text>
+📞 .vv <url>
 
-──────────────────────────────
-📌 Type *.menu2* to see **Full Menu**
-──────────────────────────────
+⚙️ *SETTINGS* ⚙️
+━━━━━━━━━━━━━━━━━━
+🌐 .public
+🔐 .private
+🟢 .autostatus on/off
+📖 .autoread on/off
+🧹 .clearsession
+🛡️ .antidelete on/off
+💬 .autoreact on/off
+🖼️ .getpp <@user>
+📸 .setpp <image>
+📜 .autobio <text>
+⌨️ .autotyping on/off
+🎙️ .autorecording on/off
+
+🎨 *STICKERS* 🎨
+━━━━━━━━━━━━━━━━━━
+🌀 .blur <image>
+🖼️ .simage <image>
+🌟 .sticker <image/video>
+🐯 .tgsticker <image/video>
+🤣 .meme
+🎯 .take <sticker>
+🔀 .emojimix <emoji1+emoji2>
+
+🎶 *DOWNLOAD* 🎶
+━━━━━━━━━━━━━━━━━━
+▶️ .play <song>
+🎥 .video <name/url>
+🎵 .song <name>
+📥 .ytmp3 <url>
+📥 .ytmp4 <url>
+▶️ .fb <url>
+
+🎮 *GAMES* 🎮
+━━━━━━━━━━━━━━━━━━
+❌⭕ .tictactoe
+🎯 .hangman
+❓ .guess
+🧠 .trivia
+✍️ .answer
+🤐 .truth
+😈 .dare
+
+🤖 *AI & SEARCH* 🤖
+━━━━━━━━━━━━━━━━━━
+🤖 .gpt <text>
+💡 .gptgo <text>
+🧬 .gemini <text>
+🧠 .flux <text>
+🎨 .imagine <prompt>
+
+🎭 *FUN ZONE* 🎭
+━━━━━━━━━━━━━━━━━━
+💘 .compliment <@user>
+😡 .insult <@user>
+😍 .flirt <@user>
+💋 .kiss <@user>
+📜 .shayari
+🌙 .goodnight
+🌹 .roseday
+🎭 .character
+☠️ .wasted
+🚢 .ship <@user1+@user2>
+😈 .simp <@user>
+🤪 .stupid <@user>
+🧠 .brainwash <@user>
+🐔 .detect <@user>
+👻 .ghost <@user>
+🧠 .mindread <@user>
+💩 .toilet <@user>
+📞 .callmom
+💘 .crush <@user>
+🪞 .mirror <@user>
+💣 .explode <@user>
+🕵️ .spy <@user>
+💨 .bombgas <@user>
+🛏️ .bedrate <@user>
+🤰 .pregnancycheck <@user>
+💘 .lovecheck <@user>
+🌈 .gaycheck <@user>
+🔥 .hornycheck <@user>
+👑 .shafi
+
+🧰 *MAKER* 🧰
+━━━━━━━━━━━━━━━━━━
+🔥 .fire <text>
+⚡ .thunder <text>
+❄️ .ice <text>
+🌫️ .snow <text>
+👹 .devil <text>
+💜 .purple <text>
+💡 .light <text>
+
+🚀 *SYSTEM* 🚀
+━━━━━━━━━━━━━━━━━━
+🔄 .update
+
+
 
 `;
 
