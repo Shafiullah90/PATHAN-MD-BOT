@@ -6,7 +6,7 @@ module.exports = {
   name: 'alive',
   alias: ['bot', 'online'],
   category: 'general',
-  description: 'Check if bot is alive in stylish format 😎',
+  description: 'Check if bot is alive in stylish format 😍✨',
   
   lastUsed: {},
 
@@ -28,17 +28,39 @@ module.exports = {
       let seconds = Math.floor(uptimeSec % 60);
       let uptime = `${hours}h ${minutes}m ${seconds}s`;
 
+      // 📅 Afghanistan Date & Time
+      const dateAfghanistan = new Date().toLocaleDateString("en-GB", { timeZone: "Asia/Kabul" });
+      const timeAfghanistan = new Date().toLocaleTimeString("en-GB", { timeZone: "Asia/Kabul" });
+
+      // 💻 System Info
+      const platform = os.platform();
+      const arch = os.arch();
+      const totalMem = (os.totalmem() / 1024 / 1024 / 1024).toFixed(1); // in GB
+      const freeMem = (os.freemem() / 1024 / 1024 / 1024).toFixed(1);   // in GB
+
       const aliveMsg = `
-╔══✪〘 🤖 𝗣𝗔𝗧𝗛𝗔𝗡-𝗕𝗢𝗧 〙✪══
-┃
-┃   ✅ Bot is Alive & Running
-┃   ⏱ Uptime: ${uptime}
-┃   🗓 Date: ${new Date().toLocaleDateString()}
-┃   🕒 Time: ${new Date().toLocaleTimeString()}
-┃   👤 Requested by: ${tagUser}
-┃
-╚══════════════════╝
-💖 Stay safe & enjoy!`;
+🌸━━━━━━━━━━━━━━━━━━━🌸
+      ✨ 𝗣𝗔𝗧𝗛𝗔𝗡-𝗕𝗢𝗧 ✨
+🌸━━━━━━━━━━━━━━━━━━━🌸
+
+💖 *Hello ${tagUser},*
+I’m alive, active & ready to serve you 😍✨
+
+⏱ *Uptime:* ${uptime}  
+🗓 *Date:* ${dateAfghanistan}  
+🕒 *Time:* ${timeAfghanistan}  
+👤 Requested by: ${tagUser}
+💻 *System Info:*  
+🔹 OS: ${platform} (${arch})  
+🔹 RAM: ${freeMem}GB free / ${totalMem}GB total  
+
+🤖 *Bot Status:* Online ✅  
+🌟 *Version:* 1.0.0  
+
+💌 Stay safe, stay happy, and keep smiling 🌷🌸  
+━━━━━━━━━━━━━━━━━━━━━━━
+⚡ Powered by: *Pathan-Bot*
+🌸━━━━━━━━━━━━━━━━━━━🌸`;
 
       // Send image + styled message as one
       await conn.sendMessage(chatId, {
