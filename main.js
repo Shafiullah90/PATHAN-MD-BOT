@@ -124,6 +124,9 @@ const kissCommand = require('./commands/kiss');
 const updateCommand = require('./commands/update');
 const hideTagCommand = require('./commands/hidetag');
 const menu2Command = require('./commands/menu2');
+const { inviteCommand } = require('./commands/invite');
+
+
 
 
 // Global settings
@@ -441,8 +444,11 @@ async function handleMessages(sock, messageUpdate, printLog) {
                 await memeCommand(sock, chatId, message);
                 break;
             // In your switch block
-        
-    
+       // getting url link of a group 
+            case userMessage === 'Invite',:
+            case userMessage === '.invite':
+    await inviteCommand(sock, chatId, message, isGroup);
+    break;
             case userMessage === '.hack':
             case userMessage === '.shack':
             case userMessage === '.hacktarget':
