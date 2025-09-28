@@ -1,7 +1,10 @@
-const settings = require('../settings');
-const fs = require('fs');
-const path = require('path');
+const settings = require('../settings'); // Import bot settings (owner name, bot name, etc.)
+const fs = require('fs'); // File system module (to read files like images/audio)
+const path = require('path'); // Path module (to handle file paths)
 
+// ===============================
+// 🕒 FORMAT TIME FUNCTION (Convert uptime seconds -> days/hours/minutes/seconds)
+// ===============================
 function formatTime(seconds) {
     const days = Math.floor(seconds / (24 * 60 * 60));
     seconds %= (24 * 60 * 60);
@@ -19,13 +22,27 @@ function formatTime(seconds) {
     return time.trim();
 }
 
+// ===============================
+// 📋 HELP / MENU COMMAND
+// ===============================
 async function helpCommand(sock, chatId, message) {
-    const start = Date.now();
-    await sock.sendMessage(chatId, { text: '⏳ *Loading sweet PATHAN-BOT menu...* ♻️' }, { quoted: message });
-    const end = Date.now();
-    const ping = Math.round((end - start) / 2);
-    const uptimeFormatted = formatTime(process.uptime());
+    const start = Date.now(); // Start time (for ping calculation)
 
+    // Show loading text while preparing menu
+    await sock.sendMessage(chatId, { text: '⏳ *Loading sweet PATHAN-BOT menu...* ♻️' }, { quoted: message });
+
+    const end = Date.now(); // End time
+    const ping = Math.round((end - start) / 2); // Ping = half of response time
+    const uptimeFormatted = formatTime(process.uptime()); // Get formatted uptime
+
+    // ===============================
+    // 🕐 AFGHANISTAN TIME (Always show Kabul time instead of server time)
+    // ===============================
+    const afgTime = new Date().toLocaleString("en-GB", { timeZone: "Asia/Kabul" });
+
+    // ===============================
+    // 📝 MENU MESSAGE TEMPLATE
+    // ===============================
     const helpMessage = `
 
 ━━━━━━━━━━━━━━━━━┓
@@ -36,7 +53,7 @@ async function helpCommand(sock, chatId, message) {
 ━━━━━━━━━━━━━━━━━━
 📍 Owner: ${settings.botOwner}
 ⏳ Uptime: ${uptimeFormatted}
-🕐 Time: ${new Date().toLocaleString()}
+🕐 Time: ${afgTime}
 ⚡ Speed: ${ping}
 
 ✨ *OWNER COMMANDS* ✨
@@ -182,10 +199,16 @@ async function helpCommand(sock, chatId, message) {
 `;
 
     try {
+        // ===============================
+        // 📂 FILE PATHS (Menu image & audios)
+        // ===============================
         const imagePath = path.join(__dirname, '../assets/menu_image.jpg');
         const audioPath = path.join(__dirname, '../assets/menu.mp3');
         const audio3Path = path.join(__dirname, '../assets/audio3.mp3');
 
+        // ===============================
+        // 📤 SEND IMAGE WITH MENU MESSAGE
+        // ===============================
         if (fs.existsSync(imagePath)) {
             const imageBuffer = fs.readFileSync(imagePath);
             await sock.sendMessage(chatId, {
@@ -202,15 +225,21 @@ async function helpCommand(sock, chatId, message) {
                 }
             }, { quoted: message });
 
+            // ===============================
+            // 🔊 SEND FIRST AUDIO (menu.mp3)
+            // ===============================
             if (fs.existsSync(audioPath)) {
                 const audioBuffer = fs.readFileSync(audioPath);
                 await sock.sendMessage(chatId, {
                     audio: audioBuffer,
                     mimetype: 'audio/mp4',
-                    ptt: true
+                    ptt: true // send as voice note
                 }, { quoted: message });
             }
 
+            // ===============================
+            // 🔊 SEND SECOND AUDIO (audio3.mp3)
+            // ===============================
             if (fs.existsSync(audio3Path)) {
                 const audio3Buffer = fs.readFileSync(audio3Path);
                 await sock.sendMessage(chatId, {
@@ -221,12 +250,15 @@ async function helpCommand(sock, chatId, message) {
             }
 
         } else {
+            // If no image found, send only text menu
             await sock.sendMessage(chatId, { text: helpMessage });
         }
     } catch (error) {
+        // In case of error, log it and send plain text menu
         console.error('Error in help command:', error);
         await sock.sendMessage(chatId, { text: helpMessage });
     }
 }
 
+// Export the command so bot can use it
 module.exports = helpCommand;
