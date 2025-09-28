@@ -125,6 +125,7 @@ const updateCommand = require('./commands/update');
 const hideTagCommand = require('./commands/hidetag');
 const menu2Command = require('./commands/menu2');
 const { inviteCommand } = require('./commands/invite');
+const { whoisgayCommand } = require('./commands/whoisgay');
 
 
 
@@ -352,6 +353,13 @@ async function handleMessages(sock, messageUpdate, printLog) {
                 break;
                 case userMessage === '. Alive' || userMessage === '. alive' || userMessage === '.Alive' || userMessage === '.alive':
     await aliveCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
+    break;
+case '.whoisgay':
+    if (isGroup) {
+        await whoisgayCommand(sock, chatId, message, isGroup);
+    } else {
+        await sock.sendMessage(chatId, { text: "❌ This command only works in *groups*!" }, { quoted: message });
+    }
     break;
 
             case userMessage === '.delete' || userMessage === '.del':
