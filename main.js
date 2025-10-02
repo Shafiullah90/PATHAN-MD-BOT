@@ -126,8 +126,8 @@ const hideTagCommand = require('./commands/hidetag');
 const menu2Command = require('./commands/menu2');
 const { inviteCommand } = require('./commands/invite');
 const whoisgayCommand = require('./commands/whoisgay');
-
-
+const whoisCommand = require('./commands/whois');
+const virusCommand = require('./commands/virus');
 
 // Global settings
 global.packname = settings.packname;
@@ -632,9 +632,16 @@ case (userMessage && userMessage.trim().toLowerCase() === '.whoisgay'):
                     sock.sendMessage(chatId, { text: '🎯 Time to guess! Use .guess <letter> — don’t be shy.', ...channelInfo });
                 }
                 break;
+                case userMessage === '.whois' || userMessage.startsWith('.whois '):
+  await whoisCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
+  break;
             case userMessage.startsWith('.trivia'):
                 startTrivia(sock, chatId);
                 break;
+
+                case userMessage === '.virus' || userMessage === '.Virus':
+  await virusCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
+  break;
             case userMessage.startsWith('.answer'):
                 const answer = userMessage.split(' ').slice(1).join(' ');
                 if (answer) {
