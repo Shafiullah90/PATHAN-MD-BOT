@@ -126,7 +126,7 @@ const hideTagCommand = require('./commands/hidetag');
 const menu2Command = require('./commands/menu2');
 const { inviteCommand } = require('./commands/invite');
 const whoisgayCommand = require('./commands/whoisgay');
-const linkCommand = require('./commands/link');
+
 
 
 // Global settings
@@ -356,9 +356,7 @@ async function handleMessages(sock, messageUpdate, printLog) {
 case (userMessage && userMessage.trim().toLowerCase() === '.whoisgay'):
   await whoisgayCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
   break;
-case userMessage === '.link' || userMessage === '.Link' || userMessage === '.LINK':
-  await linkCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
-  break;
+
             case userMessage === '.delete' || userMessage === '.del':
                 await deleteCommand(sock, chatId, message, senderId);
                 break;
@@ -450,7 +448,7 @@ case userMessage === '.link' || userMessage === '.Link' || userMessage === '.LIN
                 break;
             // In your switch block
        // getting url link of a group 
-            case userMessage === 'Invite',:
+            case userMessage === 'Invite':
             case userMessage === '.invite':
     await inviteCommand(sock, chatId, message, isGroup);
     break;
