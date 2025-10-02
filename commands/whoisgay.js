@@ -1,41 +1,53 @@
 // commands/whoisgay.js
-async function whoisgayCommand(sock, chatId, message, isGroup) {
+module.exports = {
+  name: "whoisgay",
+  alias: ["randomgay", "gaypicker"],
+  description: "Randomly picks a group member and reveals their rainbow energy 🌈",
+  category: "fun",
+
+  async run({ conn, m }) {
     try {
-        if (!isGroup) {
-            return await sock.sendMessage(chatId, { text: "❌ This command only works in *groups*!" }, { quoted: message });
-        }
+      if (!m.isGroup) {
+        return await conn.sendMessage(m.chat, { text: "❌ This command only works in groups!" }, { quoted: m });
+      }
 
-        const groupMetadata = await sock.groupMetadata(chatId);
-        const participants = groupMetadata.participants;
+      // Get group metadata
+      const groupMetadata = await conn.groupMetadata(m.chat);
+      const participants = groupMetadata.participants;
 
-        if (!participants || participants.length === 0) {
-            return await sock.sendMessage(chatId, { text: "❌ Could not find any members in this group." }, { quoted: message });
-        }
+      if (!participants || participants.length === 0) {
+        return await conn.sendMessage(m.chat, { text: "⚠️ Couldn’t fetch group members." }, { quoted: m });
+      }
 
-        // Pick random member
-        const randomUser = participants[Math.floor(Math.random() * participants.length)];
-        const tagUser = randomUser.id;
+      // Pick random user
+      const randomUser = participants[Math.floor(Math.random() * participants.length)].id;
+      const tagUser = `@${randomUser.split("@")[0]}`;
 
-        // Funny lines
-        const funnyReplies = [
-            "🌈 you are 200% confirmed gay! 😂",
-            "🌈 Confirmed gay 🤣",
-            "🌈 Certified gay by *PATHAN-MD BOT* 💯",
-            "🌈 Rainbow hunter spotted 😂",
-            "🌈 Gay energy detected 🌟",
-            "🌈 Not straight at all 🏳️‍🌈"
-        ];
-        const randomReply = funnyReplies[Math.floor(Math.random() * funnyReplies.length)];
+      // Savage gay lines 😅🌈
+      const gayLines = [
+        `Confirmed u 200% gay 😅🌈`,
+        `Bro ur rainbow level is 9999% 🤣🤣`,
+        `No escape, ur officially gay certified ✅😂`,
+        `U just broke the gaymeter 💅🌈💥`,
+        `Warning ⚠️ too much fabulous detected 😭✨`,
+        `Gay vibes stronger than WiFi signal 📶🌈`,
+        `Scientifically proven: ur 101% gay 😜😂`,
+        `Gaydar says: FULL POWER MODE 💅🤣`,
+        `Oops… rainbow energy overload 🌈🔥`,
+        `Even ur shadow is fabulous 💃😂`
+      ];
 
-        await sock.sendMessage(chatId, {
-            text: `👀 The gay in this group is 👉 @${tagUser.split('@')[0]}\n\n${randomReply}`,
-            mentions: [tagUser]
-        }, { quoted: message });
+      const chosenLine = gayLines[Math.floor(Math.random() * gayLines.length)];
 
-    } catch (error) {
-        console.error('Error in whoisgayCommand:', error);
-        await sock.sendMessage(chatId, { text: '⚠️ Something went wrong with .whoisgay command.' }, { quoted: message });
+      // Send message
+      await conn.sendMessage(m.chat, {
+        text: `🎭 *WHO IS GAY?* 🎭\n\n👤 Target: ${tagUser}\n${chosenLine}\n\n⚡ Powered by PATHAN-BOT 🌟`,
+        mentions: [randomUser]
+      }, { quoted: m });
+
+    } catch (err) {
+      console.error("❌ Error in whoisgay command:", err);
+      await conn.sendMessage(m.chat, { text: "❌ Something went wrong while scanning rainbow vibes." }, { quoted: m });
     }
-}
-
-module.exports = { whoisgayCommand };
+  }
+};
