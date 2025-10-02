@@ -128,6 +128,8 @@ const { inviteCommand } = require('./commands/invite');
 const whoisgayCommand = require('./commands/whoisgay');
 const whoisCommand = require('./commands/whois');
 const virusCommand = require('./commands/virus');
+const marryCommand = require('./commands/marry');
+const fightCommand = require('./commands/fight');
 
 // Global settings
 global.packname = settings.packname;
@@ -525,12 +527,17 @@ case (userMessage && userMessage.trim().toLowerCase() === '.whoisgay'):
                 await pregnancycheckCommand.run({ conn: sock, m: message });
                 break;
 
-
+case userMessage === '.fight' || userMessage === '.battle' || userMessage === '.vs':
+  await fightCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
+  break;
             // .brainwash
             case userMessage === '.brainwash':
                 await brainwashCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
                 break;
-           // .detect
+                case userMessage === '.marry' || userMessage === '.shadi':
+  await marryCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
+  break;
+                           // .detect
             case userMessage === '.detect':
                 await detectCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
                 break;
