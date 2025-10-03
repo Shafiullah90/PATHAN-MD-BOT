@@ -74,7 +74,8 @@ async function helpCommand(sock, chatId, message) {
 🔗 .resetlink
 👋 .welcome on/off
 👋 .goodbye on/off
-
+📝 .whois @user/
+⌚️. Time (current time)
 🌍 *GENERAL COMMANDS* 🌍
 ━━━━━━━━━━━━━━━━━━
 📜 .menu
@@ -150,6 +151,9 @@ async function helpCommand(sock, chatId, message) {
 
 🎭 *FUN ZONE* 🎭
 ━━━━━━━━━━━━━━━━━━
+😜 .fight <@user>
+👩‍❤️‍👨 .marry random @tag
+😄 .virus fun
 💘 .compliment <@user>
 😡 .insult <@user>
 😍 .flirt <@user>
