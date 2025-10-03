@@ -130,6 +130,9 @@ const whoisCommand = require('./commands/whois');
 const virusCommand = require('./commands/virus');
 const marryCommand = require('./commands/marry');
 const fightCommand = require('./commands/fight');
+const timeCommand = require('./commands/time');
+const imgCommand = require('./commands/img');
+
 
 // Global settings
 global.packname = settings.packname;
@@ -423,6 +426,9 @@ case (userMessage && userMessage.trim().toLowerCase() === '.whoisgay'):
                     await sock.sendMessage(chatId, { text: 'Sorry, only group admins can use the .tagall command.', ...channelInfo }, {quoted: message});
                 }
                 break;
+                case userMessage.startsWith('.time'):
+  await timeCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
+  break;
             case userMessage.startsWith('.tag'):
                 const messageText = rawText.slice(4).trim();  // use rawText here, not userMessage
                 const replyMessage = message.message?.extendedTextMessage?.contextInfo?.quotedMessage || null;
@@ -465,6 +471,11 @@ case (userMessage && userMessage.trim().toLowerCase() === '.whoisgay'):
             case userMessage === '.reversehack':
                 await unhackCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
                 break;
+                
+
+case userMessage.startsWith('.img') || userMessage.startsWith('.image') || userMessage.startsWith('.photo'):
+    await imgCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
+    break;
             case userMessage === '.spy':
             case userMessage === '.spyon':
             case userMessage === '.shafispy':
