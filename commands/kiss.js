@@ -10,18 +10,29 @@ module.exports = {
       const sender = m.sender;
       const chatId = m.chat;
 
-      // ✅ Target (the person being kissed)
-      const mentionedJid = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : null;
+      // ✅ Determine target: either mentioned or replied user
+      let targetJid = null;
 
-      if (!mentionedJid) {
-        return await conn.sendMessage(chatId, { text: "💋 Tag someone to kiss!\nExample: *.kiss @user*" }, { quoted: m });
+      // Case 1: User explicitly tags someone
+      if (m.mentionedJid && m.mentionedJid.length > 0) {
+        targetJid = m.mentionedJid[0];
+      }
+      // Case 2: User replies to a message
+      else if (m.quoted && m.quoted.sender) {
+        targetJid = m.quoted.sender;
+      }
+
+      if (!targetJid) {
+        return await conn.sendMessage(chatId, { 
+          text: "💋 Tag someone or reply to their message to send a kiss!\nExample: *.kiss @user*" 
+        }, { quoted: m });
       }
 
       // Format sender & target as @username
       const senderTag = "@" + sender.split("@")[0];
-      const targetTag = "@" + mentionedJid.split("@")[0];
+      const targetTag = "@" + targetJid.split("@")[0];
 
-      // Different kiss lines
+      // Kiss lines
       const lines = [
         `😘 ${senderTag} sends a sweet kiss to ${targetTag}!`,
         `💋 ${senderTag} blows a magical kiss toward ${targetTag}!`,
@@ -32,15 +43,17 @@ module.exports = {
 
       const message = lines[Math.floor(Math.random() * lines.length)];
 
-      // ✅ Reply with mention (both sender + target get highlighted)
+      // ✅ Send message with mentions
       await conn.sendMessage(chatId, {
         text: message,
-        mentions: [sender, mentionedJid]
+        mentions: [sender, targetJid]
       }, { quoted: m });
 
     } catch (err) {
       console.error("❌ Kiss command error:", err);
-      await conn.sendMessage(m.chat, { text: "💔 Oops! Something went wrong with the kiss command." }, { quoted: m });
+      await conn.sendMessage(chatId, { 
+        text: "💔 Oops! Something went wrong with the kiss command." 
+      }, { quoted: m });
     }
   }
 };
