@@ -1,64 +1,64 @@
-// commands/img.js
+const googleIt = require('google-it');
 const axios = require('axios');
-const { fetchBuffer } = require('../lib/myfunc'); // Assuming you have this utility
+const fs = require('fs');
+const path = require('path');
 
-module.exports = {
-  name: 'img',
-  alias: ['img', 'image', 'photo'],
-  description: 'Download images from query',
-  category: 'fun',
-
-  async run({ conn, m, args }) {
+async function imgCommand(sock, chatId, message) {
     try {
-      const chatId = m.chat;
+        // Extract text from message
+        const text = message.message?.conversation || message.message?.extendedTextMessage?.text || '';
+        let input = text.trim().slice(4).trim(); // Remove '.img'
 
-      // Get the query and optional number of images
-      if (!args || args.length === 0) {
-        return await conn.sendMessage(chatId, { text: "❌ Provide a search query!\nExample: *.img sunset 3*" }, { quoted: m });
-      }
+        if (!input) {
+            return await sock.sendMessage(chatId, { 
+                text: '💡 Usage:\n.img <search query>\n.img <search query> <number of images>' 
+            }, { quoted: message });
+        }
 
-      // Extract last arg if it is a number
-      let num = 3; // default
-      const lastArg = args[args.length - 1];
-      let query = args.join(' ');
+        // Extract number of images if provided
+        let numImages = 3; // default
+        const countMatch = input.match(/\s(\d+)$/);
+        if (countMatch) {
+            numImages = parseInt(countMatch[1]);
+            input = input.replace(/\s\d+$/, '').trim(); // remove number from query
+        }
 
-      if (!isNaN(lastArg)) {
-        num = Math.min(parseInt(lastArg), 5); // Limit max to 5 images
-        query = args.slice(0, -1).join(' ');
-      }
+        if (numImages > 10) numImages = 10; // limit max
+        if (numImages < 1) numImages = 1;
 
-      if (!query) {
-        return await conn.sendMessage(chatId, { text: "❌ Please provide a valid search query." }, { quoted: m });
-      }
+        // Send searching message
+        await sock.sendMessage(chatId, { text: `🔍 Searching and generating ${numImages} image(s) for: "${input}"...` }, { quoted: message });
 
-      // Send "processing" message
-      const processingMsg = await conn.sendMessage(chatId, { text: `🔍 Searching for "${query}"...` }, { quoted: m });
+        // Search images using google-it
+        const results = await googleIt({ query: input, additionalArgs: ['–num=20'] });
+        const imageUrls = results
+            .filter(r => r.link && /\.(jpg|jpeg|png|gif)$/i.test(r.link))
+            .map(r => r.link);
 
-      // Make API request to fetch images (here using Pexels API as example)
-      const API_KEY = 'YOUR_PEXELS_API_KEY'; // Replace with your API key
-      const response = await axios.get('https://api.pexels.com/v1/search', {
-        headers: { Authorization: API_KEY },
-        params: { query, per_page: num }
-      });
+        if (!imageUrls.length) {
+            return await sock.sendMessage(chatId, { text: '❌ No images found!' }, { quoted: message });
+        }
 
-      const photos = response.data.photos;
+        const finalUrls = imageUrls.slice(0, numImages);
 
-      if (!photos || photos.length === 0) {
-        return await conn.sendMessage(chatId, { text: `❌ No images found for "${query}".` }, { quoted: m });
-      }
+        // Send images one by one
+        for (let i = 0; i < finalUrls.length; i++) {
+            const url = finalUrls[i];
+            try {
+                const buffer = await axios.get(url, { responseType: 'arraybuffer' });
+                await sock.sendMessage(chatId, {
+                    image: buffer.data,
+                    caption: `📷 Image ${i + 1} of ${finalUrls.length} for "${input}"`,
+                }, { quoted: message });
+            } catch (e) {
+                console.error(`Error downloading image ${i + 1}:`, e.message);
+            }
+        }
 
-      // Download and send each image
-      for (let photo of photos) {
-        const buffer = await fetchBuffer(photo.src.original);
-        await conn.sendMessage(chatId, { image: buffer, caption: `📷 Image for "${query}"` });
-      }
-
-      // Delete processing message
-      await conn.sendMessage(chatId, { delete: processingMsg.key });
-
-    } catch (err) {
-      console.error('❌ Image command error:', err);
-      await conn.sendMessage(chatId, { text: '❌ Failed to fetch images. Please try again later.' }, { quoted: m });
+    } catch (error) {
+        console.error('[IMG] Command Error:', error);
+        await sock.sendMessage(chatId, { text: '❌ Failed to generate/download image. Try again later.' }, { quoted: message });
     }
-  }
-};
+}
+
+module.exports = imgCommand;
