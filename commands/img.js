@@ -1,13 +1,9 @@
-const googleIt = require('google-it');
 const axios = require('axios');
-const fs = require('fs');
-const path = require('path');
 
 async function imgCommand(sock, chatId, message) {
     try {
-        // Extract text from message
         const text = message.message?.conversation || message.message?.extendedTextMessage?.text || '';
-        let input = text.trim().slice(4).trim(); // Remove '.img'
+        let input = text.trim().slice(4).trim(); // remove ".img"
 
         if (!input) {
             return await sock.sendMessage(chatId, { 
@@ -15,49 +11,39 @@ async function imgCommand(sock, chatId, message) {
             }, { quoted: message });
         }
 
-        // Extract number of images if provided
-        let numImages = 3; // default
+        // extract number of images (default 3)
+        let numImages = 3;
         const countMatch = input.match(/\s(\d+)$/);
         if (countMatch) {
             numImages = parseInt(countMatch[1]);
-            input = input.replace(/\s\d+$/, '').trim(); // remove number from query
+            input = input.replace(/\s\d+$/, '').trim();
         }
-
-        if (numImages > 10) numImages = 10; // limit max
+        if (numImages > 5) numImages = 5; // limit to 5 max
         if (numImages < 1) numImages = 1;
 
-        // Send searching message
-        await sock.sendMessage(chatId, { text: `🔍 Searching and generating ${numImages} image(s) for: "${input}"...` }, { quoted: message });
+        // Notify searching
+        await sock.sendMessage(chatId, { text: `🔍 Searching ${numImages} images for: "${input}"...` }, { quoted: message });
 
-        // Search images using google-it
-        const results = await googleIt({ query: input, additionalArgs: ['–num=20'] });
-        const imageUrls = results
-            .filter(r => r.link && /\.(jpg|jpeg|png|gif)$/i.test(r.link))
-            .map(r => r.link);
+        // Use Lexica API for free images
+        const apiUrl = `https://lexica.art/api/v1/search?q=${encodeURIComponent(input)}`;
+        const response = await axios.get(apiUrl);
 
-        if (!imageUrls.length) {
-            return await sock.sendMessage(chatId, { text: '❌ No images found!' }, { quoted: message });
+        if (!response.data.images || response.data.images.length === 0) {
+            return await sock.sendMessage(chatId, { text: `❌ No images found for "${input}"` }, { quoted: message });
         }
 
-        const finalUrls = imageUrls.slice(0, numImages);
+        const finalImgs = response.data.images.slice(0, numImages);
 
-        // Send images one by one
-        for (let i = 0; i < finalUrls.length; i++) {
-            const url = finalUrls[i];
-            try {
-                const buffer = await axios.get(url, { responseType: 'arraybuffer' });
-                await sock.sendMessage(chatId, {
-                    image: buffer.data,
-                    caption: `📷 Image ${i + 1} of ${finalUrls.length} for "${input}"`,
-                }, { quoted: message });
-            } catch (e) {
-                console.error(`Error downloading image ${i + 1}:`, e.message);
-            }
+        for (let i = 0; i < finalImgs.length; i++) {
+            await sock.sendMessage(chatId, {
+                image: { url: finalImgs[i].srcSmall || finalImgs[i].src },
+                caption: `📷 Result ${i + 1}/${finalImgs.length} for: *${input}*\n\n> Downloaded by PATHAN BOT`
+            }, { quoted: message });
         }
 
-    } catch (error) {
-        console.error('[IMG] Command Error:', error);
-        await sock.sendMessage(chatId, { text: '❌ Failed to generate/download image. Try again later.' }, { quoted: message });
+    } catch (err) {
+        console.error("[IMG CMD ERROR]", err);
+        await sock.sendMessage(chatId, { text: '❌ Failed to fetch images, please try again later.' }, { quoted: message });
     }
 }
 
