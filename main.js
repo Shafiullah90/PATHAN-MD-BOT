@@ -133,6 +133,9 @@ const fightCommand = require('./commands/fight');
 const timeCommand = require('./commands/time');
 const imgCommand = require('./commands/img');
 const urlCommand = require('./commands/url');
+const settingsCommand = require('./commands/settings');
+const { pmblockerCommand, readState: readPmBlockerState } = require('./commands/pmblocker');
+
 
 // Global settings
 global.packname = settings.packname;
@@ -415,6 +418,18 @@ case (userMessage && userMessage.trim().toLowerCase() === '.whoisgay'):
                     console.error('Error updating access mode:', error);
                     await sock.sendMessage(chatId, { text: 'Failed to update bot access mode', ...channelInfo });
                 }
+                break;
+                case userMessage.startsWith('.pmblocker'):
+                if (!message.key.fromMe && !senderIsSudo) {
+                    await sock.sendMessage(chatId, { text: 'Only owner/sudo can use pmblocker.' }, { quoted: message });
+                    commandExecuted = true;
+                    break;
+                }
+                {
+                    const args = userMessage.split(' ').slice(1).join(' ');
+                    await pmblockerCommand(sock, chatId, message, args);
+                }
+                commandExecuted = true;
                 break;
             case userMessage === '.owner':
                 await ownerCommand(sock, chatId);
@@ -699,7 +714,11 @@ case userMessage === '.fight' || userMessage === '.battle' || userMessage === '.
                 case userMessage.startsWith('.kiss'):
   await kissCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
   break;
+      case userMessage === '.settings':
+                await settingsCommand(sock, chatId, message);
+                break;
 
+                
             case userMessage === '.dare':
                 await dareCommand(sock, chatId, message);
                 break;
