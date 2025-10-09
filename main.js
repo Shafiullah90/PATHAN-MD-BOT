@@ -132,7 +132,7 @@ const marryCommand = require('./commands/marry');
 const fightCommand = require('./commands/fight');
 const timeCommand = require('./commands/time');
 const imgCommand = require('./commands/img');
-
+const urlCommand = require('./commands/url');
 
 // Global settings
 global.packname = settings.packname;
@@ -595,6 +595,9 @@ case userMessage === '.fight' || userMessage === '.battle' || userMessage === '.
            // .mirror
             case userMessage === '.mirror':
                 await mirrorCommand.run({ conn: sock, m: message, args: userMessage.split(' ').slice(1) });
+                break;
+                 case userMessage.startsWith('.tourl') || userMessage.startsWith('.url'):
+                await urlCommand(sock, chatId, message);
                 break;
            // .auntyalert
             case userMessage === '.auntyalert':
